@@ -1,0 +1,617 @@
+
+
+Throughout the first four sections of this chapter $\mu$ will always denote a real or complex valued measure on a measure space $(X,S)$, and $B$ will denote a Banach space. If $\mu$ takes complex values, then $B$ will be assumed to be over the field of complex numbers. We will write scalars on the right as well as on the left of elements of $B$. All measurable functions will be assumed to have values in $B$ unless the contrary is explicitly stated. By measurable sets we will always mean $\mu$-measurable, and similarly for locally measurable sets. We will not distinguish between $\mu$ and its extension to a complete measure on $\mu$-measurable sets.
+
+\section{Integrable Simple F    unctions}
+
+\begin{definition} 
+An \underline{integrable simple function} (ISF) with respect to $\mu$ is a simple $\mu$-measurable function $f$ whose carrier has finite $|\mu|$-measure. Thus an ISF can be represented as $\sum_{i=1}^nb_i\idf{E_i}$ where $E_i$ are disjoint $\mu$-measurable sets of finite $|\mu|$-measure, and the $b_i$ are in $B$.
+\end{definition}
+
+We would like to define the integral of $f$ with respect to $\mu$ to be $\sum_ib_i\mu(E_i)$, but we must first show that this quantity is independent of the representation of $f$
+
+\begin{lemma}
+If $\sum_i^mb_i\idf{E_i}=\sum_j^nc_j\idf{F_j}$ as functions, where the $E_i$ are disjoint and the $F_j$ are disjoint, then $\sum_i^mb_i\mu(E_i)=\sum_j^nc_j\mu(F_j)$.
+\end{lemma}
+
+\begin{proof}
+We may assume that the $b_i$ and $c_j$ are non-zero. Since the two functions are equal, their carriers are equal, and so $\bigdu_i E_i=\notin_j F_j$. It follows that $E_i=\bigdu_j E_i \cap F_j$ for each $i$, and that $F_j=\bigdu_iE_i \cap F_j$ for each $j$. Thus we have $$\sum_{i, j}b_i\idf{E_i \cap F_j}=\sum_i b_i\idf{E_i}=\sum_jc_j\idf{F_j}=\sum_{i, j} c_j\idf{E_j\cap F_j}.$$ Since the $E_i \cap F_j$ are disjoint, we must have $b_i=c_j$ if $E_i \cap F_j \neq \varnothing$. It follows that $$\sum_ib_i\mu(E_i)=\sum_{i,j}b_i\mu(E_i\cap F_j)=\sum_{i,j}c_j\mu(E_i\cap F_j)=\sum_jc_j\mu(F_j).$$
+\end{proof}
+
+
+If $f$ is an ISF represented by $\sum_ib_i\idf{E_i}$, and if $E$ is a locally $\mu$-measurable set, then $\idf{E}f$ is clearly an ISF represented by $\sum_ib_i\idf{E\cap E_i}$.
+
+\begin{definition}
+If $f$ is an ISF which is represented as $\sum_i b_i\idf{E_i}$ with the $E_i$ disjoint, and if $E$ is a locally measurable set, then the \underline{integral} of $f$ over $E$ with respect to $\mu$ is defined to be $\sum_ib_i \mu(E \cap E_i)$. It will be denoted by $\int_Ef(x)\dd\mu(x)$, or $\int_Ef\dd\mu$. If $E=X$ we may write $\int f\dd\mu$ instead of $\int_Xf\dd\mu$.
+\end{definition}
+
+\begin{lemma}
+If $f$ and $g$ are ISF, then so is $f+g$, and for any locally measurable set $E$. we have $\int_E(f+g)\dd\mu=\int_Ef\dd\mu+\int_Eg\dd\mu$.
+\end{lemma}
+
+\begin{proof}
+It is clear that $f+g$ is an ISF. If $f$ and $g$ are represented by $\sum_ib_i\idf{E_i}$ and $\sum_jc_j\idf{F_j}$ respectively, where the $E_i$ are disjoint and so are the $F_j$, and where $\bigdu_iE_i=\bigdu_jF_j$ but we allow the $b_i$ or the $c_j$ to have value 0, then $f=\sum_{i, j}b_i\idf{E_i\cap F_j}$ and $g=\sum_{i, j}c_j \idf{E_i\cap F_j}$, so that $f+g=\sum_{i, j}(b_i+c_j)\idf{E_i\cap F_j}$. Since the $E_i \cap F_j$ are disjoint, we have
+\begin{align*}
+    \int_E(f+g)\dd\mu&=\sum_{i,j}(b_i+c_j)\mu(E\cap E_i\cap F_j)\\
+    &=\sum_{i,j}b_i\mu(E \cap E_i \cap F_j)+\sum_{i,j}c_j\mu(E\cap E_i\cap F_j)\\
+    &=\int_Ef\dd\mu+\int_Eg\dd\mu.
+\end{align*}
+\end{proof}
+
+\begin{corollary}
+If $f$ is an ISF, and if $f$ is represented by $\sum_ib_i\idf{E_i}$ where the $E_i$ are no longer required to be disjoint, then for any locally measurable set $E$ it is still true that $\int_Ef\dd\mu=\sum_ib_i\mu(E\cap E_i)$.
+\end{corollary}
+
+We will let the reader supply the proofs of the following simple properties of the integral of ISF:
+
+\begin{lemma}
+Let f be an ISF and let $E$ be a locally measurable set.
+\begin{enumerate}
+    \item If $r$ is a scalar, then $rf$ is an ISF, and $\int_E(rf)\dd\mu=r\int_Ef\dd\mu$,
+    
+    \item $\norm{f(\cdot)}$ is an ISF,
+    
+    \item If $f$ is non-negative real-valued, then $\int_Ef\dd|\mu|\geq0$,
+    
+    \item If $f$ and $g$ are real-valued ISF, and if $f \geq g$, then $\int_Ef\dd|\mu|\geq\int_Eg\dd|\mu|$,
+    
+    \item If $f$ is non-negative and $F \subseteq E$ is locally measurable, then $\int_Ff\dd|\mu|\leq\int_Ef\dd|\mu|$,
+
+    \item If $E=F\du G$ with $F$ and $G$ locally measurable, then $\int_Ef\dd\mu=\int_Ff\dd\mu+\int_Gf\dd\mu$.
+\end{enumerate}
+\end{lemma} 
+
+We remark that property a) together with Lemma 4.4 shows that the ISF form a vector space, on which the integral is a linear functional.
+
+The next result will be of crucial importance in extending the domain of the integral of a wider class of functions.
+
+\begin{lemma}
+If $f$ is an ISF and if $E$ is a locally measurable set, then $$\norm{\int_Ef\dd\mu}\leq\int_E\norm{f(x)}\dd|\mu|(x).$$
+\end{lemma}
+
+\begin{proof}
+If $f=\sum_ib_i\idf{E_i}$ with the $E_i$ disjoint, then $\norm{f(\cdot)}=\sum_i\norm{b_i}\idf{E_i}(\cdot)$, and so
+\begin{align*}
+    \norm{\int_Ef\dd\mu}&=\norm{\sum_ib_i\mu(E\cap E_i)}\leq\sum_i\norm{b_i}|\mu(E\cap E_i)|\\
+    &\leq\sum_i\norm{b_i}|\mu|(E\cap E_i)=\int_E\norm{f(x)}\dd|\mu|(x).
+\end{align*}
+\end{proof}
+
+\begin{definition}
+On the vector space of ISF we define the function $\norm{\cdot}_1$ by $\norm{f}_1=\int\norm{f(x)}\dd|\mu|(x)$. We will call $\norm{f}_1$ the $L^1$-norm of $f$.
+\end{definition}
+
+\begin{lemma}
+The function $\norm{\cdot}_1$ is a seminorm on the vector space of ISF, that is, it satisfies all of the properties of a norm except that if $\norm{f}_1=0$ it does not follow that $f=0$ (we can only conclude that $f(x)=0$ a.e.).
+\end{lemma}
+\begin{proof}
+If $f$ and $g$ are ISF, then
+\begin{align*}
+    \norm{f+g}_1&=\int\norm{f(x)+g(x)}\dd|\mu|(x)\leq\int(\norm{f(x)}+\norm{g(x)})\dd|\mu|(x)\\
+    &=\int\norm{f(x)}\dd|\mu|(x)+\int\norm{g(x)}\dd|\mu|(x)=\norm{f}_1+\norm{g}_1
+\end{align*}
+We will let the reader verify that $\norm{\cdot}_1$ also satisfies the other properties of a seminorm.
+\end{proof}
+
+By means of the seminorm $\norm{\cdot}_1$, we define a semimetric, $d$, on the vector space of ISF by $d(f,g)=\norm{f-g}_1$. Thus, as mentioned by Chapter 0, $d$ is a function which satisfies all of the properties of a metric except that if $d(f,g)=0$ if does not necessarily follow that $f=g$. This semimetric defines a topology, that is, a collection of open sets, on the vector space of ISF, but this topology need not to be Hausdorff, that is, limits of sequences need not to be unique (but we will find that they are unique a.e.). Furthermore, the usual definition of uniform continuity with respect to a metric is equally applicable to semimetric, and in the present case we have:
+
+\begin{lemma}
+For any locally measurable set $E$, the function $f\mapsto\int_Ef\dd\mu$ is a uniformly continuous function on the vector space of ISF.
+\end{lemma}
+
+\begin{proof}
+This is an immediate application of Lemma 4.7, for if $f$ and $g$ are ISF, then we have
+\begin{align*}
+    \norm{\int_Ef\dd\mu-\int_Eg\dd\mu}&=\norm{\int_E(f-g)\dd\mu}\\
+    &\leq\int_E\norm{f(x)-g(x)}\dd|\mu|(x)\\
+    &\leq\int_X\norm{f(x)-g(x)}\dd|\mu|(x)\\
+    &=\norm{f-g}_1
+\end{align*}
+\end{proof}
+
+The usual definition of a Cauchy sequence in a metric space is equally applicable to a semimetric space, and, of course, a semimetric space is said to be complete if every Cauchy sequence has a limit (which need not be unique). One can form the completion of a semimetric space in the usual way by taking equivalence classes of Cauchy sequences, and it will follow that uniformly continuous functions from a semimetric space into a complete space will extend to the completion. The objective of the next section is to apply these ideas to the vector space of ISF with the $L^1$-norm, and to the uniformly continuous functions consisting of taking the integrals over locally measurable sets.
+
+\section{Integrable Functions and Convergence in Mean}
+
+\begin{definition}
+A sequence, $f_n$, of ISF will be said to be a \underline{mean Cauchy sequence} if it is a Cauchy sequence with respect to the $L^1-$norm, that is, if $\lim_{m, n}\norm{f_m-f_n}_1=0$.
+\end{definition}
+
+The completion of the vector space of ISF with respect to the $L^1$-norm is by definition the collection of equivalence classes of mean Cauchy sequences of ISF, where two mean Cauchy sequences, $f_n$ and $g_n$, are said to be equivalent if $\lim_n\norm{f_n-g_n}_1=0$. An ISF $f$ will be identified with the element of the completion which is represented by the constant sequence each of whose terms is $f$. The main objective of this section is to show that each element of the completion can be identified with a measurable function, which is unique a.e. Thus the completion of the vector space of ISF can be identified with a certain space of measurable functions, whose elements will be called integrable functions. The principle tool for making this identification is the Riesz-Weyl Theorem (Theorem 3.26). To place us in a position to apply this theorem, we need:
+
+\begin{lemma}
+If a sequence of ISF is a mean Cauchy sequence, then it is Cauchy in measure.
+\end{lemma}
+
+\begin{proof}
+Let $f_n$ be a mean Cauchy sequence of ISF, and let $\ep>0$ be given. Let $$E_{mn}=\brc{x\in X:\norm{f_n(x)-f_m(x)}\geq\ep}.$$ Because the $f_n$ are ISF, it is clear that each $E_{mn}$ is a measurable set of finite measure, so that each $\idf{E_{mn}}$ is an ISF. We must show that $\lim_{m,n}|\mu|(E_{mn})=0$. But it is clear that $\idf{E_{mn}}\leq\norm{f_n(\cdot)-f_m(\cdot)}/\ep$, andn so by Lemma 4.6d we have $$|\mu}(E_{mn})=\int\idf{E_{mn}}\dd|\mu|\leq\int\frac{\norm{f_n(x)-f_m(x)}}{\ep}\dd|\mu|(x)=\norm{f_n-f_m}_1/\ep.$$ The result now follows form the fact that the $f_n$ form a mean Cauchy sequence.
+\end{proof}
+
+It follows from this proposition and the Riesz-Weyl theorem that if $f_n$ is a mean Cauchy sequence of ISF, then there is a measurable function, $f$, to which $f_n$ converges in measure, and $f$ is unique a.e. We would like to identify $f$ with the elements of the completion of the vector space of ISF corresponding to the sequence $f_n$. But before we can do this, there are two things that we must check. To begin with, we must be sure that two equivalent Cauchy sequence converge in measure to the same function.
+
+\begin{lemma}
+If $f_n$ and $g_n$ are equivalent mean Cauchy sequences, and if $f_n$ converges in measure to $f$, then so does $g_n$.
+\end{lemma}
+
+\begin{proof}
+The sequence $f_1,g_1,f_2,g_2,\dots$ of ISF is easily seen to be a mean Cauchy sequence, and so is Cauchy in measure by Lemme 4.12. But it has a subsequence which converges in measure to $f$. By the same argument as that used at the end of the proof of Theorem 3.26 it follows that the whole sequence, and so the sequence $g_n$, converges in measure to f.
+\end{proof}
+
+We must also show that a given measurable function cannot represent more than one element of the completion of the vector space of ISF. That is, we must show that:
+
+\begin{lemma}[Key lemma]
+If $f_n$ and $g_n$ are two mean Cauchy sequences of ISF which converge in measure to a given measurable function $f$, then they are equivalent sequences, that is, $\lim_n\norm{f_n-g_n}_1=0$.
+\end{lemma}
+
+\begin{proof}
+It is easily seen that it suffices to show that $f_n$ and $g_n$ have subsequences which are equivalent. Now by Corollary 3.27 there are subsequences, $f_{n_k}$ and $g_{n_k}$ respectively, which converge to $f$ a.u. We propose to show that these subsequences are equivalent. Let $h_k=f_{n_k}-g_{n_k}$. It is easily seen that $h_n$ is a mean Cauchy sequence of ISF which converges a.u. to the function 0. The proof of this lemma reduces to showing that $\norm{h_n}_1$ converges to $0$.
+
+Let $\ep>0$ be given, and choose $N$ so that if $m,n\geq N$ then $\norm{h_n-h_m}_1<\ep/8$. We show that if $n\geq N$ then $\norm{h_n}_1<\ep$. To do this, it suffices to show that $\norm{h_N}_1<\ep/2$, for then $\norm{h_n}_1\leq\norm{h_n-h_N}_1+\norm{h_N}_1<\ep$.
+
+Let $E$ be the carrier of $h_N$. Since $h_N$ is an ISF, we have $|\mu|(E)<\infty$. Furthermore, $h_N$ is bounded, that is, there is a constant, $c$, such that $\norm{h_N(x)}\leq c$ for all $x$. Since $h_n$ converges $0$ a.u., we can find a measurable set $F\subseteq E$ such that $|\mu|(E\sd F)<\ep/4c$ and $h_n$ converges uniformly to $0$ on $F$. Then $$\int_{E\sd F}\norm{h_N(x)}\dd|\mu|(x)\leq\int c\idf{E\sd F}\dd|\mu|=c|\mu|(E\sd F)<\ep/4.$$
+
+Now, since $h_n$ converges to $0$ uniformly on $F$ and since $|\mu|(F)<\infty$, we can find an integer $m\geq N$ such that $\int_F\norm{h_m(x)}\dd|\mu|(x)<\ep/8$. But
+\begin{align*}
+    \abs{\int_F\norm{h_N(x)}\dd|\mu|(x)-\int_F\norm{h_m(x)}\dd|\mu|(x)}&=\int_F|\norm{h_N(x)}-\norm{h_m(x)}|\dd|\mu|(x)\\
+    &\leq\int_F\norm{h_N(x)-h_m(x)}\dd|\mu|(x)\\
+    &<\norm{h_N-h_m}_1<\ep/8.
+\end{align*}
+It follows that $\int_F\norm{h_N(x)}\dd|\mu|(x)<\ep/4$. Thus $$\norm{h_N}_1=\int_{E\sd F}\norm{h_N(x)}\dd|\mu|(x)+\int_F\norm{h_N(x)}\dd|\mu|(x)\leq\ep/4+\ep/4=\ep/2,$$ as desired.
+\end{proof}
+
+\begin{definition}
+A measurable function $f$ will be said to be \underline{Bochner-Lebesgue integrable} (or \underline{Bochner integrable}, or just \underline{integrable}) if there is a mean Cauchy sequence of ISF which converges to $f$ in measure. If $f$ is real-valued, we will say simply that $f$ is \underline{Lebesgue integrable}.
+\end{definition}
+
+Thus the integrable functions are those which correspond to the points of the completion of the vector space of ISF. Of course, the integral of the ISF over any fixed locally measurable set, being a uniformly continuous function, extends to a function on the collection of integrable functions (because we are assuming that the integral takes values in a Banach, that is complete, space). Specifically if $f_n$ is a mean Cauchy sequence of ISF which converges to $f$ in measure, then $\int_Ef_n\dd\mu$ is a Cauchy sequence (see Lemma 4.10). Furthermore its limit depends only on $f$, for, if $g_n$ is another mean Cauchy sequence which converges to $f$ in measure, then $f_n$ and $g_n$ are equivalent Cauchy sequences by lemma 4.14, and so $\int_Ef_n\dd\mu$ and $\int_Eg_\dd\mu$ will also be equivalent Cauchy sequences (again see Lemma 4.10), and so will have the same limit. Thus we are free to make
+
+\begin{definition}
+If $f$ is an integrable function, then its \underline{Bochner Lebesgue integral} (or Bochner integral, or integral) over a locally measurable set $E$ is defined to be the limit of $\int_Ef_n\dd\mu$ where $f_n$ is any mean Cauchy sequence of ISF which converges to $f$ in measure. This limit will be denoted by $\int_Ef\dd\mu$ or $\int_Ef(x)\dd\mu(x)$. If $E=X$, we will denote the integral simply by $\int f\dd\mu$, or $\int f(x)\dd\mu(x)$. If $f$ is real-valued, then $\int_Ef\dd\mu$ is called simply the Lebesgue integral of $f$ over $E$.
+\end{definition}
+
+The Lebesgue integral was defined by Lebesgue in his thesis in 1902 for real-valued functions on the real line. The generalization of the Lebesgue integral to real-valued functions on an arbitrary measure space was the work of a number of mathematicians. The extension of the Lebesgue integral to functions with values in a Banach space was developed by Bochner in 1933.
+
+For the purpose of identifying integral functions with the completion of the vector space of ISF it was important to use convergence in measure, since a mean Cauchy sequence of ISF always converges in measure as we have already seen, but need not converge a.e., much less a.u. However, for the purposes of defining integrable functions and their integrals, these other types of converges are equally satisfactory, as the following proposition shows.
+
+\begin{proposition}
+Let $f$ be a measurable function. Then the following three conditions are equivalent: There exists a mean Cauchy sequence $f_n$ of ISF which converges to $f$
+\begin{enumerate}
+    \item in measure
+    \item a.u.
+    \item a.e.
+\end{enumerate}
+In all three cases $f$ is integrable, and $\int_Ef_n\dd\mu$ converges to $\int_Ef\dd\mu$.
+\end{proposition}
+
+\begin{proof}
+The fact that 1) implies 2) follows from Corollary 3.27. The fact that 2) implies 3) follows from Proposition 3.l7. Finally, suppose that $f_n$ converges, to $f$ a.e. Since $f_n$ is a mean Cauchy sequence, and so Cauchy in measure by Lemma 4.12, it follows from the Riesz-Weyl theorem (Theorem 3.26) that there is a subsequence, $f_{n_k}$ which converges a.u., and so both a.e. and in measure, to a function $g$. But $f_{n_k}$ converges to $f$ a.e., and so $f=g$ a.e., so that $f_{n_k}$ converges to $f$ in measure. Thus $f_{n_k}$ is a sequence satisfying 1 ). The proof of the rest of Proposition 4.17 should be clear from the above considerations.
+\end{proof}
+
+\section{Properties of the Bochner-Lebesgue Integral}
+
+In this section we show that most of the properties which we proved at the beginning of this chapter for ISF actually hold for integrable functions. In fact, most of the proofs consist simply of combining the properties for ISF with the definition of integrable functions in terms of mean Cauchy sequences of ISF
+
+\begin{proposition}
+Let $f$ and $g$ be integrable functions, and let $E$ be a locally measurable set. Then
+\begin{enumerate}
+    \item $f+g$ is integrable, and $\int_E(f+g)\dd\mu=\int_Ef\dd\mu+\int_Eg\dd\mu$.
+
+    \item If $r$ is a scalar, then $rf$ is integrable and $\int_E(rf)\dd\mu=r\int_Ef\dd\mu$.
+
+    \item $\norm{f(\cdot)}$ is integrable, and $\norm{\int_Ef\dd\mu}\leq\int_E\norm{f(x)}\dd|\mu|(x)$. (Note that a function is $\mu$-integrable iff it is $|\mu|$-integrable).
+
+    \item If $f$ is real-valued and if $f\geq0$ a.e., then $\int_Ef\dd|\mu|\geq0$.
+
+    \item If $f$ and $g$ are real-valued and if $f\geq g$ a.e., then $\int_Ef\dd|\mu|\geq\int_Eg\dd|\mu|$.
+
+    \item If $f$ is real-valued and $f\geq0$ a.e., and if $F\subseteq E$ is locally measurable, then $\int_Ff\dd|\mu|\leq\int_Ef\dd|\mu|$
+
+    \item If $E=F\du G$ with $F$ and $G$ locally measurable, then $\int_Ef\dd\mu=\int_Ff\dd\mu+\int_Gf\dd\mu$
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+We have seen that all of the above properties hold for ISF. To prove a) let $f_n$ and $g_n$ be mean Cauchy sequences of ISF which converge a.e. to $f$ and $g$ respectively. (We use condition 3 of Proposition 4.17.) Then $f_n+g_n$ is easily seen to be a mean Cauchy sequence of ISF which converges to $f+g$ a.e., and so
+\begin{align*}
+    \int_E(f+g)\dd\mu&=\lim_n\int_E(f_n+g_n)\dd\mu\\
+    &=\lim_n\int_Ef_n\dd\mu+\lim_n\int_Eg_n\dd\mu\\
+    &=\int_Ef\dd\mu+\int_E\dd\mu.
+\end{align*}
+The proofs of the other facts are quite similar, and we leave them to the reader. We remark that to prove part d) one must show that if $f_n$ is a mean Cauchy sequence of real-valued ISF which converges to the non-negative function $f$ a.e., then so is $|f_n(\cdot)|$, so that $f$ can be approximated by a sequence of non-negative ISF.
+\end{proof}
+
+Properties a) and b) above show that the integrable functions form a vector space, and that the integral over any locally measurable set is a linear function on this vector space.
+
+\begin{definition}
+We will denote the vector space of $\mu$-integrable $B$-valued functions by $\cL^1(X,S,\mu,B)$, (or appropriate abbreviations of this, such as $\cL^1$, when this involves no ambiguity)
+\end{definition}
+
+\begin{definition}
+On $\cL^1$ we define function, $\norm{\cdot}_1$ by $\norm{f}_1=\int\norm{f(x)}\dd|\mu|(x)$ for all $f\in\cL^1$. We will call $\norm{f}_1$ the \underline{$\cL^1$-norm} of $f$.
+\end{definition}
+
+\begin{proposition}
+The function $\norm{\cdot}_1$ is a seminorm on $\cL^1$.
+\end{proposition}
+
+\begin{proof}
+The proof that $\norm{\cdot}_1$ is a seminorm is very straightforward, and similar to the proof of Lemma 4.9, and so we leave it to the reader.
+\end{proof}
+
+\begin{proposition}
+If $f$ is an integrable function, then the carrier of $f$ is $\sigma$-finite.
+\end{proposition}
+
+\begin{proof}
+Let $f_n$ be a mean Cauchy sequence of ISF which converges to $f$ a.e., and let $E_n$ be the carrier of $f_n$. Since $f$ is an ISF, $E_n$ has finite measure. But the carrier of $f$ is contained in the union of all the $E_n$ together possibly with a null set.
+\end{proof}
+
+\begin{proposition}
+Let $f$ be a non-negative integrable function, and let $E$ be a measurable set. If $f\geq\idf{E}$ a.e., then $|\mu|(E)<\infty$. In particular, $\idf{E}$ is integrable.
+\end{proposition}
+
+\begin{proof}
+It is clear that , except for a null set, $E$ is contained in the carrier of $f$, and so is $\sigma$-finite. Thus there is a sequence, $E_n$ of subsets of $E$ of finite measure which increases up to $E$ , so that $\mu(E_n)$ increases to $\mu(E)$ by Proposition 2.16. But $\idf{E_n}$ is integrable for each $n$ and $f\geq\idf{E_n}$ a.e., so that according to Proposition 4.18e we have $$|\mu|(E_n)=\int\idf{E_n}\dd|\mu|\leq\int f\dd|\mu|.$$ It follows that $$|\mu|(E)\leq\int f\dd|\mu|.$$
+\end{proof}
+
+\begin{definition}
+A sequence, $f_n$, of integrable functions is said to be \underline{Cauchy in mean} (or a \underline{mean Cauchy sequence}) if it is a Cauchy sequence with respect to the $L^1$-norm, that is, if $\lim_{m, n}\norm{f_n-f_m}_1=0$. A sequence, $f_n$, of integrable functions is said to \underline{converge in mean} to an integrable function $f$ if $\lim_n\norm{f-f_n}_1=0$.
+\end{definition}
+
+\begin{proposition}
+If a sequence of integrable functions is Cauchy in mean, then it is Cauchy in measure. If a sequence of integrable functions converges in mean to an integrable function $f$, then it converges in measure to $f$.
+\end{proposition}
+
+\begin{proof}
+For mean Cauchy sequences the proof is the same as the proof of Lemma 4.12 except that we must use Proposition 4.23 to be sure that $\idf{E}$ is integrable, where $E_{mn}$ is defined as in the proof of Lemma 4.12. The proof for the case of a mean convergent sequence is just a slight variation of the proof for the case of a mean Cauchy sequence.
+\end{proof}
+
+\begin{proposition}
+Let $f$ be an integrable function. Then $\norm{f}_1=0$ if and only if $f=0$ a.e.
+\end{proposition}
+
+\begin{proof}
+It is clear that if $f=0$ a.e. then $\norm{f}_1=0$, for the mean Cauchy sequence of ISF each of whose terms is the function $0$ will converge to $f$ a.e. Conversely, if $\norm{f}_l=0$, then the sequence each of whose terms is the function 0 converges to $f$ in mean, and so in measure by Proposition 4.25. But this sequence also converges to $0$ in measure, and so $f=0$ a.e. by Proposition 3.21.
+\end{proof}
+
+It is easily seen that the collection of functions whose $L^1$-norm is $0$ forms a subspace of $\cL^1$, and that $\norm{\cdot}_1$ defines an actual norm on the factor space obtained by factoring $\cL^1$ by this space of functions whose $L^1$-norm is zero (that is, on the space obtained by identifying any two functions the $L^1$-norm of whose difference is zero). Proposition 4.26 shows that this factor space consists simply of the equivalence classes of integrable functions which agree a.e.
+
+\begin{definition}
+The normed space consisting of the equivalence classes of integrable functions which agree a.e. will be denoted by $L^1(X,S,\mu,B)$, (or appropriate abbreviations of this, such as $L^1$). We will denote the norm on $L^1$ again by $\norm{\cdot}_1$, and refer to it as the $L^1$-norm.
+\end{definition}
+
+Our motivation for defining $\cL^1$ was to obtain a completion of the vector space of ISF. Thus we would expect $\cL^1$, and so $L^1$, to be complete, so that $L^1$ is a Banach space. We will now begin to verify this fact. The next few results essentially parallel the usual proof of the fact that the completion of a metric space is in fact complete, but they also yield some other useful pieces of information. The first of these results essentially shows that the $L^1$-norm on $\cL^1$ gives the same metric as that which we would have obtained by the usual process of extending the metric on a metric space to a metric on its completion. Note that we did not quite define the $L^1$-norm by this process.
+
+\begin{lemma}
+If $f_n$ is a mean Cauchy sequence of ISF which converges to $f$ in measure (or a.u., or a.e.), then $f_n$ converges to $f$ in mean.
+\end{lemma}
+
+\begin{proof}
+It is easily seen that for each fixed $n$ the sequence $\norm{f_m(\cdot)-f_n(\cdot)}$ is a mean Cauchy sequence of ISF which converges to $\norm{f(\cdot)-f_n(\cdot)}$ in measure (or a.u., or a.e.), so that
+\begin{align*}
+    \norm{f-f_n}_1&=\int\norm{f(x)-f_n(x)}\dd|\mu|(x)\\
+    &=\lim_m\int\norm{f_m(x)-f_n(x)}\dd|\mu|(x)=\lim_m\norm{f_m-f_n}_1.
+\end{align*}
+If for a given $\ep>0$ we choose $N$ large enough so that $\norm{f_m-f_n}_1<\ep$ whenever $m,n>N$, then for $n>N$ it follows that $\norm{f-f_n}_1<\ep$.
+\end{proof}
+
+\begin{corollary}
+The vector space of ISF is dense in with respect to the $L^1$-norm.
+\end{corollary}
+
+This corollary is, of course, just a special case of the fact that a metric space is dense in its completion.
+
+\begin{theorem}
+$\cL^1$, and so $L^1$, is complete.
+\end{theorem}
+
+\begin{proof}
+Let $f_n$ be a mean Cauchy sequence of elements of $\cL^1$. Using Corollary 4.29 choose for each $n$ an ISF $g_n$ such that $\norm{f_n-g_n}<1/n$. It is easily seen that $g_n$ is a mean Cauchy sequence, and so by the Riesz-Weyl theorem (Theorem 3.26) $g_n$ converges in measure to a measurable function, $f$, which must thus be integrable. By Lemma 4.28 $g_n$ converges to $f$ in mean. It is easily seen that this implies that $f_n$ to $f$ in mean (basically because $f_n$ and $g_n$ are equivalent Cauchy sequences).
+\end{proof}
+
+We conclude this section with some consequences of Corollary 4.29.
+
+\begin{proposition}
+Let $f$ be an integrable function. Then for every $\ep>0$ there is a measurable set $E$ of finite measure such that $$\int_{X\sd E}\norm{f(x)}\dd|\mu|(x)<\ep.$$
+\end{proposition}
+
+\begin{proof}
+Given $\ep>0$, we can, by Corollary 4.29, find an ISF, g, such that $\norm{f-g}<\ep$. Let $E$ be the carrier of $g$, so that $E$ is a measurable set of finite measure. Then $$\int_{X\sd E}\norm{f(x)}\dd|\mu|(x)=\int_{X\sd E}\norm{f(x)-g(x)}\dd|\mu|(x)\leq\norm{f-g}_1<\ep.$$
+\end{proof}
+
+\begin{proposition}
+Let $f$ be an integrable function, and let $E$ be a locally measurable set. Then $$\int_Ef\dd\mu=\int\idf{E}f\dd\mu.$$
+\end{proposition}
+
+\begin{proof}
+It is easily verified that this equality is true whenever $f$ is an ISF. It is also easily seen that both sides of the equality are continuous functions of $f$ with respect to the $L^1$-norm. From the fact that the ISF are dense it follows that the equality holds for all $f$.
+\end{proof}
+
+\section{The Indefinite Integral of an Integrable Function}
+
+Let $f$ be an integrable function. In this section we will study the properties of $\int_Ef\dd\mu$ as a function of $E$.
+
+\begin{definition}
+Let $f\in\cL^1(X,S,\mu,B)$. Then the set function $\mu_f$, defined on the $\sigma$-field of locally measurable sets by $$\mu_f(E)=\int_Ef\dd\mu$$ (and so having values in B) will be called the \underline{indefinite integral} of $f$.
+\end{definition}
+
+\begin{theorem}
+For every integrable function $f$ the set function $\mu_f$ is a measure.
+\end{theorem}
+
+\begin{proof}
+
+We must show that $\mu_f$ is countably additive. We will show this by first verifying it when $f$ is an ISF, and then, in the general case, by approximating $f$ by ISF.
+
+Assume now that $f$ is an ISF. If $f=b\idf{F}$ for some $b\in B$ and some measurable set $F$ of finite measure, then $\mu_f(E)=b\mu(E\cap F)$ for every locally measurable set $E$. Thus the countable additivity of $\mu_f$ follows immediately from the countably additivity of $\mu$. But every ISF is just a finite sum of terms of the form $b\idf{F}$, and so the theorem is true for any ISF.
+
+The proof in the general case depends on the following inequality:
+
+\begin{lemma}
+If $f$ and $g$ are integrable functions, then $\norm{\mu_f(E)-\mu_g(E)}\leq\norm{f-g}_1$ for every locally measurable set E.
+\end{lemma}
+
+\begin{proof}
+$\norm{\mu_f(E)-\mu_g(E)}=\norm{\int_Ef\dd\mu+\int_Eg\dd\mu}\leq\int_E\norm{f(x)-g(x)}\dd|\mu|(x)\allowbreak\leq\norm{f-g}_1$.
+\end{proof}
+
+We return to the proof of Theorem 4.34. Let a locally measurable set $E$ be given, and let $E=\bigdu_{i=1}^\infty E_i$, with the $E_i$ locally measurable. We have already seen that $\mu_f$ is finitely additive (Proposition 4.18g), and so to prove countable additivity it suffices to show that $\mu_f\br{\bigdu_{i=1}^n E_i}$ converges to $\mu_f(E)$ as $n$ goes to $\infty$. Let $\ep>0$ be given. Choose an ISF $g$ such that $\norm{f-g}_1<\ep/3$. We have just seen that $\mu_g$ is countably additive, and so we can choose $N$ so that if $n>N$ then $\norm{\mu_g(E)-\mu_g\br{\bigdu_{i=1}^nE_i}}<\ep/3$. Then for $n>N$ we have
+\begin{align*} %FIXME
+    \norm{\mu_g(E)-\mu_g\br{\bigdu_{i=1}^nE_i}}&\leq\norm{\mu_f(E)-\mu_g(E)}+\norm{\mu_g(E)-\mu_g\br{\bigdu_{i=1}^nE_i}}\\
+    &+\norm{\mu_g\br{\bigdu_{i=1}^nE_i}-\mu_f\br{\bigdu_{i=1}^nE_i}}\\
+    &\leq\norm{f-g}_1+\ep/3+\norm{f-g}_1\leq\ep.
+\end{align*}
+\end{proof}
+
+The next proposition shows how to compute the total variation of $\mu_f$.
+
+\begin{proposition}
+Let $f$ be an integrable function. Then for each locally measurable set $E$ we have $$|\mu_f|(E)=\int_E\norm{f(x)}\dd|\mu|(x).$$
+\end{proposition}
+
+\begin{proof}
+Let $E$ be given, and suppose that $E=\bigdu_{i=1}^nE_i$. Then $\sum_{i=1}^n\norm{\mu_f(E_i)} = \sum_{i=1}^n\norm{\int_{E_i}f\dd\mu} \leq \sum_{i=1}^n\int_{E_i}\norm{f(x)}\dd|\mu|(x) = \allowbreak \int_E\norm{f(x)}\dd|\mu|(x)$. It follows that $|\mu_f|(E)\leq\int_E\norm{f(x)}\dd|\mu|(x)$.
+
+To prove the reverse inequality we first show that it is true when $f$ is an ISF, and then obtain the general case from the fact that the ISF are dense in $\cL^1$.
+
+Suppose now that $f_k$ is an ISF, and let $f=\sum_i^kb_i\idf{F_i}$ where the $F_i$ are disjoint. Let $F=\bigdu_i^kF_i$. In the proof we must take into account the definition of $|\mu_f|$, and so for each $i$ suppose that measurable sets $G_{ij}$ are given such that $E\cap F_i=\bigdu_j^{n_i}G_{ij}$. Then
+\begin{align*}
+    |\mu_f|(E)&=|\mu_f|(E\cap F)\geq\sum_{i,j}\norm{\mu_f(G_{ij})}\\
+    &=\sum_{ij}\norm{\int_{G_{ij}}f\dd\mu}=\sum_{ij}\norm{b_i}|\mu_f(G_{ij})|\\
+    &=\sum_i\norm{b_i}\br{\sum_j|\mu_f(G_{i j})|}.
+\end{align*}
+It follows that $$|\mu_f|(E)\geq\sum_i\norm{b_i}|\mu_f|(F_i\cap E)=\int_E\norm{f(x)}\dd|\mu|(x),$$ so that the theorem is true whenever $f$ is an ISF.
+
+To complete the proof we need the following Lemma:
+
+\begin{lemma}
+Let $\mu$ and $\nu$ be measures on a measurable space $(X,S)$ with values in $B$ (so that $\mu+\nu$ is defined by $(\mu+\nu)(E)=\mu(E)+\nu(E)$). Then $|\mu+\nu|\leq|\mu|+|\nu|$, in the sense that for each $E\in S$ we have $|\mu+\nu|(E)\leq|\mu|(E)+|\nu|(E)$. Consequently, $||\mu|(E)-|\nu|(E)|\leq|\mu-\nu|(E)$
+\end{lemma}
+
+\begin{proof}
+If $E=\bigdu_i^nE_i$, the $$\sum_i^n\norm{(\mu+\nu)(E_i)}\leq\sum_i^n\norm{\mu(E_i)}+\sum_i^n\norm{\nu(E_i)}\leq|\mu|(E)+|\nu|(E).$$ The desired inequalities follow immediately.
+\end{proof}
+
+We now return to the proof of Theorem 4.36. Suppose now that $f$ and are integrable functions and that $E$ is a locally measurable set. Then
+\begin{align*}
+    ||\mu_f|(E)-|\mu_g|(E)|&\leq|\mu_f-\mu_g|(E)=|\mu_{f-g}|(E)\\
+    &\leq\int_E\norm{(f-g)(x)}\dd|\mu|(x)\leq\int\norm{(f-g)(x)}\dd|\mu|(x)\\
+    &=\norm{f-g}_1
+\end{align*}
+It follows that $|\mu_f|(E)$ is a continuous function of $f$ with respect to the $L^1$-norm for each fixed $E$, as is $\int_E\norm{f(x)}\dd|\mu|(x)$. Since we have seen that the equality which we wish to prove is true for the ISF, and since these are dense in $\cL^1$, it follows that the equality is true for all integrable functions.
+
+\end{proof}
+
+The indefinite integral of a $\mu$-integrable function is closely related to the measure $\mu$. The following definition and proposition provide one useful aspect of this relation.
+
+\begin{definition}
+Let $m$ and $\mu$ be arbitrary measures on a measurable space $(X,S)$. We say that $m$ is \underline{strongly absolutely $\mu$-continuous} if for each $\ep>0$ there exists a $\delta>0$ such that $|m|(E)<\ep$ for all $E\in S$ such that $|\mu|(E)<\delta$.
+\end{definition}
+
+We will examine some related types of $\mu$-continuity in chapter 7.
+
+\begin{proposition}
+Let $\mu$ be a scalar-valued measure and let $f$ be a $\mu$-integrable function. Then the indefinite integral, $\mu_f$, of $f$ (viewed as defined only as measurable sets) is strongly absolutely $\mu$-continuous.
+\end{proposition}
+
+\begin{proof}
+Again the proof involves approximating $f$ by ISF. Let $\ep>0$ be given. Choose an ISF $g$ such that $\norm{f-g}_1<\ep/2$ Since $g$ is an ISF it is bounded, so there is a constant, $c$, such that $\norm{g(x)}\leq c$ for all $x$. Let $\delta=\ep/(2c)$. Suppose now that $E$ is a measurable set such that $|\mu|(E)<\delta$. Then
+\begin{align*}
+    |\mu_f|(E)&=\int_E\norm{f(x)}\dd|\mu|(x)\\
+    &\leq\int_E\norm{f(x)-g(x)}\dd|\mu|(x)+\int_E\norm{g(x)}\dd|\mu|(x)\\
+    &\leq\norm{f-g}_1+c|\mu|(E)\leq\ep.
+\end{align*}
+\end{proof}
+
+A typical application of this proposition can be found in the proof of Theorem 4.40
+
+\section{Some Convergence Theorems}
+
+In this section we derive some theorems which are very useful in determining whether a sequence of integrable functions converges in mean to a given integrable function. As a corollary of the first of these theorems we will obtain a very useful characterization of integrable functions.
+
+\begin{theorem}[The Lebesgue Dominated Convergence Theorem]
+Let $f_n$ be a sequence of integrable function which converges a.e. to a (necessarily measurable) function $f$. If there exists a real-valued integrable function $g$ such that $\norm{f_n(x)}\leq g(x)$ a.e. for each $n$, then the $f_n$ form a mean Cauchy sequence, $f$ is integrable, and $f_n$ converges to $f$ in mean.
+\end{theorem}
+
+\begin{proof}
+Let $\ep>0$ be given. By Proposition 4.31 choose a measurable set $E$ of finite measure such that $\int_{X\sd E}g(x)\dd|\mu|(x)<\ep/6$. (Note that $g \geq 0$ a.e. so that we don't need to take absolute values). Then for all $m$ and $n$ we have
+\begin{align*}
+    \int_{X\sd E}\norm{f_n(x)-f_m(x)}\dd|\mu|(x)&\leq\int_{X\sd E}\norm{f_n(x)}\dd|\mu|(x)+\int_{X\sd E}\norm{f_m(x)}\dd|\mu|(x)\\
+    &\leq2\int g(x)\dd|\mu|(x)<\ep/3
+\end{align*}
+
+We saw in the last section that $\mu_g$ is strongly absolutely $\mu$-continuous, so we choose $\delta>0$ such that if $|\mu|(G)<\delta$ then $|\mu_g|(G)<\ep/6$. Since $E$ has finite measure, it follows from Egoroff's theorem that the sequence $f_n$ converges to $f$ a.u. on $E$. Thus we can choose a measurable set $F\subseteq E$ such that $|u|(E\sd F)<\delta$ and the sequence $f_n$ converges to $f$ uniformly on $F$. Because of the way in which $\delta$ was chosen, and because $|\mu|(E\sd F)<\ep$, we have for all $m$ and $n$ 
+\begin{align*}
+    \int_{E\sd F}\norm{f_n(x)-f_m(x)}\dd|\mu|(x)&\leq\int_{E\sd F}\norm{f_n(x)}\dd|\mu|(x)+\int_{E\sd F}\norm{f_m(x)}\dd|\mu|(x)\\
+    &\leq2\int_{E\sd F}g(x)\dd|\mu|(x)=2|\mu_g|(E\sd F)\leq\ep/3.
+\end{align*}
+Finally, since the sequence $f_n$ converges to $f$ uniformly on $F$, we can find $N$ such that if $m,n>N$, then $\norm{f_n(x)-f_m(x)}\leq\ep/(3|\mu|(F))$ for all $x\in F$. Then for all $m,n>N$ we have that $$\int_F\norm{f_n(x)-f_m(x)}\dd|\mu|(x)\leq\int_F\ep/(3|\mu|(F))\dd|\mu|(x)=\ep/3.$$ Then for all $m,n>N$ we have $$\norm{f_n-f_m}_1=\br{\int_{X\sd E}+\int_{E\sd F}+\int_F}\norm{f_n(x)-f_m(x)}\dd|\mu|(x)\leq\ep,$$ so that the $f_n$ form a mean Cauchy sequence as desired.
+
+Since $\cL^1$ is complete, the sequence $f_n$ converges in mean to some integrable function. By Corollary 3.27 a subsequence of the $f_n$ converges a.e. to this same function, and so this function must equal $f$ a.e. Thus f is integrable and $f_n$ converges to f in mean.
+\end{proof}
+
+Bochner did not define integrable $B$-valued functions in the way that we did in Definition 4.15. Rather, he assumed that the theory of the Lebesgue integral for real-valued functions was known, and he defined integrable $B$-valued functions to be measurable functions which are dominated in norm by an integrable real-valued function. The next theorem shows that his definition is equivalent to Definition 4.15. But the main reason for our interest in this theorem is that it gives a very useful characterization of integrable functions (see for example the proof of Theorem 5.4).
+
+\begin{theorem}
+Let $\mu$ be a scalar-valued measure on $(X,S)$, and let $f$ be a $\mu$-measurable $B$-valued function. If there is a real-valued $\mu$-integrable function $g$ such that $\norm{f(x)}\leq g(x)$ a.e., then $f$ is $\mu$-integrable
+\end{theorem}
+
+\begin{proof}
+We must produce a mean Cauchy sequence of ISF which converges to $f$ a.e. Since $f$ is measurable, we can find a sequence, $f_n$, of simple measurable functions which converges to $f$ a.e. For each $n$ let $$h_n(x)=\begin{cases}f_n(x)&\text{if }\norm{f_n(x)}\leq2g(x)\\0&\text{if }\norm{f_n(x)}>2g(x)\end{cases}.$$
+Equivalently, if we let $E_n=\brc{x: 2g(x)-\norm{f_n(x)}\geq 0}$, then $h_n=f_n\idf{E_n}$. Since $E$ is clearly locally measurable, it follows that each $h_n$ is also a simple measurable function. It is easily seen that the sequence $h_n$ converges to $f$ a.e., and we have just arranged matters that for each $n$ we have $\norm{h_n(x)}\leq2g(x)$ for all $x$. But it is easily seen by using Proposition 4.23 that this inequality implies that each $h_n$ is integrable, which is something which did not need to be true for the $f_n$. It follows from the Lebesgue dominated convergence theorem (Theoren 4.40) that $h_n$ is a mean Cauchy sequence and that f is integrable.
+\end{proof}
+
+The remaining theorems of this section involve the order properties of the real numbers, and so do not generalize to vector-valued functions. However these theorems are very useful for working with vector-valued functions, as we will see in the next chapter.
+
+\begin{theorem}[The Monotone Convergence Theorem]
+Let $f_n$ be a sequence of real-valued integrable functions which is non-decreasing a.e. (that is, for each $n$ we have $f_n(x)\geq f_{n-1}(x)$ a.e.). If the sequence of the norms of the $f_n$ is bounded, that is, if there is a constant, $c$, such that $\norm{f_n}_1\leq c$ for all $n$, then $f_n$ is a mean Cauchy sequence, and there exists an integrable function $f$ such that $f_n$ converges to $f$ a.e. and in mean. In particular, $\int f_n\dd\mu$ converges to $\int f\dd\mu$. The same result holds if instead the $f_n$ are non-increasing a.e.
+\end{theorem}
+
+\begin{proof}
+If the sequence $f_n$ is non-increasing, then the sequence $-f_n$ is non-decreasing, and so it suffices to consider only the case in which the sequence $f_n$ is non-decreasing. Then the numbers $\int f_n\dd|\mu|$ are non-decreasing, and are clearly bounded above by $c$ and so they form a Cauchy sequence. But $f_n-f_m$ is either positive a.e. or negative c.e., depending on whether or not $n$ is larger than $m$, and so we have $$\norm{f_n-f_m}_1=\int|f_n-f_m|\dd|\mu|=\abs{\int(f_n-f_m)\dd|\mu|}=\abs{\int f_n\dd|\mu|-\int f_m\dd|\mu|}.$$ Thus $f_n$ is a mean Cauchy sequence also. Since $\cL^1$ is complete, there exists an $f\in\cL^1$ to which the sequence $f_n$ converges in mean, and hence in measure. But then by Corollary 3.27 there must be a subsequence of the $f_n$ which converges to $f$ a.e. Since the $f_n$ are non-decreasing, it follows that the sequence $f_n$ itself also converges to f a.e.
+\end{proof}
+
+\begin{corollary}
+If $f_n$ is a sequence of real-valued integrable functions which is non-decreasing a.e. and which converges a.e. to a function $f$, and if the sequence of the norms of the $f_n$ is bounded, then $f$ is integrable and the sequence $f_n$ converges to $f$ in mean. In particular, $\int f_n\dd\mu$ converges to $\int f\dd\mu$. The same result holds if instead the sequence $f_n$ is non-increasing a.e.
+\end{corollary} 
+
+\begin{proof}
+By Theorem 4.42 the sequence $f_n$ will converge a.e. and in mean to an integrable function $h$, which must of course equal $f$ a.e.
+\end{proof}
+
+By making the appropriate definition of the integrals with respect to a non-negative measure of arbitrary non-negative extended real-valued functions which are measurable in a natural sense, we can conveniently state a corollary of the Monotone Convergence Theorem which is useful in certain situations. For a typical application of this corollary see the proof of Theorem 6.9.
+
+\begin{definition}
+Let $\mu$ be a non-negative measure, and let $f$ be a non-negative extended real-valued function on $X$. Let $E$ be the set where $f$ takes the value $\infty$. We say that $f$ is \underline{$\mu$-measurable} if $E$ is $\mu$-measurable and if f is $\mu$-measurable in the usual sense on $X\sd E$. If $f$ is $\mu$-measurable, then we define the integral of $f$ with respect to $\mu$ as follows. If $\mu(E)>0$ then we set $\int f\dd\mu=\infty$. If $\mu(E)=0$, then we can view f as being undefined on the null set $E$, and we then set $\int f\dd\mu=\infty$ if $f$ is not integrable in the usual sense, whereas if $f$ is integrable, then we let $\int f\dd\mu$ be the usual integral of $f$.
+\end{definition}
+
+\begin{corollary}
+If $\mu$ is a non-negative measure and if $f_n$ is a non-decreasing sequence of $\mu$-measurable non-negative extended real-valued functions which converges a.e. to a non-negative extended real-valued function $f$, then $f$ is $\mu$-measurable and the sequence $\int f_n\dd\mu$ converges to $\int f\dd\mu$.
+\end{corollary}
+
+\begin{proof}
+We will let the reader verify that $f$ must be $\mu$-measurable, since in the applications we make of this corollary in these notes we will always know in advance that $f$ is measurable. We remark next that if $g$ and $h$ are $\mu$-measurable non-negative extended real-valued functions such that $g\geq h$ a.e. then it follows from Theorem 4.41 and Proposition 4.18e that $\int g\dd\mu\geq\int f\dd\mu$. Thus if $\int f_n\dd\mu=\infty$ for at least one $n$, then it is clear that the sequence $\int f_n\dd\mu$ converges to $\infty=\int f\dd\mu$. On the other hand, if all of the $f_n$ are integrable, then either the increasing sequence $\int f_n\dd\mu$ is unbounded, in which case it is clear again that it converges $\infty=\int f\dd\mu$, or else it is bounded, in which case we can apply Corollary 4.43 to conclude that $f$ also is integrable and that $\int f\dd\mu$ again converges to $\int f\dd\mu$.
+\end{proof}
+
+We remark that the corresponding statement for the case in which the sequence $f_n$ is non-increasing is false in general unless at least one of the $f_n$ is integrable (in which case Corollary 4.43 is applicable), for essentially the name reason as the fact that Proposition 2.17 is false unless at least one of the En has finite measure.
+
+\begin{theorem}[Fatou's Lemma]
+If $\mu$ is a non-negative measure, and if $f_n$ is a sequence of non-negative integrable functions, then $$\int_E(\liminf_nf_n)\dd\mu\leq\liminf_n\int f_n\dd\mu.$$ In particular, if the right hand is finite, then $\liminf_nf_n$ is integrable.
+
+\end{theorem}
+
+\begin{proof}
+Let $g_n=\inf\brc{f_i:n\leq i<\infty}$. Now $g_n$ is the limit as $m$ goes to $\infty$ of the decreasing sequence $\inf\brc{f_i:n\leq i\leq m}$. But from Proposition 3.7 it follows that the infimum of a finite number of measurable functions is measurable. Thus $g_n$ is measurable for each $n$. Since $\liminf_nf_n=\lim_ng_n$, we see that $\liminf_nf_n$ is also measurable. Now $g_n$ is a non-decreasing sequence, and so $\lim_n\int g_n\dd\mu=\int\liminf_nf_n\dd\mu$ by Corollary 4.44. But $g_n\leq f_n$, and so $\int g_n\dd\mu\leq\int f_n\dd\mu$, for all $n$. Because the sequence $\int g_n\dd\mu$ is non-decreasing, we obtain the inequality $$\liminf_nf_n\dd\mu\geq\lim\int g_n\dd\mu=\int\liminf_nf_n\dd\mu$$ as desired.
+\end{proof}
+
+
+\section{Exercises}
+\begin{enumerate}[label=\arabic*)]
+\item Show that if $f$ is a real-valued continuous function on $[a,b]$, then its Riemann integral on $[a,b]$ is equal to its Lebesgue integral on $[a,b]$.
+
+\item Let $\mu$ be Lebesgue measure or the whole real line, and let $B=L^1(\mu)$. Define a function $f$ from $[0,1]$ to $B$ by $f(t)=\idf{[t, t+1]}$ (or, more precisely, the equivalence class thereof). Show that $f$ is continuous, and so, by Exercise 2 of Chapter 3, is also $\mu$-integrable. Show that $f$ is $\mu$-integrable, and compute $\int_{[0,1]}f\dd\mu$ (that is, determine what function in $L^1(\mu)$ it is).
+
+\item Show that $\lim _{a\to\infty}\int_0^a\frac{\sin x}{x}\dd x$ exists and is finite, but that $\frac{\sin x}{x}$ is not Lebesgue integrable on $[0,\infty)$.
+
+\item Let $B$ and $B'$ be Banach spaces, and let $T$ be a bounded linear transformation from $B$ to $B'$, that is, a linear transformation such that there is a constant $K$ such that $\norm{T(b)}_{B'}\leq K\norm{b}_B$ for all $b\in B$. Let $\mu$ be a scalar measure on $(X,S)$. Show that if $f$ is a $B'$-valued $\mu$-measurable function, then $T\circ f$ is a $B'$-valued $\mu$-measurable function, and that if $f$ is integrable then so is $T\circ f$ and $\int_E(T\circ f)\dd\mu=T\br{\int_Ef\dd\mu}$.
+
+\item Show that if $f$ is a $\mu$-integrable scalar-valued function and $b\in B$, then the $B$-valued function $g(x)=f(x)b$ is $\mu$-integrable, and $\int g\dd\mu=\br{\int f\dd\mu}b$.
+
+\item Let $f$ be a $B$-valued function which is integrable with respect to Lebesgue measure on $[0,1]$. If $\int_0^t f\dd\mu=0$ for all $t\in[0,1]$, what can you conclude about f?
+
+\item Show that if $f$ is a $\mu$-integrable $B$-valued function and if $\int f(x)g(x)\dd\mu(x)=0$ for all scalar-valued ISF $g$, then $f=0$ a.e.
+
+\item A left-continuous non-decreasing real-valued function $\alpha$ defined on $\bR$ is said to be absolutely continuous if for every $\ep>0$ there is a $\delta>0$ such that $\sum_{i=1}^n|\alpha(b_i)-\alpha(a_i)|<\ep$ for every finite disjoint collection $\brc{[a_i, b_i): i=1,\dots, n}$ of intervals for which $\sum_{i=1}^n(b_i-a_i)<\delta$. If $\alpha$ is any left-continuous non-decreasing function, show that $\alpha$ is absolute]y continuous if and only if the corresponding Stieltjes-Lebesgue measure is strongly absolutely continuous with respect to Lebesgue measure.
+
+\item Find a sequence $f_n$ of integrable functions which converges a.e. to an integrable function $f$ but such that $\int f_n\dd\mu$ does not converge to $\int f\dd\mu$. This shows that some condition such as domination by an integrable function is necessary in the Lebesgue dominated convergence theorem.
+
+\item Evaluate $\lim_{n\to\infty}\int_{-\infty}^\infty(1+x^2+n(x\sin(1/x))^2)^{-1}\dd x$. If you knew only the theory of the Riemann integral how would you so about doing this?
+
+\item Show that $(x^3 \sin x)/(x^{10}+\log(2+|x|))^{1/2}$ is Lebesgue integrable on $(-\infty,\infty)$
+
+\item The Mean Value Theorem: This theorem is stated in terms of convex sets, and so we will need to discuss first the rudiments of the theory of convex sets.
+\begin{enumerate}[label=\alph*)]
+    \item A subset $A$ of a vector space is called convex if the line segment joining any two points of $A$ lies entirely in $A$, that is, whenever $a, b \in A$ then $ta+(1-t)b \in A$ for all $0\leq t\leq1$. Show that the intersection of any collection of convex sets in convex, so every set $A$ of a vector space is contained in a smallest convex set called the convex hull of $A$, which we will denote by $c(A)$. Show that $$c(A)=\brc{\sum_{i=1}^nt_ia_i:a_i \in A,t_i\geq0,\sum_{i=1}^nt_i=1}.$$ If $A$ is contained in a Banach space and if $\overline{c}(A)$ denotes the closure on $c(A)$, show that $\overline{c}(A)$ is the smallest closed convex set containing $A$. It is called the closed convex hull of A.
+    
+    \item The Mean Value Theorem. Let $\mu$ be a non-negative measure, and let $f$ be a $B$-valued $\mu$-integrable function. Then for every measurable set $E$ of strictly positive finite measure we have $$\mu_f(E)/\mu(E)=(1/\mu(E))\int_Ef\dd\mu\in\overline{c}(\er{f}{E})\subseteq\overline{c}(\operatorname{range}f|_E).$$ (where $\er{f}{E}$ is as defined in exercise 6 of Chapter 3). This is the analogue of the fact that if a real valued continuous function $f$ on $[a, b]$ has values in the interval $[m, M]$, then $\frac{1}{b-a}\int_a^b f(x)\dd x\in[m, M]$. Hint: As usual, prove this first for ISF and then approximate.
+    
+    \item Prove conversely that if $\mu$ is a non-negative measure, $f$ is a $B$-valued $\mu$-measurable function, $E$ is a locally measurable set and $K$ is a closed subset of $B$, then if $(\mu_f(F)/\mu(F))\in K$ for every measurable $F \subset E$ such that $0<\mu(F)<\infty$, it follows that $\er{f}{E}\subseteq K$. In particular, if $E$ is measurable then $f(x)\in K$ for almost all $x \in E$
+\end{enumerate}
+
+\item
+\begin{enumerate}[label=\alph*)]
+    \item Show that if $f$ is a $\mu$-integrable $B$-valued function then the range of $\mu_f$, that is $\brc{\mu_f(E): E\text{ is a locally measurable set}}$, is a relatively compact subset of $B$ (that is, has compact closure).
+    
+    \item Show that if $\mu$ is non-atomic then the closure of the range of $\mu_f$ is convex. Hint: Use exercise 8 of Chapter 1.
+
+    \item Show that if the range of $f$ is countable, then the range of $\mu_f$ is closed (so that if $\mu$ is non-atomic the range of $\mu_f$ is convex). Hint: Use exercise 15 of Chapter 1. (A classical theorem of Liapcunoff states that the range itself of a non-atomic measure with values in a finite dimensional vector space is convex, but no reasonably simple proof of this fact is known. The corresponding statement is false in the infinite dimensional case. In fact in in exercise 19.f) we will give an example of a function, $f$, which is Bochner integrable with respect to Lebesgue measure, $\mu$, but such that the range of $\mu_f$ is not convex (and so also not closed).
+    
+    \item Find en example of a finite real-valued Borel measure whose range is not convex.
+\end{enumerate}
+
+\item If $\mu$ is a non-negative measure on $(X, S)$ and if $m$ is a B-valued measure on $(X,S)$ having the property that $m(E)=0$ whenever $\mu(E)=0$ (e.g. an indefinite integral), then for every locally measurable set $E$ define a subset $A_E$ (or more precisely, $A_E(m)$) of $B$ by $A_E=\brc{m(F)/\mu(F):F\subseteq E\text{ and }0<\mu(F)<\infty}$, called the "average range" of $m$ on E. Show that if $f$ is a $\mu$-integrable B-valued function, then $\mu_f$ locally almost has compact average range, that is, for every measurable set $E$ with $\mu(E)<\infty$ and for every $\ep>0$ there exists $F\subset E$ with $\mu(E\sd F)<\ep$ such that $A_F$ is relatively compact. This and the next three exercises are closely related to the Radon-Nikodym theorem which we will consider in Chapter 7. Hint: Use the results of exercise 5 of Chapter 3, the mean value theorem (exercise 12 above), and the fact that if $A$ is compact then so is $\overline{c}(A)$. To prove this last result, show that $\overline{c}(A)$ is totally bounded if $A$ is.
+
+\item A subset $C$ of a vector space is called a cone (with vertex at 0) if $tc\in C$ for every $c\in C$ and every scalar $t\geq0$. If $A$ is a subset of a vector space, then the cone generated by $A$ is defined to be $\brc{ta:a\in A\text{ and }t\text{ is a non-negative scalar}}$. Show that if $\mu$ is a non-negative measure and if $f$ is a $\mu$-integrable $B$-valued function, then locally $\mu_f$ somewhere has compact direction, that is, for every measurable set $E$ with $0<\mu(E)<\infty$ there exists $F\subseteq E$ and a compact subset $K$ of $B$ not containing $0$ such that $\mu(F)>O$ and $\mu_f(G)$ is in the cone generated by $K$ for every $G\subseteq F$.
+
+\item With $\mu$, $f$ and $A_E$ as in exercise 14, show that $\mu_f$ locally somewhere has average range of small diameter, that is, for every measurable set $E$ of finite measure and every $\ep>O$ there exists a measurable set $F\subseteq E$ such that $\mu(F)>0$ and the diameter of $A_E$ is less than $\ep$. Recall that the diameter of a set $K\subseteq B$ is $\sup\brc{\norm{b-b'}:b,b'\in K}$.
+
+\item Let $\mu$ be Lebesgue measure on $[0,1]$, and let $B=L^1([0,1],\mu)$. Define a function, $m$, on the $\sigma$-field of Lebesgue measurable subsets of [0, 1] with values in $B$, by $m(E)=\idf{E}$ (or, more precisely, the equivalence class thereof). Show that $m$ is a measure. Compute the total variation of $m$, Is $m$ strongly absolutely $\mu$-continuous ? In spite of this, show that $m$ cannot be the indefinite integral of any $\mu$-integrable function, because it does not satisfy the properties described in exercises 14, 15 and 16 above. Also show that the closure of the range of $m$ is not convex. (Compare with exercise 13.b ) above.)
+
+\item
+\begin{enumerate}[label=\alph*)]
+    \item Let $\mu$ be a non-atomic non-negative measure, and let $f$ be a $\mu$-integrable $B$-valued function. Show that for any locally measurable set $E$ the closure of $A_E(\mu_f)$ is a convex set which, in fact, is equal to $\overline{c}(\er{E}{f})$. Hint: Use exercise 8 of Chanter 1.
+    
+    \item Show that if $m$ is the measure of exercise 17, then the closure of $A_E(m)$ is not convex.
+
+    \item Find a real-valued function, $f$, integrable with respect to Lebesgue measure $\mu$ such that $A_R(\mu_f)$ is not closed.
+
+    \item Find a measure $\mu$ and a real-valued $\mu$-integrable function for which the conclusion of part a) fails.
+\end{enumerate}
+
+\item There are several ways of defining the integral of a function with values in a Banach space which are more general than the Bochner integral (in the sense that certain functions which are not measurable according to our definition can still be integrated), but which are less well understood then the Bochner integral. We will not try to give a precise description of these other definitions, but in this exercise and the next one we will give some suggestive examples of one of them (another can be found in exercise of Chapter 5).
+
+Let $\mu$ be Lebesgue measure on $[0,1]$, and let $B=L^\infty([0,1],\mu)$ (see exercise 7 of Chapter 3). Define a function, $f$, from $[0,1]$ to $B$ by $f(t)=\idf{[0,t]}$ (or, more precisely, the equivalence class thereof).
+
+\begin{enumerate}[label=\alph*)]
+    \item Show that $f$ is not measurable.
+
+    \item We would nevertheless like to have a meaning for $\int_Ef\dd\mu$ for every $\mu$-measurable set $E$. To obtain a feeling for what the value of this integral should be, view $f$ as a function with values in $B'=L^1([0,1],\mu)$, and show that now it is measurable, and in fact integrable (see exercise 2). Thus $\mu_f$ is well defined as a measure with value in $Bl$
+
+    \item Show that $\mu_f(E)$ is a continuous function (more precisely, the equivalence class of $\mu_f(E)$ contains a continuous function) for every measurable set $E$. Thus $\mu_f$ can be viewed as having values in $C([0,1])$ and so in $B$ (since $C([0,1])$ can be identified with a closed subspace of $L^\infty([0,1],\mu)$. Show that viewed in this way $\mu_f$ is still a measure. What is its total variation?
+
+    \item Viewing $f$ as having values in $B$, one might then expect $\int_Ef\dd\mu$ to be $\mu_f(E)$ viewed as an element of $B$. The way to justify this is as follows: For $g \in B$ and $h\in B'$ note that $gh$ is integrable, and let $\brk{g,h}=\int gh\dd\mu$. Show that for any $h\in B'$ the function $t\mapsto\brk{f(t), h}$ is measurable (so we say that $f$ is weakly measurable for the duality $\brk{,}$). Then verify that $$\brk{\mu_f(E),h}=\int_E\brk{f(t),h}\dd\mu(t)$$ for every measurable set $E$ and every $h \in B'$. Hint: Show it first when $h$ is an ISF. To do this note that $g\mapsto\brk{g,h}$ is a bounded linear functional and use exercise 4. (We thus say that f is weakly integrable for the duality, $\brk{,}$, between $B$ and $B'$, and that the weak integral of $f$ over any set $E$ is the vector $\mu_f(E)$. Thus $\mu_f$ viewed as having values in $B$ can be considered to be the indefinite integral of the weakly integrable function $f$.)
+    
+    \item Viewing $\mu_f$ as having values in $C([0,1])$, show that it is not the indefinite integral of any Bochner integrable function with values in $C([0,1])$, (basically because thus function would have to be $f$). This illustrates the fact that a measure with values in a certain space (e.g. $C([0,1])$) which is not an indefinite integral, may be an indefinite integral in at least a weak sense if the space in which it is viewed as taking its values is enlarged (e.g. to $B$). Note that the range of $\mu_f$ is relatively compact. (Why?)
+    
+    \item Show that the range of $\mu_f$, even when viewed as being in $B'$, is not closed. Hint: Show that the function $\alpha(t)=t/2$ is not in the range of $\mu_f$ but is in the convex hull of the range of $\mu_f$ (and so must be in the closure of the range of $\mu_f$). Thus Liapounoff's theorem (see comments in exercise 13.c)) is not true for even the indefinite integrals of continuous Bochner integrable functions. (It would be interesting to have a characterization of those functions which are in the range of $\mu_f$.)
+\end{enumerate}
+
+\item Let $\mu$ be Lebesgue measure on $[0,1]$, and let $f_1,f_2,\dots$ be the characteristic functions of the intervals $[0,1/2],[1/2,1],[0,1/3],[1/3,2/3],[2/3,1],[0,1/4],\dots$ (you may have discovered this sequence of sets in answer to exercise 4.c) of Chapter 3). Let $f$ be the function on $[0,1]$ with values in $\ell^\infty$ whose value at $t\in[0,1]$ is the sequence $(f_1(t),f_2(t),\dots)$
+
+\begin{enumerate}[label=\alph*)]
+    \item Show that $f$ is not measurable. Hint: Egoroff's theorem is helpful.
+    \item Nevertheless we would like to integrate $f$. In fact we would expect that $$\int_E f\dd\mu=\br{\int_Ef_1\dd\mu,\int_Ef_2\dd\mu,\dots}$$ for any measurable set $E$. If we define $\mu_f(E)=\int_Ef\dd\mu$ by the above formula, show that it is a measure, and has finite total variation.
+    
+    \item We justify the definition of the integral of $f$ suggested above in a manner entirely analogous to the justification provided in exercise 19.d). Given $a\in\ell^\infty$ and $b\in\ell^1$ note that their pointwise product, $ab$, is in $\ell^1$, and let $\brk{a,b}=\sum_{i=1}^\infty a_ib_i$. Show that for every $b\in\ell^1$ the function $t\mapsto\brk{f(t),b}$ is measurable (so we say that $f$ is weakly measurable for the duality $\brk{,}$). Then verify that $$\brk{\mu_f(E), b}=\int_E\brk{f(t),b}\dd\mu(t)$$ for every measurable set $E$ and every $b\in\ell^l$. (We thus say that $f$ is weakly integrable for the duality $\brk{,}$, and that the weak integral of $f$ over any set $E$ is the vector $\mu_f(E)$.)
+    
+    \item A Banach space of some interest is the subspace of $l^\infty$ consisting of all sequences which converge to 0. This space is traditionally denoted by $c_0$. Show that the range of $\mu_f$ is contained in $c_0$, and in fact is contained in a compact subset of $c_0$. But show that $\mu_f$ cannot be the indefinite integral of a function with values in $c_0$. This gives another example of the phenomenon described in exercise 19.e).
+\end{enumerate}
+
+\item Let $\mu$ be Lebesgue measure on $\bR$. The Fourier transform of any function $f\in\cL^1(\mu,c)$ is defined to be the function $\cF(f)$ on $\bR$ whose value at $t\in\bR$ is $$\cF(f)(t)=\int f(x)\exp(ixt)\dd x.$$
+\begin{enumerate}[label=\alph*]
+    \item Prove that the Fourier transform of any function in $\cL^1$ is a bounded uniformly continuous function.
+
+    \item Prove that if both $f$ and $x\mapsto xf(x)$ are in $\cL^1$, then $\cF(f)$ is differentiable and $$\dv{\cF(f)}{t}(s)=\cF(x\mapsto ixf(x))(s).$$
+\end{enumerate}
+
+\item Let $G$ be a topological croup, such as $\bR$, and let $B$ be a Banach space. Then a representation of $G$ on $B$ is a map, $R$, from $G$ to the set of bounded invertible linear operators on B (the definition of a bounded operator was given in exercise 4 above) such that $R(s+t)=R(s)R(t)$ for all $s,t\in G$ (composition of operators). The representation $R$ is called strongly continuous if $s\mapsto R(s)b$ is a (norm) continuous function on $G$ for each $b\in B$, and it is called uniformly bounded if there is a constant $c$ such that $\norm{R(s)b}\leq c\norm{b}$ for all $t\in G$ and $b\in B$.
+
+\begin{enumerate}[label=\alph*)]
+    \item If $G=\bR$, if $\mu$ is Lebesgue measure on $\bR$ if $B=L^1(\mu,B')$ where $B'$ is any Banach space, and if $R$ is defined by $(R(s)f)(t)=f(t-s)$, show that $R$ is a uniformly bounded continuous representation of $R$. Hint: Use exercise 14.a) of Chapter 1.
+    
+    \item Let $R$ be a uniformly bounded strongly continuous representation of $\bR$ on a Banach space $B$, and let $\mu$ be Lebesgue measure on $\bR$. For each $f\in L^1(\mu,c)$ define a function, $R_f$, on $B$ by $$R_f(b)=\int f(s)(R(s)b)\dd\mu(s)$$ for every $b \in B$. Show that $R_f$ is a bounded linear operator on $B$.
+
+    \item With $R$ and $R_f$ as in part b, show that there is a sequence, $f_n$, of elements of $L^1(\mu)$ of norm one such that $\lim R_{f_n} b=b$ for all $b\in B$. Hint: Try an "approximate $\delta$-function".
+\end{enumerate}
+This exercise will be further developed in the exercises of Chapter 5 and 6.
+\end{enumerate}

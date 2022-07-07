@@ -1,0 +1,287 @@
+
+Throughout this chapter we will assume as we did in Chapter 4 that $\mu$ is a scalar-valued measure on $(X,S)$ unless the contrary is explicitly stated.
+
+\section{The $L^p$ Spaces}
+
+In this section we define certain vector spaces of measurable functions called the $\cL^p$ spaces. For $1<p<\infty$ these spaces are equipped with a seminorm analogous to the $L^1$-norm on $\cL^1$. As was the case with $\cL^1$, we will see that if we identify functions of an $\cL^p$ space which agree a.e., then we obtain a normed space, which we will denote by $L^p$.
+
+\begin{definition}
+For $0<p<\infty$ we will denote the set of all $B$-valued $\mu$-measurable functions, $f$, such that $\norm{f(\cdot)}^p$ is integrable, by $\cL^p(X,S,\mu,B)$ (or suitable abbreviations thereof). We define a real-valued function, $\norm{\cdot}_p$, on $\cL^p$ by $$\norm{f}_p=\br{\int\norm{f(x)}^p\dd|\mu|(x)}^{1/p}.$$ For $1\leq p<\infty$ this function is called the $L^p$-norm.
+\end{definition}
+
+As this definition suggests, we will show that $\cL^p$ is a vector space for $1 \leq p<\infty$ and that $\norm{\cdot}_p$ is a seminorm on this vector space. (For $0<p<1$, $\cL^p$ is still a vector space, but $\norm{\cdot}_p$ is no longer a norm, although $\norm{\cdot}_p^p$ can be used to define an interesting metric on $\cL^p$. We will not consider this case further).
+
+\begin{proposition}
+If $f\in\cL^p$, then $\norm{f}_p=0$ iff $f=0$ a.e.
+\end{proposition}
+
+\begin{proof}
+If $\norm{f}_p=0$ then $\int\norm{f(x)}^p\dd|\mu|(x)=0$ so that by Proposition 4.26 we see that $\norm{f(x)}^p=0$ a.e. It follows that $f=0$ a.e. The converse is clear.
+\end{proof}
+
+It is considerably more difficult to prove that $\cL^p$ is a vector space and that $\norm{\cdot}_p$ is a seminorm than was the case for $\norm{\cdot}_1$. The difficulty lies in proving the triangle inequality for $\norm{\cdot}_p$. We will need the next few results in order to prove it.
+
+\begin{lemma}
+If $p>1,q>1$ and $(1/p)+(l/q)=1$, then for any positive real numbers $r$ and $s$ we have $$rs\leq(r^p/p)+(s^q/q).$$
+\end{lemma}
+
+\begin{proof}
+Define a function $k$ by $k(t)=(t^p/p)+(t^{-q}/q)$ for all $t>0$. Then the derivative, $k'$, of $k$ is $k'(t)=t^{p-1}-t^{-q-1}$. Now $k'(1)=0$, so $k$ has a critical point at $t=1$. Furthermore, it is clear that if $t>1$ then $k'(t)>0$, whereas if $0<t<1$ then $k'(t)<0$. Thus $k$ has an absolute minimum at $t=1$. But $k(1)=1$, and so for every $t>0$ we have $1\leq(t^p/p)+(t^{-q}/q)$. Setting $t=r^{1/q}/s^{1/p}$ we obtain $1\leq r^{p/q}/ps+s^{q/p}/qr$, so that $rs\leq r^{(p/q)+1}+s^{(q/p)+1}=r^p/p+s^q/q$.
+\end{proof}
+
+\begin{theorem}[H\"older's inequality]
+Suppose that $p>1, q>1$, and $1/p+1/q=1$. If $f\in\cL^p$ and $g\in\cL^q$, where $g$ is $B$-valued and $f$ is scalar valued, then $fg\in\cL^1$ and $\norm{fg}_1\leq\norm{f}_p\norm{g}_q$.
+\end{theorem}
+
+\begin{proof}
+We have seen earlier that $fg$ is measurable. If either $f$ or $g=0$ a.e. then the result is obvious, so we assume that $\norm{f}_p>0$ and $\norm{g}_q>0$. Setting $r=|f(x)|\norm{f}_p$ and $s=\norm{g(x)}/\norm{g}_q$ in Lemma 5.3, we obtain $|f(x)|\norm{g(x)}/\norm{f}_p\norm{g}_q\leq|f(x)|^p/p\norm{f}_p^p+\norm{g(x)}^q/q\norm{g}_q^q$. By hypothesis, the right side is integrable, and so $f g\in \cL^I$ by Theorem 4.41. Integrating both sides, we obtain $$\norm{fg}_1/\norm{f}_p\norm{g}_q\leq\norm{f}_p^p/p\norm{f}_p^p+\norm{g}_q^q/q\norm{g}_q^q=1$
+\end{proof}
+
+By using H\"older's inequality, we can prove the triangle inequality for the $L^p$-norm.
+
+\begin{theorem}[Minkowski's inequality]
+If $1<p<\infty$ and if $f$ and $g$ are in $\cL^p$, then $f+g\in\cL^p$ and $\norm{f+g}_p\leq\norm{f}_p+\norm{g}_p$.
+\end{theorem}
+
+\begin{proof}
+To see that $f+g\in\cL^p$, we note that for each $x$
+\begin{align*}
+\norm{f(x)+g(x)}^p&\leq(\norm{f(x)}+\norm{g(x)}^p\leq(2\max(\norm{f(x)},\norm{g(x)}))^p. \\
+&=2^p \max(\norm{f(x)}^p,\norm{g(x)}^p)\leq2^p(\norm{f(x)}^p+\norm{g(x)}^p).
+\end{align*}
+Since the right-hand end is assumed to be integrable, it follows from Theorem 4.41 that the left-hand end is also, so that $f+g\in\cL^p$.
+
+Now let $q=p/(p-1)$, so that $(1/p)+(1/q)=1$ and $p-1=p/q$. Then, using the fact that $\norm{f(\cdot)+g(\cdot)}^{p/q}\in\cL^q$ since $\norm{f(\cdot)+g(\cdot)}\in\cL^p$, and applying H\"older's inequality, we obtain
+\begin{align*}
+    \norm{f+g}_p^p&=\int\norm{f(x)+g(x)}^p\dd|\mu|(x)\\
+    &=\int\norm{f(x)+g(x)}\norm{f(x)+g(x)}^{p-1}\dd|\mu|(x)\\
+    &\leq\int\norm{f(x)}\norm{f(x)+g(x)}^{p/q}\dd|\mu|(x)+\int\norm{g(x)}\norm{f(x)+g(x)}^{p/q}\dd\mu|(x)\\
+    &\leq\norm{f}_p\br{\int\norm{f(x)+g(x)}^p\dd|\mu|(x)}^{1/q}+\norm{g}_p\br{\int\norm{f(x)+g(x)}^p\dd|\mu|(x)}^{1/q}\\
+    &=(\norm{f}_p+\norm{g}_p)\norm{f+g}_p^{p/q}\\
+    &=\br{\norm{f}_p+\norm{g}_p}\norm{f+g}_p^{p-1} 
+\end{align*} From this Minkowski's inequality follows immediately.
+\end{proof}
+
+It is a trivial matter to show that $\cL^p$ is closed under scalar multiplication and that $\norm{\cdot}_p$ behaves as a seminorm should with respect to scalar multiplication. Thus
+
+\begin{corollary}
+$\cL^p$ is a vector space and $\norm{\cdot}_p$ is a seminorm on $\cL^p$, for $1\leq p<\infty$.
+\end{corollary}
+
+From Proposition 5.2 we see that the subspace of functions in $\cL^p$ whose $L^p$-norm is 0 is exactly the subspace of functions equal to 0 a.e. Thus, exactly as in the case of $\cL^1$, the $L^p$-norm drops to an actual norm on the factor space obtained by factoring $\cL^p$ by the subspace of functions which are equal to 0 a.e., and this factor space consists exactly of the equivalence classes of functions in $\cL^p$ which agree a.e.
+
+\begin{definition}
+For $1<p<\infty$ the normed space consisting of the equivalence classes of functions in $\cL^p$ which agree a.e. will be denoted by $L^p(X,S,\mu,B)$ (or appropriate abbreviations thereof). We will denote the norm on $L^p$ again by $\norm{\cdot}_p$ and we will call it the \underline{$L^p$-norm}.
+\end{definition}
+
+When working with $L^p$ it is convenient and traditional to speak as though its elements are functions rather than equivalence classes of functions. This seldom leads to confusion, and we will follow this practice in these notes.
+
+\section{The Completeness of the $\cL^p$ Spaces}
+
+In this section we will prove that the $\cL^p$ spaces are complete, and obtain some additional information about them. The proof of completeness is not quite as simple as that for $\cL^1$ and requires some of the convergence theorems proved at the end of the last chapter.
+
+\begin{definition}
+Convergence with respect to the $L^p$-norm will be called \underline{convergence in $p$-mean}. A sequence of functions in $\cL^p$ which is a Cauchy sequence with respect to the $L^p$-norm will be called a \underline{$p$-mean Cauchy sequence}.
+\end{definition}
+
+In analogy with the situation for $\cL^1$ (see Proposition 4.25) we have:
+
+\begin{proposition}
+A $p$-mean Cauchy sequence of functions in $\cL^p$ is Cauchy in measure. A sequence of functions in $\cL^p$ which converges to a function $f\in\cL^p$ in $p$-mean also converges to $f$ in measure.
+\end{proposition}
+
+\begin{proof}
+The proof is only a slight variation of the proof of Proposition 4.25 and Lemma 4.12. Let $f$ be a function in $\cL^p$, and let $\ep>0$ be given. Let $E=\brc{x\in X:\norm{f(x)}\geq\ep}$. It is easily seen that $\idf{E}\leq\norm{f(\cdot)}^p/\ep^p$, and so $|\mu|(E)\leq\br{\int\norm{f(x)}^p\dd|\mu|(x)}/\ep^p$. In other words $$|\mu|(\brc{x\in X:\norm{f(x)}\geq\ep})\leq\left(\norm{f}_p/\ep)^p.$$
+This inequality is known as the Markov inequality, and for the case $p=2$ it is also called the Tchebychev inequality.
+
+Suppose now that $f_n$ is a $p$-mean Cauchy sequence of functions in $\cL^p$. Applying the Markov inequality we obtain the fact that $$|\mu|(\brc{x\in X:\norm{f_m(x)-f_n(x)}\geq\ep})\leq(\norm{f_m-f_n}_p/\ep)^p.$$
+It follows immediately that the sequence $f_n$ is Cauchy in measure.
+
+The proof for the case in which the sequence $f_n$ converges in $p$-mean is only a slight variant of the above proof.
+\end{proof}
+
+\begin{theorem}
+$\cL^p(X,S,\mu,B)$, and so $L^p(X,S,\mu,B)$, is complete.
+\end{theorem}
+
+\begin{proof}
+Let $f_n$ be a $p$-mean Cauchy sequence of functions in $\cL^p$. Then the sequence $f_n$ is Cauchy in measure by Proposition 5.9, and so, by the Riesz-Weyl Theorem (Theorem 3.26), there is a measurable function, $f$, such that the sequence $f_n$ converges to $f$ in measure and a subsequence of the $f_n$ converges to $f$ a.e. We wish to show that $f\in\cL^p$ and that the sequence $f_n$ converges to $f$ in $p$-mean. Since for the latter it suffices to show that a subsequence of the $f_n$ converges to $f$ in $p$-mean, we will assume for the rest of the proof that the sequence $f_n$ converges to $f$ a.e.
+
+Now $\norm{f(x)-f_n(x)}^p=\lim_m\norm{f_m(x)-f_n(x)}^p$ a.e., and so we can apply Fatou's lemma (Theorem 4.45) to conclude that $$\int\norm{f(x)-f_n(x)}^p\dd|\mu|(x)\leq\lim _m\int\norm{f_m(x)-f_n(x)}^p\dd|\mu|(x)=\lim_m\norm{f_m-f_n}_p^p.$$ Because the sequence $f_n$ is Cauchy in $p$-mean, the limit on the right is finite, and so $\norm{f(\cdot)-f_n(\cdot)}^p$ is in $L^p$. Hence $f\in\cL^p$. It is also clear from the above inequality that $f_n$ converges to $f$ in $p$-mean.
+\end{proof}
+
+\begin{corollary}
+If $f_n$ is a $p$-mean Cauchy sequence of functions in $\cL^p$ which converges to a function $f$ a.e., then $f\in\cL^p$ and $f_n$ converges to $f$ in $p$-mean.
+\end{corollary}
+
+\begin{proof}
+A subsequence of the $f_n$ converges in $p$-mean and a.e. to a function in $\cL^p$, which must be equal to $f$ a.e.
+\end{proof}
+
+\begin{theorem}
+The ISF are dense in $\cL^p$.
+\end{theorem}
+
+\begin{proof}
+We first note that if $g$ is an ISF then so is $\norm{g(\cdot)}^p$, and so $g\in\cL^p$. Now let $f$ be any element of $\cL^p$. Since $f$ is measurable, there is a sequence, $f_n$ of simple measurable functions which converges to $f$ a.e. For each $n$ define a function $h_n$ by $$h_n(x)=\begin{cases}f_n(x)&\text{if }\norm{f_n(x)}\leq2\norm{f(x)}\\ 0&\text{if }\norm{f_n(x)}>2\norm{f(x)}\end{cases}.$$ As was the case in the proof of Theorem 4.41, it is easily seen that $h_n$ is a sequence of ISF which converges to $f$ a.e. and which has the property that $\norm{h_n(x)}\leq2\norm{f(x)}$ for all $x$. It follows that $\norm{f(x)-h_n(x)}\leq3\norm{f(x)}$, and so $\norm{f(x)-h_n(x)}^p\leq3^p\norm{f(x)}^p$, for all $x$. Since $\norm{f(\cdot)}^p$ is integrable and since the sequence $\norm{f(\cdot)-h_n(\cdot)}^p$ converges pointwise to 0, we can apply the Lebesgue dominated convergence theorem (Theorem 4.40) to conclude that $\int\norm{f(x)-h_n(x)}^p\dd|\mu|(x)$ converges to zero, so that $h_n$ converges to $f$ in $p$-mean as desired.
+\end{proof}
+
+\section{Some Convergence Theorems}
+
+In this section we show that some of the convergence theorems proved at the end of Chapter 4 have easy generalizations to the $\cL^p$ spaces, and we also prove a convergence theorem which was not mentioned in Chapter 4.
+
+\begin{theorem}[The Lebesgue Dominated Convergence Theorem]
+Let $f_n$ be a sequence of functions in $\cL^p(\mu,B)$ which converges a.e. to a (necessarily measurable) function $f$. If there exists a real-valued function, $g$, in $\cL^p$ such that $\norm{f_n(x)}\leq g(x)$ a.e. for each $n$, then $f\in\cL^p(B)$ and the sequence $f_n$ converges to $f$ in $p$-mean.
+\end{theorem}
+
+\begin{proof}
+It is clear that $\norm{f(x)}\leq g(x)$ a.e. and so $\norm{f(x)}^p \leq g(x)^p$ a.e. Since $g(\cdot)^p$ is assumed integrable it follows from Theorem 4.41 that $\norm{f(x)}^p$ is integrable, so that $f\in\cL^p$. The rest of the argument is almost identical to that in the second half of the proof of Theorem 5.12, and, in fact, if we had preferred we could have proved the present theorem before Theorem 5.12 and then appealed to the present theorem for the second half of the proof of Theorem 5.12. To repeat the argument, we have $\norm{f(x)-f_n(x)}\leq2g(x)$ a.e., and so $\norm{f(x)-f_n(x)}^p\leq2^p(g(x))^p$ a.e. Since $(g(\cdot))^p$ is assumed integrable and since the sequence $\norm{f(\cdot)-f_n(\cdot)}^p$ converges to 0 a.e., we can apply our first version of the Lebesgue dominated convergence theorem (Theorem 4.40) to conclude that $\int\norm{f(x)-f_n(x)}^p\dd|\mu|(x)$ converges to zero, so that $f_n$ converges to $f$ in $p$-mean.
+\end{proof}
+
+We generalize next the Monotone Convergence Theorem.
+
+\begin{theorem}[The Monotone Convergence Theorem]
+Let $f_n$ be a sequence of real-valued functions in $\cL^p$ which is non-decreasing a.e. (that is, for each $n$ we have $f_n(x)\geq f_{n-1}(x)$ a.e.). If the sequence of the $L^p$-norms of the $f_n$ is bounded, that is, if there is a constant, $c$, such that $\norm{f_n}_p\leq c$ for all $n$, then $f_n$ is a $p$-mean Cauchy sequence, and there exists an $f\in\cL$ such that $f_n$ converges to $f$ a.e. and in $p$-mean.
+\end{theorem}
+
+\begin{proof}
+For the same reason as in the proof of Theorem 4.42 we may assume that the $f_n$ are non-negative. We will show that the present theorem is a corollary of Theorem 4.42. To show this we need the following lemma:
+
+\begin{lemma}
+If $r$ and $s$ are real numbers such that $r\geq s\geq 0$, then $(r-s)^p\leq r^p-s^p$.
+\end{lemma}
+
+\begin{proof}
+Define a function $k$ by $k(t)=t^p-s^p-(t-s)^p$. Then the derivative of $k$ is $k'(t)=pt^{p-1}-p(t-s)^{p-1}$, which for $t\geq s$ is non-negative, so that $k$ is non-decreasing for $t\geq s$. Since $k(s)=0$, the inequality follows immediately.
+\end{proof}
+
+We now return to the proof of Theorem 5.14. Since the $f_n$ are non-negative and in $\cL^p$, the $f_n^p$ form a non-decreasing sequence of functions in $L^I$, and the $L^I$-norms of the $f_n^p$ are bounded above. Then by Theorem $4.42$ there is a non-negative integrable function $g$ such that $f_n^p$ converges to $g$ a.e. and in mean. Define a function $f$ by $f(x)=g(x)^{1/p}$. It is then clear that $f\in\cL^p$, that $f_n$ converges to $f$ a.e., and that $f_n^p$ converges to $f^p$ in mean. Now, since $f \geq f_n$ a.e., it follows from Lemma 5.11 that $(f(x)-f_n(x))^p\leq f(x)^p-f_n(x)^p$ a.e., so that
+\begin{align*}
+    \norm{f-f_n}_p^p&=\int(f(x)-f_n(x))^p\dd|\mu|(x) \\
+    &\leq\int[f(x)^p-f_n(x)^p]\dd|\mu|(x)=\norm{f^p-f_n^p}.
+\end{align*}
+It follows that $f_n$ converges to $f$ in $p$-mean as desired.
+\end{proof}
+
+We conclude this section with one more convergence theorem (of which the Lebesgue dominated convergence theorem is, in fact, an easy consequence. The part of this theorem involving condition 3a is called Vitali's theorem, while the part involving condition 3b is frequently called "$L^p$ convergence theorem".
+
+\begin{theorem}
+Let $f\in\cL^p$ and let $f_n$ be a sequence of functions in $\cL^p$.
+\begin{enumerate}[label=\Roman*)]
+    \item If $f_n$ converges to $f$ in $p$-mean, then
+    \begin{enumerate}[label=\arabic*)]
+        \item the indefinite integrals with respect to $|\mu|$ of the functions $\norm{f_n(\cdot)}^p$ are uniformly absolutely $\mu$-continuous, that is, for every $\ep>0$ there is a $\delta>0$ such that if $|\mu|(E)<\delta$, then $\int_E\norm{f_n(x)}^p\dd|\mu|(x)<\ep$ for all $n$, and
+        
+        \item for any $\ep>0$ there is a fixed measurable set $E$ of finite $|\mu|$-measure such that $\int_{X\sd E}\norm{f(x)}^p\dd|\mu|(x)<\ep$ for all $n$.
+    \end{enumerate}
+    
+    \item Conversely, if 1) and 2) hold and either
+    \begin{enumerate}[label=3\alph*)]
+        \item $f_n$ converges to $f$ a.e., or
+        \item $f_n$ converges to $f$ in measure, 
+    \end{enumerate}
+    then $f_n$ converges to $f$ in $p$-mean.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+We prove I) first. To show 1), let $\ep>0$ be given. Choose $N$ such that if $n\geq N$ then $\norm{f-f_n}_p<\ep^{1/p}/2$, and choose $\delta'>0$ such that if $|\mu|(E)<\delta'$ then $\int_E\norm{f(x)}^p\dd|\mu|(x)<\ep/2^p$, as can be done by Proposition 4.39. Then if $n\geq N$ and $|\mu|(E)<\delta'$, we have 
+\begin{align*}
+\int_E\norm{f_n(x)}^p\dd|\mu|(x)&=\norm{f_n\idf{E}}_p^p\leq(\norm{f_n\idf{E}-f\idf{E}}_p+\norm{f\idf{E}}_p)^p\\
+&\leq\br{\norm{f-f_n}_p+\br{\int_E\norm{f(x)}^p\dd|\mu|(x)}^{1/p}}^p\\
+&\leq(\ep^{1/p}/2+\ep^{1/p}/2)^p=\ep.
+\end{align*}
+Now choose $\delta''>0$ such that if $|\mu|(E)<\delta''$, then $\int_E\norm{f_i(x)}^p\dd|\mu|(x)<\ep$ for $1\leq i<N$. If we let $\delta=\min(\delta',\delta'')$, then we see that $\delta$ has the desired property.
+
+The proof of 2) is quite similar. Again let $\ep>0$ be given, and choose $N$ such that if $n \geq N$ then $\norm{f-f_n}_p<\ep^{1/p}/2$. By Proposition 4.31 we can find a measurable set $E_0$ of finite $|\mu|$-measure such that $\int_{X\sd E_0}\norm{f(x)}^p\dd|\mu|(x)<\ep/2^p$. Then, by substituting $X\sd E_0$ for $E$ in the string of inequalities used to prove 1) above, we see that $\int_{X\sd E_0}\norm{f_n(x)}^p\dd|\mu|(x)<\ep$ for all $n\geq N$. But for each $i$ for which $1\leq i<N$ we can also find a measurable set $E_i$ of finite measure such that $\int_{X\sd E_i}\norm{f_i(x)}^p\dd|\mu|(x)<\ep$. If we let $E=\bigcup_{i=0}^{N-1}E_i$, then we see that $E$ has the desired property.
+
+We now turn to the proof of part II). Suppose that I), 2) and either 3a) or 3b) hold. We wish to show that $f_n$ converges to $f$ in $p$-mean. To do this it suffices to show that $f_n$ is Cauchy in $p$-mean, for then if condition 3a holds we can apply Corollary $5.11$, whereas if condition 3b holds, then by the Riesz-Weyl Theorem (Theorem 3.26) there is a subsequence for which 3a holds, and so again Corollary 5.11 is applicable.
+
+Now let $\ep>0$ be given. According to condition 2) there exists a measurable set $E$ of finite measure such that $\int_{X\sd E}\norm{f_n(x)}^p\dd|\mu|(x)<(\ep/4)^p$ for all $n$. Then $\norm{f_n\idf{X\sd E}-f_m\idf{X\sd E}}_p\leq\norm{f_n\idf{X\sd E}}_p+\norm{f_m\idf{X\sd E}}_p\leq\ep/2$ for all $n$, and so it suffices to show that $\norm{f_n\idf{E}-f_m\idf{E}}_p<\varepsilon/2$ for sufficiently large $n$.
+
+By condition I) choose a $\delta>0$ such that if $|\mu|(F)<\delta$ then $\int_F\norm{f_n(x)}^p\dd|\mu|(x)<(\ep/8)^p$ for all $n$, so that
+$\norm{f_n\idf{F}-f_m\idf{F}}_p\leq\norm{f_n\idf{F}}_p+\norm{f_m\idf{F}}_p<\ep/4$ for all $n$.
+
+Suppose now that condition 3a) holds. Since $E$ has finite measure, we can apply Egoroff's theorem (Theorem 3.15), and so there is a measurable set $F\subseteq E$ such that $|\mu|(F)<\delta$ and $f_n$ converges uniformly to $f$ on $E\sd F$. Thus we can choose an $N$ such that if $m,n\geq N$ then $\norm{f_n(x)-f_m(x)}<\ep/(4(|\mu|(E))^{1/p})$ for all $x\in E\sd F$. For each $m$ and $n$ we define a set, $F_{mn}$, by $F_{mn}=F$.
+
+On the other hand, if condition $3 {~b}$ ) holds, let $$F_{mn}=\brc{x\in E:\norm{f_n(x)-f_m(x)}\geq\ep/(4(|\mu|(E))^{1/p})}.$$ Then there exists an $N$ such that $|\mu|(F_{mn})<\delta$ whenever $m, n>N$.
+
+Thus in either case there exists an $N$ and measurable sets $F_{mn}\subseteq E$ such that if $m,n>N$ then $|\mu|(F_{mn})<\delta$ and $\norm{f_n(x)-f_m(x)}<\ep/(4(|\mu|(E))^{1/p})$ for $x\in E\sd F_{mn}$. Then for $m, n>N$ we have
+\begin{align*}
+    \norm{f_n\idf{E}-f_m\idf{E}}&\leq\norm{f_n\idf{E\sd F_{mn}}-f_m\idf{E\sd F_{mn}}}_p+\norm{f_n\idf{F_{mn}}-f_m\idf{F_{mn}}}_p\\
+    &\leq\br{\int_{E\sd F_{mn}}\norm{f_n(x)-f_m(x)}^p\dd|\mu|(x)}^{1/p}+\ep/4\\
+    &\leq\ep/2
+\end{align*}
+as desired.
+\end{proof}
+
+The reader should notice some similarities between the above proof and the proof of the Lebesgue dominated convergence theorem (Theorem 4.40).
+
+\section{Dense Subspaces}
+
+In this section we prove some theorems which will enable us to conclude such results as the fact that if $\mu$ is Lebesgue measure, then the continuous $B$-valued functions of compact support are dense in $\cL^p(\mu,B)$ for $1\leq p<\infty$.
+
+We begin by showing how to introduce a semimetric on the collection of measurable subsets of finite measure of any measure space. If $(X,S,\mu)$ is a measure space, let $S_f$ denote the ring of elements of $S$ of finite measure. If $E$ and $F$ are any two sets, then their symmetric difference, denoted by $E \symd F$, is defined to be $(E\sd F)\du(F\sd E)$. (This definition was considered in exercise 13 of Chapter 1.)
+
+\begin{proposition}
+Let $(X,S,\mu)$ be a measure space, and define a function, $d$, on pairs of elements of $S_f$ by $$d(E, F)=|\mu|(E\symd F).$$ Then $d$ is a semimetric on $S_f$.
+\end{proposition}
+
+\begin{proof}
+Only the triangle inequality is not entirely obvious. But suppose elements $E,F$ and $G$ of $S$ are given. Then $(E\sd F)\subset(E\sd G)\cup(G\sd F)$ and $(F\sd E)\subset(F\sd G)\cup(G\sd E)$, so that $E\symd F\subset(E\symd G)\cup(G\symd F)$. Thus $d(E,F)\leq d(E,G)+d(G,F)$.
+\end{proof}
+
+\begin{proposition}
+The operations of forming the union of any two elements of $S_f$ and of forming the difference of elements of $S_f$ are continuous with respect to the semimetric $d$.
+\end{proposition}
+
+\begin{proof}
+Let $E,E_1,F,F_1$ be elements of $S_f$. Then it is easily seen that $(E\cup E_1)\sd(F\cup F_1)\subseteq E\symd F\cup E_1\symd F_1$. A similar inclusion is obtained if the roles of the $E$'s and $F$'s are interchanged. Combining these inclusions, we obtain $$d(E\cup E_1,F\cup F_1)\leq d(E,F)+d(E_1, F_1),$$
+which shows that forming unions is continuous.
+
+Similarly it is easily seen that $$(E\sd E_1)\symd(F\sd E_1)\subseteq E\symd F\text{ while }(E\sd E_1)\symd(E\sd F_1)\subseteq E_1\symd F_1.$$ An application of the triangle inequality then shows that $$d(E\sd E_1,F\sd F_1)\leq d(E, F)+d(E_1,F_1).$$
+\end{proof}
+
+The various density theorems in this section are all based on the following theorem.
+
+\begin{theorem}
+Let $(X,S,\mu)$ be a finite measure space, and let $R$ be a subring of $S$. Then the closure of $R$ in $S$ with respect to the semimetric $d$ defined above is a $\sigma$-ring. In particular, if $R$ generates $S$, then $R$ is dense in $S$.
+\end{theorem}
+
+\begin{proof}
+Let $\overline{R}$ denote the closure of $R$ in $S$. It suffices to show that $\overline{R}$ is a $\sigma$-ring. Now it follows immediately from Lemma 5.18 that $\overline{R}$ is a ring. It remains to show that $\overline{R}$ is closed under taking countable unions. Let $E_n$ be a sequence of elements of $\overline{R}$, and let $E=\bigcup_nE_n$. For each integer $n$ let $F_n=\bigcup_{i=1}^nE_i$. Since, as we have just seen, $\overline{R}$ is a ring, it follows that each $F_n$ is in $\overline{R}$. Furthermore, the $F_n$ increase up to $E$, and so $d(E,F_n)=|\mu|(E\sd F_n)$ goes to zero by Proposition 2.16 and the fact that $\mu$ is finite. Thus $E\in\overline{R}$.
+\end{proof}
+
+The key to applying the above theorem to the $L^p$ spaces is to remark that if $E$ and $F$ are any two elements of $S_f$, then $|\idf{E}(\cdot)-\idf{F}(\cdot)|=\idf{E\symd F}$, so that $\norm{\idf{E}-\idf{F}}_p=\br{\int\idf{E\symd F}\dd|\mu|}^{1/p}=(d(E,F))^{1/p}$. Using this remark we will prove:
+
+\begin{theorem}
+Let $(X,S,\mu)$ be a measure space, and let $R$ be a subring of $S_f$ which generates $S$. Then for $1\leq p<\infty$ the subspace of $R$-simple $B$-valued functions is dense in $\cL^p(X,S,\mu,B)$.
+\end{theorem}
+
+\begin{proof}
+Since the $S$-simple integrable functions are dense in $\cL^p$ by Theorem 5.12, it suffices to show that every $S$-simple integrable function can be approximated by $R$-simple functions. To do this it is easily seen to be sufficient to show that the characteristic function of any element of $S_f$ can be approximated in the $L^p$-norm by the characteristic functions of elements of $R$. But we show now that this follows from Theorem 5.19.
+
+Suppose first that $E$ is an element of $S_f$ which is contained in an element, $F$, of $R$. Let us denote by $R_F$ the subring of $R$ consisting of all those elements of $R$ which are contained in $R$. Then $E$ is contained in the $\sigma$-ring generated by $R_F$ according to Proposition 2.4. Restricting $\mu$ to the $\sigma$-ring generated by $R_F$, we can apply Theorem 5.19 to conclude that $E$ can be approximated by elements of $R_F$ with respect to the semimetric $d$. It then follows from the remarks immediately preceding the statement of Theorem $5.20$ that $X_E$ can be approximated in the $L^p$-norm by characteristic functions of elements of $R$.
+
+Suppose now that $E$ is an arbitrary element of $S_f$. Since $R$ generates $S$, there is a sequence, $F_n$, of elements of $R$ whose union contains $E$. Since $R$ is a ring we may assume that the $F_n$ are increasing. Then $F_n\cap E$ converges up to $E$, and so, since $E$ has finite measure, $F$ n $E$ converges to E with respect to the semimetric $d$ (by the same argument as was used at the end of the proof of Theorem 5.19). Thus $\idf{F_n}\cap E$ converges to $\idf{E}$ in the $L^p$-norm. But according to the results of the previous paragraph each $\idf{F_n\cap E}$ can be approximated in the $L^p$-norm by characteristic functions of elements of $R$.
+\end{proof}
+
+\begin{corollary}
+Let $\mu$ be any Borel measure on the real line, and let $R$ be the ring of finite disjoint unions of finite left-closed right-open intervals. Then for $1\leq p<\infty$ the $R$-simple $B$-valued functions are dense in $\cL^p(\mu, B)$
+\end{corollary}
+
+\begin{definition}
+Let $f$ be a vector-valued function on a topological space $X$. By the \underline{support} of $f$ is meant the smallest closed set outside of which the function everywhere has value $0$.
+\end{definition}
+
+\begin{theorem}
+Let $\mu$ be any Borel measure on the real line. Then for $1\leq p<\infty$ the continuous $B$-valued functions of compact support are dense in $\cL^p(\mu, B)$
+\end{theorem}
+
+\begin{proof}
+From Corollary 5.21 it follows that it is sufficient to show that if $a$ and $b$ are any real numbers with $a<b$ then $\idf{[a, b)}$ can be approximated in the $L^p$-norm by continuous functions of compact support. But for each $n$ let $f_n$ be the continuous function of compact support whose graph is:
+%FIXME input the graph pls thx
+It is easily seen that the sequence $f_n$ converges in $p$-mean to $\idf{[a, b)}$.
+\end{proof}
+
+In Chapter 8 we will be able to generalize Corollary 5.21 and Theorem 5.23 to measures on an arbitrary locally compact space.

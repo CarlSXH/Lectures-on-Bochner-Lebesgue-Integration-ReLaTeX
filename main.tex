@@ -1,0 +1,141 @@
+\documentclass[11pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{physics}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\usepackage[english]{babel}
+
+\title{Lectures on Bochner-Lebesgue Integration}
+\author{Marc Rieffel}
+\date{October 2021}
+
+%\binoppenalty=10000
+%\relpenalty=10000
+%\sloppy
+
+
+%\theorembodyfont{\rm}
+\newtheoremstyle{definition}%             % Name
+  {}%                                     % Space above
+  {}%                                     % Space below
+  {}%                                     % Body font
+  {}%                                     % Indent amount
+  {\bfseries}%                            % Theorem head font
+  {.}%                                    % Punctuation after theorem head
+  { }%                                    % Space after theorem head, ' ', or \newline
+  {\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}%                         % Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]  
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{examples}[definition]{Examples}
+\newtheorem{example}[definition]{Example}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem*{exercises}{Exercises}
+
+
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\theenumi}{\alph{enumi})}
+\renewcommand{\thedefinition}{\arabic{chapter}.\arabic{definition}}
+
+
+
+
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\renewcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\br}[1]{\left(#1\right)}
+\newcommand{\sbr}[1]{\left[#1\right]}
+\newcommand{\brc}[1]{\left\{#1\right\}}
+\newcommand{\brk}[1]{\left\langle#1\right\rangle}
+\renewcommand{\bf}[1]{\mathbf{#1}}
+
+
+
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\ep}{\varepsilon}
+
+% not my favorite notations so I can change lol
+%\newcommand{\setdiff}[2]{#1\setminus #2}
+
+%set difference
+\newcommand{\sd}{\setminus}
+%complement of a set
+\newcommand{\comp}[1]{{#1}^c}
+%disjoint union
+\newcommand{\du}{\sqcup}
+%big disjoint union
+\newcommand{\bigdu}{\bigsqcup}
+%indicator function
+\newcommand{\idf}[1]{\chi_{#1}}
+%carrier of
+\newcommand{\car}[1]{C(#1)}
+%essential range
+\newcommand{\er}[2]{\text{er}_{#2}(#1)}
+%curly L
+\newcommand{\cL}{{\cal L}}
+%curly F
+\newcommand{\cF}{{\cal F}}
+%symmetric difference
+\newcommand{\symd}{\Delta}
+
+% definition that should be flexible
+\newcommand{\sring}[1]{R(#1)}
+\newcommand{\hring}[1]{{\cal H}(#1)}
+\newcommand{\mring}[1]{{\cal M}(#1)}
+\newcommand{\nring}[1]{{\cal N}(#1)}
+
+
+
+\begin{document}
+
+\maketitle
+
+\setcounter{chapter}{-1}
+
+
+\chapter*{Introduction}
+%\input{0.Introduction}
+
+
+\tableofcontents
+
+\chapter{Preliminaries on Banach spaces}
+\input{0.Preliminary}
+
+\chapter{Measure}
+\input{1.Measures}
+
+\chapter{Properties of Measures}
+\input{2.Properties of Measures}
+
+\chapter{Measurable Functions}
+\input{3.Measurable Functions}
+
+\chapter{Integration}
+\input{4.Integration}
+
+\chapter{The $L^p$ Spaces}
+\input{5.The Lp Spaces}
+
+\chapter{Product Measures and Fubini's Theorem}
+\input{6.Product Measures ad Fubini's Theorem}
+
+\chapter{The Radon-Nikodym Theorem}
+\chapter{Integration on Locally Compact Spaces}
+
+\end{document}
