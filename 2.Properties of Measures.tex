@@ -6,10 +6,10 @@ A pair $(X,S)$ is called a measurable space if $X$ is a set and $S$ is a $\sigma
 \end{definition}
 
 \begin{definition}
-Let $(X, S)$ be a measurable space. We say that $E \subseteq X$ is \underline{$S$-measurable} (or just \underline{measurable}) if $E \in S$. We say that $E \subseteq X$ is \underline{locally $S$-measurable} if $E\cap F \in S$ for all $F \in S$. If $\mu$ is a non-negative measure on $(X, S)$, then we say that $E \subseteq X$ is \underline{$\mu$-measurable} if $E \in S\du\nring(\mu)$ (which was defined in Proposition 1.41). We say that $I \subseteq X$ is \underline{locally $\mu$-measurable} if $A\cap F$ is $\mu$-measurable for every $\mu$-measurable set $F$.
+Let $(X, S)$ be a measurable space. We say that $E \subseteq X$ is \underline{$S$-measurable} (or just \underline{measurable}) if $E \in S$. We say that $E \subseteq X$ is \underline{locally $S$-measurable} if $E\cap F \in S$ for all $F \in S$. If $\mu$ is a non-negative measure on $(X, S)$, then we say that $E \subseteq X$ is \underline{$\mu$-measurable} if $E \in S\du\nring{\mu}$ (which was defined in Proposition 1.42). We say that $I \subseteq X$ is \underline{locally $\mu$-measurable} if $A\cap F$ is $\mu$-measurable for every $\mu$-measurable set $F$.
 \end{definition}
 
-We remark that if $\mu$ is $\sigma$-finite, then the $\mu$-measurable sets are exactly the sets which are measurable with respect to the outer measure determined by $\mu$, as is seen from Theorem 1.42.
+We remark that if $\mu$ is $\sigma$-finite, then the $\mu$-measurable sets are exactly the sets which are measurable with respect to the outer measure determined by $\mu$, as is seen from Theorem 1.43.
 
 It is easily seen that if $(X, S)$ is a measurable space, then the family of all locally $S$-measurable sets is a $\sigma$-field, as is the family of all locally $\mu$-measurable sets if $\mu$ is a non-negative measure on $S$.
 
@@ -79,20 +79,20 @@ An arbitrary measure $\mu$ is said to be \underline{$\sigma$-finite } (\underlin
 If $\mu$ is an arbitrary measure on a $\sigma$-ring $S$, then a set $E \subseteq X$ is said to be (\underline{locally}) \underline{$\mu$-measurable} if it is (locally) measurable (see Definition 2.2). A set $F \in \hring{S}$ is called a \underline{$\mu$-null set} (or just a \underline{null set}) if $|\mu|^*(F)=0$. We denote the family of $\mu$-null sets by $\nring{\mu}$.
 \end{definition}
 
-We remark again that Theorem 1.42 shows that if $\mu$ is $\sigma$-finite, then the $\mu$-measurable sets are exactly the sets which are measurable with respect to the outer measure determined by $|\mu|$.
+We remark again that Theorem 1.43 shows that if $\mu$ is $\sigma$-finite, then the $\mu$-measurable sets are exactly the sets which are measurable with respect to the outer measure determined by $|\mu|$.
 
 \begin{definition}
 An arbitrary measure $\mu$ is said to be \underline{complete} if every $\mu$-null set is in the domain of $\mu$.
 \end{definition}
 
-The fact that we have used the term $\mu$-measurable in Definition 2.9 suggests that we should be able to extend $\mu$ to a measure on the $\sigma$-ring of $\mu$-measurable sets. The following theorem, which generalizes Proposition 1.41, shows that this is in fact the case.
+The fact that we have used the term $\mu$-measurable in Definition 2.9 suggests that we should be able to extend $\mu$ to a measure on the $\sigma$-ring of $\mu$-measurable sets. The following theorem, which generalizes Proposition 1.42, shows that this is in fact the case.
 
 \begin{theorem}
 Let $(X, S, \mu)$ be an arbitrary measure space. Define $\hat{\mu}$ on the $\sigma$-ring of $\mu$-measurable sets, $S\du\nring{\hat{\mu}}$, by $\hat{\mu}(E\du F)=\mu(E)$ where $E\in S$ and ${F} \in \nring{\mu}$. Then $\hat{\mu}$ is a well defined complete measure which extends $\mu$.
 \end{theorem}
 
 \begin{proof}
-If $E \in S$ and $|\mu|(E)=0$, then $\mu(E)=0$. As a consequence, it is easily seen that the proof of Proposition 1.41 applies to this case also.
+If $E \in S$ and $|\mu|(E)=0$, then $\mu(E)=0$. As a consequence, it is easily seen that the proof of Proposition 1.42 applies to this case also.
 \end{proof}
 
 \section{Bounded Measures}

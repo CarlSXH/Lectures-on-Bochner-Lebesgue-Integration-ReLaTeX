@@ -34,7 +34,7 @@ Suppose that $p>1, q>1$, and $1/p+1/q=1$. If $f\in\cL^p$ and $g\in\cL^q$, where 
 \end{theorem}
 
 \begin{proof}
-We have seen earlier that $fg$ is measurable. If either $f$ or $g=0$ a.e. then the result is obvious, so we assume that $\norm{f}_p>0$ and $\norm{g}_q>0$. Setting $r=|f(x)|\norm{f}_p$ and $s=\norm{g(x)}/\norm{g}_q$ in Lemma 5.3, we obtain $|f(x)|\norm{g(x)}/\norm{f}_p\norm{g}_q\leq|f(x)|^p/p\norm{f}_p^p+\norm{g(x)}^q/q\norm{g}_q^q$. By hypothesis, the right side is integrable, and so $f g\in \cL^I$ by Theorem 4.41. Integrating both sides, we obtain $$\norm{fg}_1/\norm{f}_p\norm{g}_q\leq\norm{f}_p^p/p\norm{f}_p^p+\norm{g}_q^q/q\norm{g}_q^q=1$
+We have seen earlier that $fg$ is measurable. If either $f$ or $g=0$ a.e. then the result is obvious, so we assume that $\norm{f}_p>0$ and $\norm{g}_q>0$. Setting $r=|f(x)|\norm{f}_p$ and $s=\norm{g(x)}/\norm{g}_q$ in Lemma 5.3, we obtain $|f(x)|\norm{g(x)}/\norm{f}_p\norm{g}_q\leq|f(x)|^p/p\norm{f}_p^p+\norm{g(x)}^q/q\norm{g}_q^q$. By hypothesis, the right side is integrable, and so $f g\in \cL^I$ by Theorem 4.41. Integrating both sides, we obtain $$\norm{fg}_1/\norm{f}_p\norm{g}_q\leq\norm{f}_p^p/p\norm{f}_p^p+\norm{g}_q^q/q\norm{g}_q^q=1$$
 \end{proof}
 
 By using H\"older's inequality, we can prove the triangle inequality for the $L^p$-norm.
@@ -107,7 +107,7 @@ $\cL^p(X,S,\mu,B)$, and so $L^p(X,S,\mu,B)$, is complete.
 \begin{proof}
 Let $f_n$ be a $p$-mean Cauchy sequence of functions in $\cL^p$. Then the sequence $f_n$ is Cauchy in measure by Proposition 5.9, and so, by the Riesz-Weyl Theorem (Theorem 3.26), there is a measurable function, $f$, such that the sequence $f_n$ converges to $f$ in measure and a subsequence of the $f_n$ converges to $f$ a.e. We wish to show that $f\in\cL^p$ and that the sequence $f_n$ converges to $f$ in $p$-mean. Since for the latter it suffices to show that a subsequence of the $f_n$ converges to $f$ in $p$-mean, we will assume for the rest of the proof that the sequence $f_n$ converges to $f$ a.e.
 
-Now $\norm{f(x)-f_n(x)}^p=\lim_m\norm{f_m(x)-f_n(x)}^p$ a.e., and so we can apply Fatou's lemma (Theorem 4.45) to conclude that $$\int\norm{f(x)-f_n(x)}^p\dd|\mu|(x)\leq\lim _m\int\norm{f_m(x)-f_n(x)}^p\dd|\mu|(x)=\lim_m\norm{f_m-f_n}_p^p.$$ Because the sequence $f_n$ is Cauchy in $p$-mean, the limit on the right is finite, and so $\norm{f(\cdot)-f_n(\cdot)}^p$ is in $L^p$. Hence $f\in\cL^p$. It is also clear from the above inequality that $f_n$ converges to $f$ in $p$-mean.
+Now $\norm{f(x)-f_n(x)}^p=\lim_m\norm{f_m(x)-f_n(x)}^p$ a.e., and so we can apply Fatou's lemma (Theorem 4.46) to conclude that $$\int\norm{f(x)-f_n(x)}^p\dd|\mu|(x)\leq\lim _m\int\norm{f_m(x)-f_n(x)}^p\dd|\mu|(x)=\lim_m\norm{f_m-f_n}_p^p.$$ Because the sequence $f_n$ is Cauchy in $p$-mean, the limit on the right is finite, and so $\norm{f(\cdot)-f_n(\cdot)}^p$ is in $L^p$. Hence $f\in\cL^p$. It is also clear from the above inequality that $f_n$ converges to $f$ in $p$-mean.
 \end{proof}
 
 \begin{corollary}
