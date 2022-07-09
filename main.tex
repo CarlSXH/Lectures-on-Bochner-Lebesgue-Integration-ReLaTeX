@@ -5,25 +5,31 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{enumitem}
+\usepackage{pgfplots}
+%\usepackage [autostyle, english = american]{csquotes}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,      
     urlcolor=cyan,
-    pdftitle={Overleaf Example},
+    pdftitle={Lectures on Bochner-Lebesgue Integration},
     pdfpagemode=FullScreen,
     }
-\usepackage[english]{babel}
+
+%\MakeOuterQuote{"}
 
 \title{Lectures on Bochner-Lebesgue Integration}
-\author{Marc Rieffel}
-\date{October 2021}
+\author{Marc Rieffel\\
+\small Carl Sun, LaTeX'ed in July, 2022}
+\date{1970}
 
-%\binoppenalty=10000
-%\relpenalty=10000
-%\sloppy
 
+\renewcommand{\baselinestretch}{1.1}
+
+\binoppenalty=100
+\relpenalty=100
+\sloppy
 
 %\theorembodyfont{\rm}
 \newtheoremstyle{definition}%             % Name
@@ -34,9 +40,9 @@
   {\bfseries}%                            % Theorem head font
   {.}%                                    % Punctuation after theorem head
   { }%                                    % Space after theorem head, ' ', or \newline
-  {\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}%                         % Theorem head spec (can be left empty, meaning `normal')
+  {\underline{\thmname{#2}\thmnumber{  #1}\thmnote{: #3}}}% Theorem head spec (can be left empty, meaning `normal')
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]  
+\newtheorem{definition}{Definition}[chapter]
 \newtheorem{theorem}[definition]{Theorem}
 \newtheorem{proposition}[definition]{Proposition}
 \newtheorem{lemma}[definition]{Lemma}
@@ -48,6 +54,8 @@
 
 \renewcommand{\thesection}{\Alph{section}}
 \renewcommand{\theenumi}{\alph{enumi})}
+\setlist[enumerate,1]{label={\alph*)},ref=\thedefinition\alph*)}
+\setlist[enumerate,2]{label={\alph*)},ref=\thedefinition\alph*)}
 \renewcommand{\thedefinition}{\arabic{chapter}.\arabic{definition}}
 
 
@@ -60,7 +68,6 @@
 \newcommand{\brc}[1]{\left\{#1\right\}}
 \newcommand{\brk}[1]{\left\langle#1\right\rangle}
 \renewcommand{\bf}[1]{\mathbf{#1}}
-
 
 
 \newcommand{\bC}{\mathbb{C}}
@@ -81,9 +88,10 @@
 %big disjoint union
 \newcommand{\bigdu}{\bigsqcup}
 %indicator function
-\newcommand{\idf}[1]{\chi_{#1}}
+\newcommand{\idf}[1]{{\raisebox{\depth}{$\chi$}}_{#1}}
 %carrier of
-\newcommand{\car}[1]{C(#1)}
+\DeclareMathOperator{\carrier}{supp}
+\newcommand{\car}[1]{\carrier(#1)}
 %essential range
 \newcommand{\er}[2]{\text{er}_{#2}(#1)}
 %curly L
@@ -91,7 +99,10 @@
 %curly F
 \newcommand{\cF}{{\cal F}}
 %symmetric difference
-\newcommand{\symd}{\Delta}
+\newcommand{\symd}{\triangle}
+
+%the dot for implicit argument
+\newcommand{\imarg}{\,\cdot\,}
 
 %x y section
 \newcommand{\xsec}[2]{{}^{#2}#1}
@@ -99,11 +110,10 @@
 
 
 % definition that should be flexible
-\newcommand{\sring}[1]{R(#1)}
+\newcommand{\sring}[1]{{\cal S}(#1)}
 \newcommand{\hring}[1]{{\cal H}(#1)}
 \newcommand{\mring}[1]{{\cal M}(#1)}
 \newcommand{\nring}[1]{{\cal N}(#1)}
-
 
 
 \begin{document}
@@ -117,31 +127,34 @@
 \input{0.Introduction}
 
 
-\chapter*{Introduction 2?}
-\input{0.My Introduction}
-
-
 \tableofcontents
 
 \chapter{Preliminaries on Banach spaces}
+\label{ch:preliminary}
 \input{0.Preliminary}
 
 \chapter{Measure}
+\label{ch:measures}
 \input{1.Measures}
 
 \chapter{Properties of Measures}
+\label{ch:properties of measures}
 \input{2.Properties of Measures}
 
 \chapter{Measurable Functions}
+\label{ch:meas func}
 \input{3.Measurable Functions}
 
 \chapter{Integration}
+\label{ch:integration}
 \input{4.Integration}
 
-\chapter{The $L^p$ Spaces}
+\chapter{The \texorpdfstring{$L^p$}{Lp} Spaces}
+\label{ch:Lp spaces}
 \input{5.The Lp Spaces}
 
 \chapter{Product Measures and Fubini's Theorem}
+\label{ch:product measure}
 \input{6.Product Measures and Fubini's Theorem}
 
 %\chapter{The Radon-Nikodym Theorem}
