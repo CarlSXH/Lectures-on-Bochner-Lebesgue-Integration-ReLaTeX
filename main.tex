@@ -40,6 +40,13 @@
 \relpenalty=100
 \sloppy
 
+% refucing the size of 
+\RequirePackage{fix-cm}
+\makeatletter 
+\newcommand\semiHuge{\@setfontsize\semiHuge{15}{18}}
+\makeatother
+\titleformat*{\section}{\semiHuge\bfseries}
+
 %\theorembodyfont{\rm}
 \newtheoremstyle{definition}%             % Name
   {}%                                     % Space above
@@ -62,15 +69,13 @@
 \newtheorem*{exercises}{Exercises}
 
 
-\providecommand{\defline}{\ul}
+\providecommand{\defline}[1]{{\ul{\it #1}}}%\ul}
 \renewcommand{\thesection}{\Alph{section}}
 \renewcommand{\theenumi}{\alph{enumi})}
 \setlist[enumerate,1]{label={\alph*)},ref=\thedefinition\alph*)}
 \setlist[enumerate,2]{label={\alph*)},ref=\thedefinition\alph*)}
 \renewcommand{\thedefinition}{\arabic{chapter}.\arabic{definition}}
 
-
-\titleformat*{\section}{\Large\bfseries}
 
 
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
