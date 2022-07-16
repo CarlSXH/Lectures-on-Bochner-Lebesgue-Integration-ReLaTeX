@@ -1,23 +1,22 @@
 
-In this preliminary chapter we will define what is meant by a Banach space, give a few examples, and describe those few elementary properties of Banach spaces which will be needed in later chapters. We assume that the reader is familiar with the theory of metric spaces. In a few places before Chapter 8 we will mention topological spaces, but a reader who is not familiar with topological spaces will have no difficulty if at every occurrence of the words "topological space" they substitute the words "metric space".
+In this preliminary chapter we will define what is meant by a Banach space, give a few examples, and describe those few elementary properties of Banach spaces which will be needed in later chapters. We assume that the reader is familiar with the theory of metric spaces. In a few places before Chapter 8 we will mention topological spaces, but a reader who is not familiar with topological spaces will have no difficulty if at every occurrence of the words ``topological space'' they substitute the words ``metric space''.
 
 \begin{definition}
 \label{def:norm}
-Let $V$ be a vector space (over the real or complex numbers). A function, $\norm{\imarg}$, from $V$ into the non-negative real numbers is called a \underline{seminorm} on $V$ if it satisfies the following two properties:
+Let $V$ be a vector space (over the real or complex numbers). A function, $\norm{\imarg}$, from $V$ into the non-negative real numbers is called a \defline{seminorm} on $V$ if it satisfies the following two properties:
 \begin{enumerate}[label=\alph*)]
     \item $\norm{v+w}\leq\norm{v}+\norm{w}$ for all $v,w\in V$. (this inequality is called the triangle inequality)
     \item $\norm{sv}=|s|\norm{v}$ for all $v\in V$ and all scalars $s$.
 \end{enumerate}
-A seminorm, $\norm{\imarg}$, is called a \underline{norm} if, in addition, it satisfies the following property:
+A seminorm, $\norm{\imarg}$, is called a \defline{norm} if, in addition, it satisfies the following property:
 \begin{enumerate}[label=\alph*)]
     \setcounter{enumi}{2}
     \item If $v\in V$ and $\norm{v}=0$, then $v=0$.
 \end{enumerate}
 \end{definition}
 
-\begin{definition}
-\label{def:norm space}
-A \underline{normed vector space} (or, more briefly, a \underline{normed space}) is a vector space $V$ together with a particular norm on $V$.
+\begin{definition}\label{def:norm space}
+A \defline{normed vector space} (or, more briefly, a \defline{normed space}) is a vector space $V$ together with a particular norm on $V$.
 \end{definition}
 
 
@@ -25,21 +24,21 @@ A \underline{normed vector space} (or, more briefly, a \underline{normed space})
 \begin{examples}
 The following are examples of normed spaces:
 \begin{enumerate}
-    \item \label{ex:norm 1}
+    \item\label{ex:norm 1}
     The field, $\mathbb{R}$, of real numbers, or the field, $\bC$, of complex numbers, where the norm of an element is taken to be its absolute value.
     
-    \item \label{ex:norm 2}
+    \item\label{ex:norm 2}
     The vector spaces $\bR^n$ and $\bC^n$, consisting of all $n$-tuples of real or complex numbers, with the norm of an $n$-tuple, $(s_1,\dots,s_n)$, defined by $$\norm{(s_1,\dots,s_n)}=\br{\sum_{i=1}^n|s_i|^2}^{1/2}.$$ This norm is called the Euclidean norm.
     
-    \item \label{ex:norm 3}
+    \item\label{ex:norm 3}
     The same vector spaces as in example \ref{ex:norm 2} above, but with the norm defined by $$\norm{(s_1,\dots,s_n)}=\sum_{i=1}^n|s_i|.$$
     
     \item The same vector spaces as in example \ref{ex:norm 2} and \ref{ex:norm 3} above, but with the norm defined by $$\norm{(s_1,\dots,s_n)}=\max\brc{|s_1|,\dots,|s_n|}.$$
     
-    \item \label{ex:norm last}
+    \item\label{ex:norm last}
     Let $X$ be a topological space, and let $C(X)$ denote the vector space of all complex-valued (or real-valued) bounded functions on $X$, with the norm of an element $f\in C(X)$ defined by $$\norm{f}=\sup\brc{|f(x)|:x\in X}.$$ If, instead, we choose one fixed point, $x_0$, of $X$, and define $\norm{\imarg}$ by $$\norm{f}=|f(x_0)|,$$ then we obtain an example of a seminorm on $C(X)$.
     
-    \item \label{ex:norm non banach}
+    \item\label{ex:norm non banach}
     Let $X$ be the closed unit interval, $[0,1]$, so that $C(X)$ is the vector space of all continuous functions on $[0,1]$ (real valued if desired), and define the norm of an element, $f$, of $C(X)$ to be $$\norm{f}=\int_0^1|f(x)|\dd{x},$$ where the integral is a Riemann integral.
 \end{enumerate}
 \end{examples}
@@ -49,7 +48,7 @@ A norm, $\norm{\imarg}$, on a vector space $V$ can always be used to define a me
 It follows from the above considerations that every normed space is a metric space, when we equip it with the metric obtained from its norm. We can thus discuss open sets, convergence of sequences, Cauchy sequences, completeness, compactness, etc., in a normed space. In later chapters, when we do mention such concepts in relation to a normed space, it will always be understood that they are defined with respect to the metric obtained from the norm of the normed space. In particular, whenever we speak of the topology of a normed space we will always mean the collection of all its subsets which are open with respect to the metric obtained from its norm.
 
 \begin{definition}
-A \underline{Banach space} is a normed space which is complete (with respect to the metric obtained from its norm).
+A \defline{Banach space} is a normed space which is complete (with respect to the metric obtained from its norm).
 \end{definition}
 
 In other words, a Banach apace is a normed space which has the property that every Cauchy sequence of elements of the space has a limit.
@@ -57,13 +56,17 @@ In other words, a Banach apace is a normed space which has the property that eve
 
 \begin{examples}
 \begin{enumerate}
-    \item \label{ex:banach 1} The reader should have little difficulty in verifying that the normed spaces described in Examples \ref{ex:norm 1} through \ref{ex:norm last} are, in fact, Banach spaces.
+    \item\label{ex:banach 1}
+    The reader should have little difficulty in verifying that the normed spaces described in Examples \ref{ex:norm 1} through \ref{ex:norm last} are, in fact, Banach spaces.
     
-    \item \label{ex:banach non ex} However, the reader should be able to convince themselves that the normed space described in Example \ref{ex:norm non banach} is not a Banach space. In fact, one of the principle results of the theory of the Lebesgue integral is to give a useful description of the (metric space) completion of the normed space of this example.
+    \item\label{ex:banach non ex}
+    However, the reader should be able to convince themselves that the normed space described in Example \ref{ex:norm non banach} is not a Banach space. In fact, one of the principle results of the theory of the Lebesgue integral is to give a useful description of the (metric space) completion of the normed space of this example.
     
-    \item \label{ex:banach 2} Let $\ell^1$ denote the vector space of all complex-valued sequences, $\brc{s_i}_{i=1}^\infty$, which have the property that $\sum_{i=1}^\infty|s_i|$ is finite, and define the norm of any such sequence to be this sum.
+    \item\label{ex:banach 2}
+    Let $\ell^1$ denote the vector space of all complex-valued sequences, $\brc{s_i}_{i=1}^\infty$, which have the property that $\sum_{i=1}^\infty|s_i|$ is finite, and define the norm of any such sequence to be this sum.
     
-    \item \label{ex:banach 3} If $X$ is any set, then we will let $\ell^\infty(X)$ denote the vector space of all bounded complex-valued functions on $X$, and define the norm of an element, $f$, of $\ell^\infty(X)$ to be $$\norm{f}=\sup\brc{|f(x)|:x\in X}.$$ If $X$ is viewed as being a metric space with the discrete metric, then this example is a special case of Example \ref{ex:norm last}. If $X$ is the set $\bN$ of positive integers, then we will write just $\ell^\infty$ instead of $\ell^\infty(\bN)$. Thus $\ell^\infty$ is the space of all bounded sequences.
+    \item\label{ex:banach 3}
+    If $X$ is any set, then we will let $\ell^\infty(X)$ denote the vector space of all bounded complex-valued functions on $X$, and define the norm of an element, $f$, of $\ell^\infty(X)$ to be $$\norm{f}=\sup\brc{|f(x)|:x\in X}.$$ If $X$ is viewed as being a metric space with the discrete metric, then this example is a special case of Example \ref{ex:norm last}. If $X$ is the set $\bN$ of positive integers, then we will write just $\ell^\infty$ instead of $\ell^\infty(\bN)$. Thus $\ell^\infty$ is the space of all bounded sequences.
 \end{enumerate} 
 \end{examples}
 
