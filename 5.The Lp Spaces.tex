@@ -11,8 +11,7 @@ For $0<p<\infty$ we will denote the set of all $B$-valued $\mu$-measurable funct
 
 As this definition suggests, we will show that $\cL^p$ is a vector space for $1 \leq p<\infty$ and that $\norm{\imarg}_p$ is a seminorm on this vector space. (For $0<p<1$, $\cL^p$ is still a vector space, but $\norm{\imarg}_p$ is no longer a norm, although $\norm{\imarg}_p^p$ can be used to define an interesting metric on $\cL^p$. We will not consider this case further).
 
-\begin{proposition}
-\label{prop:zero Lp norm}
+\begin{proposition}\label{prop:zero Lp norm}
 If $f\in\cL^p$, then $\norm{f}_p=0$ iff $f=0$ a.e.
 \end{proposition}
 
@@ -22,8 +21,7 @@ If $\norm{f}_p=0$ then $\int\norm{f(x)}^p\dd|\mu|(x)=0$ so that by Proposition \
 
 It is considerably more difficult to prove that $\cL^p$ is a vector space and that $\norm{\imarg}_p$ is a seminorm than was the case for $\norm{\imarg}_1$. The difficulty lies in proving the triangle inequality for $\norm{\imarg}_p$. We will need the next few results in order to prove it.
 
-\begin{lemma}
-\label{lem:pq inequality}
+\begin{lemma}\label{lem:pq inequality}
 If $p>1,q>1$ and $(1/p)+(1/q)=1$, then for any positive real numbers $r$ and $s$ we have $$rs\leq(r^p/p)+(s^q/q).$$
 \end{lemma}
 
@@ -31,8 +29,7 @@ If $p>1,q>1$ and $(1/p)+(1/q)=1$, then for any positive real numbers $r$ and $s$
 Define a function $k$ by $k(t)=(t^p/p)+(t^{-q}/q)$ for all $t>0$. Then the derivative, $k'$, of $k$ is $k'(t)=t^{p-1}-t^{-q-1}$. Now $k'(1)=0$, so $k$ has a critical point at $t=1$. Furthermore, it is clear that if $t>1$ then $k'(t)>0$, whereas if $0<t<1$ then $k'(t)<0$. Thus $k$ has an absolute minimum at $t=1$. But $k(1)=1$, and so for every $t>0$ we have $1\leq(t^p/p)+(t^{-q}/q)$. Setting $t=r^{1/q}/s^{1/p}$ we obtain $1\leq r^{p/q}/ps+s^{q/p}/qr$, so that $rs\leq r^{(p/q)+1}+s^{(q/p)+1}=r^p/p+s^q/q$.
 \end{proof}
 
-\begin{theorem}[H\"older's inequality]
-\label{thm:holders}
+\begin{theorem}[H\"older's inequality]\label{thm:holders}
 Suppose that $p>1, q>1$, and $1/p+1/q=1$. If $f\in\cL^p$ and $g\in\cL^q$, where $g$ is $B$-valued and $f$ is scalar valued, then $fg\in\cL^1$ and $\norm{fg}_1\leq\norm{f}_p\norm{g}_q$.
 \end{theorem}
 
@@ -42,8 +39,7 @@ We have seen earlier that $fg$ is measurable. If either $f$ or $g=0$ a.e. then t
 
 By using H\"older's inequality, we can prove the triangle inequality for the $L^p$-norm.
 
-\begin{theorem}[Minkowski's inequality]
-\label{thm:minkowski inequality}
+\begin{theorem}[Minkowski's inequality]\label{thm:minkowski inequality}
 If $1<p<\infty$ and if $f$ and $g$ are in $\cL^p$, then $f+g\in\cL^p$ and $\norm{f+g}_p\leq\norm{f}_p+\norm{g}_p$.
 \end{theorem}
 
@@ -91,8 +87,7 @@ Convergence with respect to the $L^p$-norm will be called \defline{convergence i
 
 In analogy with the situation for $\cL^1$ (see Proposition \ref{prop:integrable in mean implies measure}) we have:
 
-\begin{proposition}
-\label{prop:p mean implies in measure}
+\begin{proposition}\label{prop:p mean implies in measure}
 A $p$-mean Cauchy sequence of functions in $\cL^p$ is Cauchy in measure. A sequence of functions in $\cL^p$ which converges to a function $f\in\cL^p$ in $p$-mean also converges to $f$ in measure.
 \end{proposition}
 
@@ -120,8 +115,7 @@ Now $\norm{f(x)-f_n(x)}^p=\lim_m\norm{f_m(x)-f_n(x)}^p$ a.e., and so we can appl
 \end{align*} Because the sequence $f_n$ is Cauchy in $p$-mean, the limit on the right is finite, and so $\norm{f(\imarg)-f_n(\imarg)}^p$ is in $L^p$. Hence $f\in\cL^p$. It is also clear from the above inequality that $f_n$ converges to $f$ in $p$-mean.
 \end{proof}
 
-\begin{corollary}
-\label{cor:converge in p mean is inside Lp}
+\begin{corollary}\label{cor:converge in p mean is inside Lp}
 If $f_n$ is a $p$-mean Cauchy sequence of functions in $\cL^p$ which converges to a function $f$ a.e., then $f\in\cL^p$ and $f_n$ converges to $f$ in $p$-mean.
 \end{corollary}
 
@@ -129,8 +123,7 @@ If $f_n$ is a $p$-mean Cauchy sequence of functions in $\cL^p$ which converges t
 A subsequence of the $f_n$ converges in $p$-mean and a.e. to a function in $\cL^p$, which must be equal to $f$ a.e.
 \end{proof}
 
-\begin{theorem}
-\label{thm:ISF dense in Lp}
+\begin{theorem}\label{thm:ISF dense in Lp}
 The ISF are dense in $\cL^p$.
 \end{theorem}
 
@@ -152,8 +145,7 @@ It is clear that $\norm{f(x)}\leq g(x)$ a.e. and so $\norm{f(x)}^p \leq g(x)^p$ 
 
 We generalize next the Monotone Convergence Theorem.
 
-\begin{theorem}[The Monotone Convergence Theorem]
-\label{thm:mct for Lp}
+\begin{theorem}[The Monotone Convergence Theorem]\label{thm:mct for Lp}
 Let $f_n$ be a sequence of real-valued functions in $\cL^p$ which is non-decreasing a.e. (that is, for each $n$ we have $f_n(x)\geq f_{n-1}(x)$ a.e.). If the sequence of the $L^p$-norms of the $f_n$ is bounded, that is, if there is a constant, $c$, such that $\norm{f_n}_p\leq c$ for all $n$, then $f_n$ is a $p$-mean Cauchy sequence, and there exists an $f\in\cL^p$ such that $f_n$ converges to $f$ a.e. and in $p$-mean.
 \end{theorem}
 
@@ -181,22 +173,22 @@ We conclude this section with one more convergence theorem (of which the Lebesgu
 \begin{theorem}
 Let $f\in\cL^p$ and let $f_n$ be a sequence of functions in $\cL^p$.
 \begin{enumerate}[label=\Roman*),ref=\Roman*)]
-    \item \label{thm:cond:converge p mean}
+    \item\label{thm:cond:converge p mean}
     If $f_n$ converges to $f$ in $p$-mean, then
     \begin{enumerate}[label=\arabic*),ref=\arabic*)]
-        \item \label{thm:item:indef int of p power uniform abs cts}
+        \item\label{thm:item:indef int of p power uniform abs cts}
         the indefinite integrals with respect to $|\mu|$ of the functions $\norm{f_n(\imarg)}^p$ are uniformly absolutely $\mu$-continuous, that is, for every $\ep>0$ there is a $\delta>0$ such that if $|\mu|(E)<\delta$, then $\int_E\norm{f_n(x)}^p\dd|\mu|(x)<\ep$ for all $n$, and
         
-        \item \label{thm:item:p power small outside finite set}
+        \item\label{thm:item:p power small outside finite set}
         for any $\ep>0$ there is a fixed measurable set $E$ of finite $|\mu|$-measure such that $\int_{X\sd E}\norm{f(x)}^p\dd|\mu|(x)<\ep$ for all $n$.
     \end{enumerate}
     
-    \item \label{thm:cond:converge p mean converse}
+    \item\label{thm:cond:converge p mean converse}
     Conversely, if \ref{thm:item:indef int of p power uniform abs cts} and \ref{thm:item:p power small outside finite set} hold and either
     \begin{enumerate}[label=3\alph*),ref=3\alph*)]
-        \item \label{thm:item:vitali thm}
+        \item\label{thm:item:vitali thm}
         $f_n$ converges to $f$ a.e., or
-        \item \label{thm:item:Lp convergence thm}
+        \item\label{thm:item:Lp convergence thm}
         $f_n$ converges to $f$ in measure, 
     \end{enumerate}
     then $f_n$ converges to $f$ in $p$-mean.
@@ -250,8 +242,7 @@ Let $(X,S,\mu)$ be a measure space, and define a function, $d$, on pairs of elem
 Only the triangle inequality is not entirely obvious. But suppose elements $E,F$ and $G$ of $S$ are given. Then $(E\sd F)\subseteq(E\sd G)\cup(G\sd F)$ and $(F\sd E)\subseteq(F\sd G)\cup(G\sd E)$, so that $E\symd F\subseteq(E\symd G)\cup(G\symd F)$. Thus $d(E,F)\leq d(E,G)+d(G,F)$.
 \end{proof}
 
-\begin{proposition}
-\label{prop:set diff union are cts}
+\begin{proposition}\label{prop:set diff union are cts}
 The operations of forming the union of any two elements of $S_f$ and of forming the difference of elements of $S_f$ are continuous with respect to the semimetric $d$.
 \end{proposition}
 
@@ -264,8 +255,7 @@ Similarly it is easily seen that $$(E\sd E_1)\symd(F\sd E_1)\subseteq E\symd F\t
 
 The various density theorems in this section are all based on the following theorem.
 
-\begin{theorem}
-\label{thm:closure of subring}
+\begin{theorem}\label{thm:closure of subring}
 Let $(X,S,\mu)$ be a finite measure space, and let $R$ be a subring of $S$. Then the closure of $R$ in $S$ with respect to the semimetric $d$ defined above is a $\sigma$-ring. In particular, if $R$ generates $S$, then $R$ is dense in $S$.
 \end{theorem}
 
@@ -275,8 +265,7 @@ Let $\overline{R}$ denote the closure of $R$ in $S$. It suffices to show that $\
 
 The key to applying the above theorem to the $L^p$ spaces is to remark that if $E$ and $F$ are any two elements of $S_f$, then $|\idf{E}(\imarg)-\idf{F}(\imarg)|=\idf{E\symd F}$, so that $\norm{\idf{E}-\idf{F}}_p=\br{\int\idf{E\symd F}\dd|\mu|}^{1/p}=(d(E,F))^{1/p}$. Using this remark we will prove:
 
-\begin{theorem}
-\label{thm:R ISF dense in Lp}
+\begin{theorem}\label{thm:R ISF dense in Lp}
 Let $(X,S,\mu)$ be a measure space, and let $R$ be a subring of $S_f$ which generates $S$. Then for $1\leq p<\infty$ the subspace of $R$-simple $B$-valued functions is dense in $\cL^p(X,S,\mu,B)$.
 \end{theorem}
 
@@ -289,8 +278,7 @@ Then $E$ is contained in the $\sigma$-ring generated by $R_F$ according to Propo
 Suppose now that $E$ is an arbitrary element of $S_f$. Since $R$ generates $S$, there is a sequence, $F_n$, of elements of $R$ whose union contains $E$. Since $R$ is a ring we may assume that the $F_n$ are increasing. Then $F_n\cap E$ converges up to $E$, and so, since $E$ has finite measure, $F_n\cap E$ converges to $E$ with respect to the semimetric $d$ (by the same argument as was used at the end of the proof of Theorem \ref{thm:closure of subring}). Thus $\idf{F_n\cap E}$ converges to $\idf{E}$ in the $L^p$-norm. But according to the results of the previous paragraph each $\idf{F_n\cap E}$ can be approximated in the $L^p$-norm by characteristic functions of elements of $R$.
 \end{proof}
 
-\begin{corollary}
-\label{cor:lclosed ropen ISF dense in Lp}
+\begin{corollary}\label{cor:lclosed ropen ISF dense in Lp}
 Let $\mu$ be any Borel measure on the real line, and let $R$ be the ring of finite disjoint unions of finite left-closed right-open intervals. Then for $1\leq p<\infty$ the $R$-simple $B$-valued functions are dense in $\cL^p(\mu, B)$
 \end{corollary}
 
@@ -298,8 +286,7 @@ Let $\mu$ be any Borel measure on the real line, and let $R$ be the ring of fini
 Let $f$ be a vector-valued function on a topological space $X$. By the \defline{support} of $f$ is meant the smallest closed set outside of which the function everywhere has value $0$.
 \end{definition}
 
-\begin{theorem}
-\label{thm:cpct support dense in Lp}
+\begin{theorem}\label{thm:cpct support dense in Lp}
 Let $\mu$ be any Borel measure on the real line. Then for $1\leq p<\infty$ the continuous $B$-valued functions of compact support are dense in $\cL^p(\mu, B)$
 \end{theorem}
 
