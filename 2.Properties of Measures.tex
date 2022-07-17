@@ -43,7 +43,7 @@ For example, this corollary shows that the two ways in which one might define Le
 In Chapter \ref{ch:measures}, most of the results which we proved involved non-negative measures. The purpose of this section is to define the total variation of an arbitrary measure. This gives us a way to obtain a non-negative measure which is closely related to a given arbitrary measure, and this will enable us to extend some of our earlier definitions and results about non-negative measures to arbitrary measures.
 
 \begin{definition}
-If $\mu$ is an arbitrary measure on a $\sigma$-ring $S$, then the \defline{total variation}, $|\mu|$, of $\mu$ is defined by $$|\mu|(E)=\sup\brc{\sum_{i=1}^n\norm{\mu(E_i)}: E=\bigdu_{i=1}^nE_i, E_i\in S}$$ for each $E \in S$. (Of course, if $\mu$ is extended real-valued, we let $\norm{\infty}=\infty$.)
+If $\mu$ is an arbitrary measure on a $\sigma$-ring $S$, then the \defline{total variation}, $|\mu|$, of $\mu$ is defined by \[|\mu|(E)=\sup\brc{\sum_{i=1}^n\norm{\mu(E_i)}: E=\bigdu_{i=1}^nE_i, E_i\in S}\] for each $E \in S$. (Of course, if $\mu$ is extended real-valued, we let $\norm{\infty}=\infty$.)
 \end{definition}
 
 
@@ -54,7 +54,7 @@ The total variation, $|\mu|$, of a measure $\mu$ is a non-negative measure.
 \begin{proof}
 It is clear from its definition that $|\mu|$ is a non-negative extended real valued function, on $S$. We remark that it is also clear that $|\mu|$ is monotone, that is, that if $E \subseteq F$, where $E, F\in S$, then $|\mu|(E)\leq|\mu|(F)$. To prove the theorem we need to show that $|\mu|$ is countably additive.
 
-Suppose first that $E=F\du G$ with $F,G\in S$. If $F=\bigdu_{i=1}^mF_i$ and $G=\bigdu_{j=1}^nG_j$, then $E=\bigdu_{i=1}^mF_i\du\bigdu_{j=1}^nG_j$, and so $$|\mu|(E)\geq\sum_{i=1}^m\norm{\mu(F_i)}+\sum_{j=1}^n\norm{\mu(G_j)}.$$ It follows that $|\mu|(E)\geq|\mu|(F)+|\mu|(G)$. By induction it follows that if $E=\bigdu_{i=1}^nE_i$, then $|\mu|(E)\geq\sum_{i=1}^n|\mu|(E_i)$.
+Suppose first that $E=F\du G$ with $F,G\in S$. If $F=\bigdu_{i=1}^mF_i$ and $G=\bigdu_{j=1}^nG_j$, then $E=\bigdu_{i=1}^mF_i\du\bigdu_{j=1}^nG_j$, and so \[|\mu|(E)\geq\sum_{i=1}^m\norm{\mu(F_i)}+\sum_{j=1}^n\norm{\mu(G_j)}.\] It follows that $|\mu|(E)\geq|\mu|(F)+|\mu|(G)$. By induction it follows that if $E=\bigdu_{i=1}^nE_i$, then $|\mu|(E)\geq\sum_{i=1}^n|\mu|(E_i)$.
 
 Suppose now that $E=\bigdu_{i=1}^\infty E_i$. Then $E\supseteq\bigdu_{i=1}^nE_i$ for all $n$, and so, since $|\mu|$ is monotone, $|\mu|(E)\geq|\mu|\br{\bigdu_{i=1}^nE_i}=\sum_{i=1}^n|\mu|(E_i)$ for all $n$. Thus $|\mu|(E)\geq\sum_{i=1}^\infty|\mu|(E_i)$.
 
@@ -126,7 +126,7 @@ By Proposition \ref{prop:bounded measure are bounded} we know that $\sup\brc{\no
 
 In view of Proposition \ref{prop:meas set it lives on}, it is natural to extend a bounded measure $\mu$ to a measure $\mu'$ on the $\sigma$-field of all locally measurable sets $F$ by setting $\mu'(F)=\mu(F\cap E)$, where $E$ carries $\mu$. It is then easily seen that if $\mu$ is $\sigma$-finite so is $\mu'$. Thus, in a sense, the only time we must work with $\sigma$-rings instead of $\sigma$-fields in order to preserve $\sigma$-finiteness is when we have an extended real valued measure.
 
-If $\mu$ is a non-negative measure then it too can be extended to the $\sigma$-field of locally measurable sets $F$ by letting $$\mu'(F)=\sup\brc{\mu(E):E\subseteq F,E\in\text{domain }\mu}.$$ However, in general this $\mu'$ will not be $\sigma$-finite even if $\mu$ is $\sigma$-finite, and so it is usually not useful to make this extension. 
+If $\mu$ is a non-negative measure then it too can be extended to the $\sigma$-field of locally measurable sets $F$ by letting \[\mu'(F)=\sup\brc{\mu(E):E\subseteq F,E\in\text{domain }\mu}.\] However, in general this $\mu'$ will not be $\sigma$-finite even if $\mu$ is $\sigma$-finite, and so it is usually not useful to make this extension. 
 
 \section{Convergence Properties of Measures}
 
@@ -165,7 +165,7 @@ A measure $\mu$ is said to be of \defline{bounded variation} if $|\mu|$ is a bou
 
 \item Compute the total variations of those set functions in Exercise \ref{exer:ex of measures} of Chapter \ref{ch:measures} which are measures. How does you result compare with Exercise \ref{exer:total var of measure in banach} above?
 
-\item Let $B$ be a Banach space and let $(X, S)$ be a measurable space. Then the collection of $B$-valued measures on $S$ forms a vector space when $\mu+\nu$ is defined by $(\mu+\nu)(E)=\mu(E)+\nu(E)$ for all $E \in S$, and $\alpha\mu$ is defined by $(\alpha \mu)(E)=\alpha(\mu(E))$ for $E \in S$. (The field of scalars for the vector space of measures is taken to be the same as the field scalars for $B$. Note that we cannot form a vector space in this way if we admit measures taking the value $+\infty$.) Let $M$ be the collection of all $B$-valued measures on $S$ which are of bounded variation. It is easy to see that $M$ is a subspace of the vector space of all $B$-valued measures on $S$. Furthermore, we can define a function $\norm{\imarg}$ from $M$ to $\bR$ by $$\norm{\mu}=\sup\brc{|\mu|(E):E\in S}.$$ Show that $\norm{\imarg}$ is a norm on $M$. (This is called the total variation norm.), and show that $(M,\norm{\imarg})$ is a Banach space. (Be sure to show that the set functions which you claim are measures really are.)
+\item Let $B$ be a Banach space and let $(X, S)$ be a measurable space. Then the collection of $B$-valued measures on $S$ forms a vector space when $\mu+\nu$ is defined by $(\mu+\nu)(E)=\mu(E)+\nu(E)$ for all $E \in S$, and $\alpha\mu$ is defined by $(\alpha \mu)(E)=\alpha(\mu(E))$ for $E \in S$. (The field of scalars for the vector space of measures is taken to be the same as the field scalars for $B$. Note that we cannot form a vector space in this way if we admit measures taking the value $+\infty$.) Let $M$ be the collection of all $B$-valued measures on $S$ which are of bounded variation. It is easy to see that $M$ is a subspace of the vector space of all $B$-valued measures on $S$. Furthermore, we can define a function $\norm{\imarg}$ from $M$ to $\bR$ by \[\norm{\mu}=\sup\brc{|\mu|(E):E\in S}.\] Show that $\norm{\imarg}$ is a norm on $M$. (This is called the total variation norm.), and show that $(M,\norm{\imarg})$ is a Banach space. (Be sure to show that the set functions which you claim are measures really are.)
 
 \item Two measures $\mu$ and $\nu$ on $(X, S)$ are said to be \defline{mutually singular} if there are disjoint locally measurable sets $E$ and $F$ such that $E$ carries $\mu$ and $F$ carries $\nu$.
 \begin{enumerate}

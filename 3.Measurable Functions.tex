@@ -92,7 +92,7 @@ Let $f$ be a function from $X$ to $B$. Then $f$ is $S$-measurable if and only if
 \begin{proof}
 Suppose that $f$ is an $S$-measurable function. Then there exists a sequence, $f_n$, of simple $S$-measurable functions which converges to $f$ pointwise. For each $n$ let $\brc{b_1^n,\dots,b_{k_n}^n}$ be the range of $f_n$, and let $K$ be the closure of the set of all the $b_i^n$ for all $n$ and all $i$. Clearly $K$ is separable and $f(X)\subseteq K$, and so $f(X)$ is separable. Now let $U$ be an open ball, or, in fact, any open subset of $B$. We need to show that $f^{-1}(U)\cap\car{f}\in S$. But $f^{-1}(U)\cap\car{f}=f^{-1}(U\sd\brc{0})$. Thus we need merely to show that if $U$ is any open set not containing 0, then $f^{-1}(U)\in S$. Now this is obviously true for simple $S$-measurable functions. It follows then from Lemma \ref{lem:preimage of open set as sigma union intersection} that it is true for $f$, since each $U_n$ of that lemma will also be an open set not containing 0.
 
-Conversely, suppose that $f$ satisfies properties \ref{thm:item:sep range} and \ref{thm:item:car}. Then we can choose a sequence, $b_i$, of elements of $B$ which is dense in $f(X)$. We wish to define a sequence, $f_n$, of simple $S$-measurable functions which converges pointwise to $f$. We will define the $f_n$ so that in fact $f_n$ will have its values in $\brc{0,b_1,\dots,b_n}$ for each $n$. In order to do this, let $$C_{ij}=\brc{x\in X:x\in\car{f}\text{ and }\norm{f(x)-b_i}<1/j}$$ for all positive integers $i$ and $j$. Note that by property \ref{thm:item:car} each $C_{ij}$ is in $S$. We might at first glance want to define $f_n$ to have value $b_i$ on $C_{ij}$, but for this to make sense we must first disjointize the $C_{ij}$. However, in doing this we must be careful to keep as much of the $C_{ij}$ for which $j$ is large, since these are the sets on which $f$ is most closely approximated. To accomplish this we let $E_{i j}^n=C_{ij}\sd\bigcup_{(i,j)<(k,l)\leq(n,n)}C_{kl}$ for $1\leq i,j\leq n$, where the pairs $(i,j)$ are totally ordered ``antilexicographically'', that is, we say that $(i,j)\leq(k,l)$ if $j<l$, or if $j=l$ and $i\leq k$. Then for each fixed $n$ the sets $E_{i j}^n$ are disjoint and $E_{ij}^n\subseteq C_{ij}$ for all $i$ and $j$. Let $f_n=\sum_{i,j=1}^nb_i\idf{E_{ij}^n}$. We show that the sequence $f_n$ converges to $f$ pointwise. Thus suppose we are given $x\in X$ and $\ep>0$. We will assume that $x\in\car{f}$, since if $f(x)=0$ then $f_n(x)=0$ for all $n$, and so we are done. Choose $m_0$ such that $1/m_0<\ep$, and choose $i_0$ so that $\norm{f(x)-b_{i_0}}<1/m_0$. If we let $N=\max\brc{i_0, m_0}$, then we claim that $\norm{f(x)-f_n(x)}<\ep$ whenever $n>N$. To see this we note that $x\in C_{i_0m_0}$ by the definition of $i_0$ and $m_0$, and so if $n>N$, then $x\in E^n_{kl}$, where $(k,l)=\max\brc{(i,j):x\in C_{ij},(i_0,m_0)\leq(i,j)\leq(n, n)}$. It follows that $f_n(x)=b_k$ and that $\norm{f(x)-b_k}<1/l\leq 1/m_0<\ep$. Thus $\norm{f(x)-f_n(x)}<\ep$.
+Conversely, suppose that $f$ satisfies properties \ref{thm:item:sep range} and \ref{thm:item:car}. Then we can choose a sequence, $b_i$, of elements of $B$ which is dense in $f(X)$. We wish to define a sequence, $f_n$, of simple $S$-measurable functions which converges pointwise to $f$. We will define the $f_n$ so that in fact $f_n$ will have its values in $\brc{0,b_1,\dots,b_n}$ for each $n$. In order to do this, let \[C_{ij}=\brc{x\in X:x\in\car{f}\text{ and }\norm{f(x)-b_i}<1/j}\] for all positive integers $i$ and $j$. Note that by property \ref{thm:item:car} each $C_{ij}$ is in $S$. We might at first glance want to define $f_n$ to have value $b_i$ on $C_{ij}$, but for this to make sense we must first disjointize the $C_{ij}$. However, in doing this we must be careful to keep as much of the $C_{ij}$ for which $j$ is large, since these are the sets on which $f$ is most closely approximated. To accomplish this we let $E_{i j}^n=C_{ij}\sd\bigcup_{(i,j)<(k,l)\leq(n,n)}C_{kl}$ for $1\leq i,j\leq n$, where the pairs $(i,j)$ are totally ordered ``antilexicographically'', that is, we say that $(i,j)\leq(k,l)$ if $j<l$, or if $j=l$ and $i\leq k$. Then for each fixed $n$ the sets $E_{i j}^n$ are disjoint and $E_{ij}^n\subseteq C_{ij}$ for all $i$ and $j$. Let $f_n=\sum_{i,j=1}^nb_i\idf{E_{ij}^n}$. We show that the sequence $f_n$ converges to $f$ pointwise. Thus suppose we are given $x\in X$ and $\ep>0$. We will assume that $x\in\car{f}$, since if $f(x)=0$ then $f_n(x)=0$ for all $n$, and so we are done. Choose $m_0$ such that $1/m_0<\ep$, and choose $i_0$ so that $\norm{f(x)-b_{i_0}}<1/m_0$. If we let $N=\max\brc{i_0, m_0}$, then we claim that $\norm{f(x)-f_n(x)}<\ep$ whenever $n>N$. To see this we note that $x\in C_{i_0m_0}$ by the definition of $i_0$ and $m_0$, and so if $n>N$, then $x\in E^n_{kl}$, where $(k,l)=\max\brc{(i,j):x\in C_{ij},(i_0,m_0)\leq(i,j)\leq(n, n)}$. It follows that $f_n(x)=b_k$ and that $\norm{f(x)-b_k}<1/l\leq 1/m_0<\ep$. Thus $\norm{f(x)-f_n(x)}<\ep$.
 \end{proof}
 
 \begin{corollary}\label{cor:characterization of meas func}
@@ -158,7 +158,7 @@ Let $\mu$ be a non-negative measure on a $\sigma$-ring $S$. If $E\in S$ and $\mu
 \end{theorem}
 
 \begin{proof}
-By removing a null set, we can assume that $f_n$ converges to $f$ everywhere on $E$. For any positive integers $m$ and $n$ let $$E_n^m=\brc{x\in E:\norm{f(x)-f_k(x)}\geq 1/m\text{ for some }k\geq n}.$$ Since each $f_n$, and so $f$, is $\mu$-measurable, it is easily seen by using Proposition \ref{prop:sum product of meas function} and the easy half of Corollary \ref{cor:characterization of meas func} that each $E_n^m$ is in $S \du\nring{\mu}$. Now for fixed $m$ we have $E_n^m\downarrow_n\varnothing$ because $f_n$ converges to $f$. Since $E$, and thus the $E_n^m$, have finite measure, it follows from Proposition \ref{prop:increase limit of measures} that for fixed $m$ the sequence $\mu(E_n^m)$ converges to $0$ as $n$ goes to $\infty$.
+By removing a null set, we can assume that $f_n$ converges to $f$ everywhere on $E$. For any positive integers $m$ and $n$ let \[E_n^m=\brc{x\in E:\norm{f(x)-f_k(x)}\geq 1/m\text{ for some }k\geq n}.\] Since each $f_n$, and so $f$, is $\mu$-measurable, it is easily seen by using Proposition \ref{prop:sum product of meas function} and the easy half of Corollary \ref{cor:characterization of meas func} that each $E_n^m$ is in $S \du\nring{\mu}$. Now for fixed $m$ we have $E_n^m\downarrow_n\varnothing$ because $f_n$ converges to $f$. Since $E$, and thus the $E_n^m$, have finite measure, it follows from Proposition \ref{prop:increase limit of measures} that for fixed $m$ the sequence $\mu(E_n^m)$ converges to $0$ as $n$ goes to $\infty$.
 
 Let $\ep>0$ be given. For each $m$ choose $n(m)$ such that $\mu(E_{n(m)}^m)<\ep/2^m$, and let $F=E\sd\bigcup_{m=1}^\infty E_{n(m)}^m$. Then $\mu(E\sd F)\leq\sum_{m=1}^\infty\mu(E_{n(m)}^m)<\ep$. We show that $f_n$ converges to $f$ uniformly on $F$. Given $\delta>0$, choose $m$ so that $1/m<\delta$, and let $N=n(m)$. Now if $x\in F$, then $x\notin E_N^m$, and so for $k\geq N$ we have $\norm{f(x)-f_k(x)}<1/m<\delta$.
 
@@ -201,7 +201,7 @@ For each integer $m$ choose $F_m\subset E$ such that $\mu^*(E\sd F_m)<1/m$, and 
 
 In this section we study another type of convergence for functions, which will be of considerable use later.
 \begin{definition}
-Let $\mu$ be a non-negative measure on $(X,S)$ with corresponding outer measure $\mu^*$. A sequence, $f_n$, of arbitrary functions on $X$ is said to converges to a function $f$ \defline{in measure} on $E\subseteq X$ if the intersections of $E$ with $\car{f}$ and the $\car{f_n}$ are in the domain of $\mu^*$, and if for every $\ep>0$, $$\lim_{n\to+\infty}\mu^*(\brc{x\in E:\norm{f(x)-f_n(x)}\geq\ep})=0.$$
+Let $\mu$ be a non-negative measure on $(X,S)$ with corresponding outer measure $\mu^*$. A sequence, $f_n$, of arbitrary functions on $X$ is said to converges to a function $f$ \defline{in measure} on $E\subseteq X$ if the intersections of $E$ with $\car{f}$ and the $\car{f_n}$ are in the domain of $\mu^*$, and if for every $\ep>0$, \[\lim_{n\to+\infty}\mu^*(\brc{x\in E:\norm{f(x)-f_n(x)}\geq\ep})=0.\]
 \end{definition}
 
 Our first result shows that limits in measure are unique a.e.
@@ -216,7 +216,7 @@ Using the triangle inequality, we see that for any $\ep>0$ and $n$ we have
 &\brc{x\in E:\norm{f(x)-g(x)}\geq\ep}\\
 &\quad\subseteq\brc{x\in E:\norm{f(x)-f_n(x)}\geq\ep/2}\cup\brc{x\in E:\norm{g(x)-f_n(x)}\geq\ep/2}.
 \end{align*}
-Applying $\mu^*$ to both sides and letting $n$ go to $\infty$, we find that for each $\ep>0$ $$\mu^*(\brc{x\in E:\norm{f(x)-g(x)}\geq\ep})=0.$$ Since $\brc{x\in E:\norm{f(x)-g(x)}\neq0}=\bigcup_{m=1}^\infty\brc{x\in E:\norm{f(x)-g(x)}\geq1/m}$, we are done.
+Applying $\mu^*$ to both sides and letting $n$ go to $\infty$, we find that for each $\ep>0$ \[\mu^*(\brc{x\in E:\norm{f(x)-g(x)}\geq\ep})=0.\] Since $\brc{x\in E:\norm{f(x)-g(x)}\neq0}=\bigcup_{m=1}^\infty\brc{x\in E:\norm{f(x)-g(x)}\geq1/m}$, we are done.
 \end{proof}
 
 We leave the proof of the next proposition to the reader.
@@ -238,7 +238,7 @@ If $f_n$ converges a.u. to $f$ on $E$, and if the intersections of $E$ with $\ca
 \end{proposition}
 
 \begin{proof}
-Let $\delta>0$ be given, and choose $F\subseteq E$ so that $E\sd F$ is in the domain of $\mu^*$, $\mu^*(E\sd F)<\delta$, and $f_n$ converges to $f$ uniformly on $F$. Then for any $\ep>0$ choose $N$ so that $\norm{f(x)-f_n(x)}<\ep$ for all $n>N$ and for all $x\in F$. It follows that for any $n>N$ we have $$\mu^*(\brc{x\in E:\norm{f(x)-f_n(x)}\geq\ep})\leq\mu^*(E\sd F)<\delta.$$
+Let $\delta>0$ be given, and choose $F\subseteq E$ so that $E\sd F$ is in the domain of $\mu^*$, $\mu^*(E\sd F)<\delta$, and $f_n$ converges to $f$ uniformly on $F$. Then for any $\ep>0$ choose $N$ so that $\norm{f(x)-f_n(x)}<\ep$ for all $n>N$ and for all $x\in F$. It follows that for any $n>N$ we have \[\mu^*(\brc{x\in E:\norm{f(x)-f_n(x)}\geq\ep})\leq\mu^*(E\sd F)<\delta.\]
 \end{proof}
 
 \begin{corollary}
@@ -250,7 +250,7 @@ This follows from Egoroff's theorem and Proposition \ref{prop:au implies in meas
 \end{proof}
 
 \begin{definition}
-A sequence $f_n$ of functions is said to be \defline{Cauchy in measure} on $E\subseteq X$ if the intersection of $E$ with each $\car{f_n}$ is in the domain of $\mu^*$, and if for every $\ep>0$ $$\lim_{m,n\to+\infty}\mu^*(\brc{x\in X:\norm{f_m(x)-f_n(x)}\geq\ep})=0.$$
+A sequence $f_n$ of functions is said to be \defline{Cauchy in measure} on $E\subseteq X$ if the intersection of $E$ with each $\car{f_n}$ is in the domain of $\mu^*$, and if for every $\ep>0$ \[\lim_{m,n\to+\infty}\mu^*(\brc{x\in X:\norm{f_m(x)-f_n(x)}\geq\ep})=0.\]
 \end{definition}
 
 We now come to the most important completeness result of this chapter. It is the crux cf the proof that certain function spaces (the $L^p$ spaces) defined in Chapter \ref{ch:Lp spaces} are complete, and so are Banach spaces.
@@ -260,7 +260,7 @@ If a sequence, $f_n$, of functions is Cauchy in measure on $E\subseteq X$, then 
 \end{theorem}
 
 \begin{proof}
-We define the sequence of integers, $n_k$, by induction. Let $n_1=1$. For $k>1$ choose $n_k$ so that $n_k>n_{k-1}$ and so that if $m,n\geq n_k$, then $$\mu^*(\brc{x\in E:\norm{f_m(x)-f_n(x)}\geq2^{-k}})\leq 2^{-k}.$$ For each $k$ we let $g_k=f_{n_k}$, and we show that this subsequence is almost uniformly Cauchy on $E$. Given $\ep>0$, choose $K$ so that $\sum_{k=K}^\infty 2^{-k}=2^{-(k-1)}<\ep$. Let $F=E\sd\bigcup_{k=K}^\infty\brc{x\in E:\norm{g_k(x)-g_{k+1}(x)}\geq2^{-k}}$. Then by the choice of the $n_k$ we have $\mu^*(E\sd F)<\ep$. We must show that $g_k$ is uniformly Cauchy on $F$. Given $\delta>0$ choose $N$ so that $N\geq K$ and $2^{-(N-1)}<\delta$. Then for any $j>l>N$ and $x\in F$ we have
+We define the sequence of integers, $n_k$, by induction. Let $n_1=1$. For $k>1$ choose $n_k$ so that $n_k>n_{k-1}$ and so that if $m,n\geq n_k$, then \[\mu^*(\brc{x\in E:\norm{f_m(x)-f_n(x)}\geq2^{-k}})\leq 2^{-k}.\] For each $k$ we let $g_k=f_{n_k}$, and we show that this subsequence is almost uniformly Cauchy on $E$. Given $\ep>0$, choose $K$ so that $\sum_{k=K}^\infty 2^{-k}=2^{-(k-1)}<\ep$. Let $F=E\sd\bigcup_{k=K}^\infty\brc{x\in E:\norm{g_k(x)-g_{k+1}(x)}\geq2^{-k}}$. Then by the choice of the $n_k$ we have $\mu^*(E\sd F)<\ep$. We must show that $g_k$ is uniformly Cauchy on $F$. Given $\delta>0$ choose $N$ so that $N\geq K$ and $2^{-(N-1)}<\delta$. Then for any $j>l>N$ and $x\in F$ we have
 \begin{align*}
 &\norm{g_j(x)-g_l(x)}\\
 &\quad=\norm{g_j(x)-g_{j-1}(x)+g_{j-1}(x)-g_{j-2}(x)+\dots+g_{l+1}(x)-g_l(x)}\\
@@ -331,7 +331,7 @@ When working with $\mu$-measurable functions and when identifying functions whic
 \end{enumerate}
 
 \item\label{exer:essentially bounded}
-A measurable function on $X$ is said to be essentially bounded if $\er{f}{X}$ is a bounded set. Traditionally the vector space (why?) of essentially bounded functions with values in the Banach space $B$ is denoted by $\cL^\infty(X, B)$. A seminorm, $\norm{\imarg}_\infty$, is defined on $\cL^\infty(X, B)$ by $$\norm{f}_\infty=\sup\brc{\norm{b}: b\in\er{f}{X}}.$$
+A measurable function on $X$ is said to be essentially bounded if $\er{f}{X}$ is a bounded set. Traditionally the vector space (why?) of essentially bounded functions with values in the Banach space $B$ is denoted by $\cL^\infty(X, B)$. A seminorm, $\norm{\imarg}_\infty$, is defined on $\cL^\infty(X, B)$ by \[\norm{f}_\infty=\sup\brc{\norm{b}: b\in\er{f}{X}}.\]
 \begin{enumerate}
     \item Show that the set of functions, $f$, such that $\norm{f}_\infty=0$ is a subspace, $N$, of $\cL^\infty$. Show that if $\norm{f}_\infty=0$ then $f=0$. a.e.
     
@@ -342,7 +342,7 @@ A measurable function on $X$ is said to be essentially bounded if $\er{f}{X}$ is
     \item Show that if either $B=\bR$ or $B=\bC$ and if multiplication is defined in $L^\infty(X, B)$ to be pointwise multiplication, then $L^\infty(X, B)$ is a Banach algebra, that is, an algebra for which $\norm{fg}_\infty\leq\norm{f}_\infty\norm{g}_\infty$.
 \end{enumerate}
 
-\item Let $(X, S, \mu)$ be a measure space with $\mu$ finite and positive, and let $B$ be a fixed Banach space. Let $F$ be the vector space of all functions from $X$ to $B$, and define the distance between any two elements, $f$ and $g$, of $F$ to be $$d(f,g)=\inf_{\ep>0}\frac{\ep+\mu^*(\brc{x:\norm{g(x)-f(x)}\geq\ep})}{1+\ep+\mu^*(\brc{x:\norm{g(x)-f(x)}\geq\ep})}.$$
+\item Let $(X, S, \mu)$ be a measure space with $\mu$ finite and positive, and let $B$ be a fixed Banach space. Let $F$ be the vector space of all functions from $X$ to $B$, and define the distance between any two elements, $f$ and $g$, of $F$ to be \[d(f,g)=\inf_{\ep>0}\frac{\ep+\mu^*(\brc{x:\norm{g(x)-f(x)}\geq\ep})}{1+\ep+\mu^*(\brc{x:\norm{g(x)-f(x)}\geq\ep})}.\]
 Show that $d$ is a pseudometric on $F$ which defines convergence in measure, that is, a sequence, $f_n$, of elements of $F$ converges in measure to $f\in F$ iff $d(f_n, f)$ converges to 0. (It is a curious fact that the smallest convex set in $F$ containing any $d$-neighborhood of 0 is all of $F$ itself if, for example, $\mu$ is Lebesgue measure.)
 
 \item\label{exer:precpct range seq of simple func}

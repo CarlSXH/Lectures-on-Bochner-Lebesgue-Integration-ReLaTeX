@@ -6,7 +6,7 @@ Throughout this chapter we will assume as we did in Chapter \ref{ch:integration}
 In this section we define certain vector spaces of measurable functions called the $\cL^p$ spaces. For $1<p<\infty$ these spaces are equipped with a seminorm analogous to the $L^1$-norm on $\cL^1$. As was the case with $\cL^1$, we will see that if we identify functions of an $\cL^p$ space which agree a.e., then we obtain a normed space, which we will denote by $L^p$.
 
 \begin{definition}
-For $0<p<\infty$ we will denote the set of all $B$-valued $\mu$-measurable functions, $f$, such that $\norm{f(\imarg)}^p$ is integrable, by $\cL^p(X,S,\mu,B)$ (or suitable abbreviations thereof). We define a real-valued function, $\norm{\imarg}_p$, on $\cL^p$ by $$\norm{f}_p=\br{\int\norm{f(x)}^p\dd|\mu|(x)}^{1/p}.$$ For $1\leq p<\infty$ this function is called the \defline{$L^p$-norm}.
+For $0<p<\infty$ we will denote the set of all $B$-valued $\mu$-measurable functions, $f$, such that $\norm{f(\imarg)}^p$ is integrable, by $\cL^p(X,S,\mu,B)$ (or suitable abbreviations thereof). We define a real-valued function, $\norm{\imarg}_p$, on $\cL^p$ by \[\norm{f}_p=\br{\int\norm{f(x)}^p\dd|\mu|(x)}^{1/p}.\] For $1\leq p<\infty$ this function is called the \defline{$L^p$-norm}.
 \end{definition}
 
 As this definition suggests, we will show that $\cL^p$ is a vector space for $1 \leq p<\infty$ and that $\norm{\imarg}_p$ is a seminorm on this vector space. (For $0<p<1$, $\cL^p$ is still a vector space, but $\norm{\imarg}_p$ is no longer a norm, although $\norm{\imarg}_p^p$ can be used to define an interesting metric on $\cL^p$. We will not consider this case further).
@@ -22,7 +22,7 @@ If $\norm{f}_p=0$ then $\int\norm{f(x)}^p\dd|\mu|(x)=0$ so that by Proposition \
 It is considerably more difficult to prove that $\cL^p$ is a vector space and that $\norm{\imarg}_p$ is a seminorm than was the case for $\norm{\imarg}_1$. The difficulty lies in proving the triangle inequality for $\norm{\imarg}_p$. We will need the next few results in order to prove it.
 
 \begin{lemma}\label{lem:pq inequality}
-If $p>1,q>1$ and $(1/p)+(1/q)=1$, then for any positive real numbers $r$ and $s$ we have $$rs\leq(r^p/p)+(s^q/q).$$
+If $p>1,q>1$ and $(1/p)+(1/q)=1$, then for any positive real numbers $r$ and $s$ we have \[rs\leq(r^p/p)+(s^q/q).\]
 \end{lemma}
 
 \begin{proof}
@@ -34,7 +34,7 @@ Suppose that $p>1, q>1$, and $1/p+1/q=1$. If $f\in\cL^p$ and $g\in\cL^q$, where 
 \end{theorem}
 
 \begin{proof}
-We have seen earlier that $fg$ is measurable. If either $f$ or $g=0$ a.e. then the result is obvious, so we assume that $\norm{f}_p>0$ and $\norm{g}_q>0$. Setting $r=|f(x)|/\norm{f}_p$ and $s=\norm{g(x)}/\norm{g}_q$ in Lemma \ref{lem:pq inequality}, we obtain $|f(x)|\norm{g(x)}/\norm{f}_p\norm{g}_q\leq|f(x)|^p/p\norm{f}_p^p+\norm{g(x)}^q/q\norm{g}_q^q$. By hypothesis, the right side is integrable, and so $f g\in \cL^1$ by Theorem \ref{thm:bochner characterization integrable}. Integrating both sides, we obtain $$\norm{fg}_1/\norm{f}_p\norm{g}_q\leq\norm{f}_p^p/p\norm{f}_p^p+\norm{g}_q^q/q\norm{g}_q^q=1$$
+We have seen earlier that $fg$ is measurable. If either $f$ or $g=0$ a.e. then the result is obvious, so we assume that $\norm{f}_p>0$ and $\norm{g}_q>0$. Setting $r=|f(x)|/\norm{f}_p$ and $s=\norm{g(x)}/\norm{g}_q$ in Lemma \ref{lem:pq inequality}, we obtain $|f(x)|\norm{g(x)}/\norm{f}_p\norm{g}_q\leq|f(x)|^p/p\norm{f}_p^p+\norm{g(x)}^q/q\norm{g}_q^q$. By hypothesis, the right side is integrable, and so $f g\in \cL^1$ by Theorem \ref{thm:bochner characterization integrable}. Integrating both sides, we obtain \[\norm{fg}_1/\norm{f}_p\norm{g}_q\leq\norm{f}_p^p/p\norm{f}_p^p+\norm{g}_q^q/q\norm{g}_q^q=1.\]
 \end{proof}
 
 By using H\"older's inequality, we can prove the triangle inequality for the $L^p$-norm.
@@ -92,10 +92,10 @@ A $p$-mean Cauchy sequence of functions in $\cL^p$ is Cauchy in measure. A seque
 \end{proposition}
 
 \begin{proof}
-The proof is only a slight variation of the proof of Proposition \ref{prop:integrable in mean implies measure} and Lemma \ref{lem:ISF mean cauchy implies cauchy in measure}. Let $f$ be a function in $\cL^p$, and let $\ep>0$ be given. Let $E=\brc{x\in X:\norm{f(x)}\geq\ep}$. It is easily seen that $\idf{E}\leq\norm{f(\imarg)}^p/\ep^p$, and so $|\mu|(E)\leq\br{\int\norm{f(x)}^p\dd|\mu|(x)}/\ep^p$. In other words $$|\mu|(\brc{x\in X:\norm{f(x)}\geq\ep})\leq\br{\norm{f}_p/\ep}^p.$$
+The proof is only a slight variation of the proof of Proposition \ref{prop:integrable in mean implies measure} and Lemma \ref{lem:ISF mean cauchy implies cauchy in measure}. Let $f$ be a function in $\cL^p$, and let $\ep>0$ be given. Let $E=\brc{x\in X:\norm{f(x)}\geq\ep}$. It is easily seen that $\idf{E}\leq\norm{f(\imarg)}^p/\ep^p$, and so $|\mu|(E)\leq\br{\int\norm{f(x)}^p\dd|\mu|(x)}/\ep^p$. In other words \[|\mu|(\brc{x\in X:\norm{f(x)}\geq\ep})\leq\br{\norm{f}_p/\ep}^p.\]
 This inequality is known as the Markov inequality, and for the case $p=2$ it is also called the Tchebychev inequality.
 
-Suppose now that $f_n$ is a $p$-mean Cauchy sequence of functions in $\cL^p$. Applying the Markov inequality we obtain the fact that $$|\mu|(\brc{x\in X:\norm{f_m(x)-f_n(x)}\geq\ep})\leq(\norm{f_m-f_n}_p/\ep)^p.$$
+Suppose now that $f_n$ is a $p$-mean Cauchy sequence of functions in $\cL^p$. Applying the Markov inequality we obtain the fact that \[|\mu|(\brc{x\in X:\norm{f_m(x)-f_n(x)}\geq\ep})\leq(\norm{f_m-f_n}_p/\ep)^p.\]
 It follows immediately that the sequence $f_n$ is Cauchy in measure.
 
 The proof for the case in which the sequence $f_n$ converges in $p$-mean is only a slight variant of the above proof.
@@ -128,7 +128,7 @@ The ISF are dense in $\cL^p$.
 \end{theorem}
 
 \begin{proof}
-We first note that if $g$ is an ISF then so is $\norm{g(\imarg)}^p$, and so $g\in\cL^p$. Now let $f$ be any element of $\cL^p$. Since $f$ is measurable, there is a sequence, $f_n$ of simple measurable functions which converges to $f$ a.e. For each $n$ define a function $h_n$ by $$h_n(x)=\begin{cases}f_n(x)&\text{if }\norm{f_n(x)}\leq2\norm{f(x)}\\ 0&\text{if }\norm{f_n(x)}>2\norm{f(x)}\end{cases}.$$ As was the case in the proof of Theorem \ref{thm:bochner characterization integrable}, it is easily seen that $h_n$ is a sequence of ISF which converges to $f$ a.e. and which has the property that $\norm{h_n(x)}\leq2\norm{f(x)}$ for all $x$. It follows that $\norm{f(x)-h_n(x)}\leq3\norm{f(x)}$, and so $\norm{f(x)-h_n(x)}^p\leq3^p\norm{f(x)}^p$, for all $x$. Since $\norm{f(\imarg)}^p$ is integrable and since the sequence $\norm{f(\imarg)-h_n(\imarg)}^p$ converges pointwise to 0, we can apply the Lebesgue dominated convergence theorem (Theorem \ref{thm:dct}) to conclude that $\int\norm{f(x)-h_n(x)}^p\dd|\mu|(x)$ converges to zero, so that $h_n$ converges to $f$ in $p$-mean as desired.
+We first note that if $g$ is an ISF then so is $\norm{g(\imarg)}^p$, and so $g\in\cL^p$. Now let $f$ be any element of $\cL^p$. Since $f$ is measurable, there is a sequence, $f_n$ of simple measurable functions which converges to $f$ a.e. For each $n$ define a function $h_n$ by \[h_n(x)=\begin{cases}f_n(x)&\text{if }\norm{f_n(x)}\leq2\norm{f(x)}\\ 0&\text{if }\norm{f_n(x)}>2\norm{f(x)}\end{cases}.\] As was the case in the proof of Theorem \ref{thm:bochner characterization integrable}, it is easily seen that $h_n$ is a sequence of ISF which converges to $f$ a.e. and which has the property that $\norm{h_n(x)}\leq2\norm{f(x)}$ for all $x$. It follows that $\norm{f(x)-h_n(x)}\leq3\norm{f(x)}$, and so $\norm{f(x)-h_n(x)}^p\leq3^p\norm{f(x)}^p$, for all $x$. Since $\norm{f(\imarg)}^p$ is integrable and since the sequence $\norm{f(\imarg)-h_n(\imarg)}^p$ converges pointwise to 0, we can apply the Lebesgue dominated convergence theorem (Theorem \ref{thm:dct}) to conclude that $\int\norm{f(x)-h_n(x)}^p\dd|\mu|(x)$ converges to zero, so that $h_n$ converges to $f$ in $p$-mean as desired.
 \end{proof}
 
 \section{Some Convergence Theorems}
@@ -215,7 +215,7 @@ $\norm{f_n\idf{F}-f_m\idf{F}}_p\leq\norm{f_n\idf{F}}_p+\norm{f_m\idf{F}}_p<\ep/4
 
 Suppose now that condition \ref{thm:item:vitali thm} holds. Since $E$ has finite measure, we can apply Egoroff's theorem (Theorem \ref{thm:egoroff}), and so there is a measurable set $F\subseteq E$ such that $|\mu|(F)<\delta$ and $f_n$ converges uniformly to $f$ on $E\sd F$. Thus we can choose an $N$ such that if $m,n\geq N$ then $\norm{f_n(x)-f_m(x)}<\ep/(4(|\mu|(E))^{1/p})$ for all $x\in E\sd F$. For each $m$ and $n$ we define a set, $F_{mn}$, by $F_{mn}=F$.
 
-On the other hand, if condition \ref{thm:item:Lp convergence thm} holds, let $$F_{mn}=\brc{x\in E:\norm{f_n(x)-f_m(x)}\geq\ep/(4(|\mu|(E))^{1/p})}.$$ Then there exists an $N$ such that $|\mu|(F_{mn})<\delta$ whenever $m, n>N$.
+On the other hand, if condition \ref{thm:item:Lp convergence thm} holds, let \[F_{mn}=\brc{x\in E:\norm{f_n(x)-f_m(x)}\geq\ep/(4(|\mu|(E))^{1/p})}.\] Then there exists an $N$ such that $|\mu|(F_{mn})<\delta$ whenever $m, n>N$.
 
 Thus in either case there exists an $N$ and measurable sets $F_{mn}\subseteq E$ such that if $m,n>N$ then $|\mu|(F_{mn})<\delta$ and $\norm{f_n(x)-f_m(x)}<\ep/(4(|\mu|(E))^{1/p})$ for $x\in E\sd F_{mn}$. Then for $m, n>N$ we have
 \begin{align*}
@@ -235,7 +235,7 @@ In this section we prove some theorems which will enable us to conclude such res
 We begin by showing how to introduce a semimetric on the collection of measurable subsets of finite measure of any measure space. If $(X,S,\mu)$ is a measure space, let $S_f$ denote the ring of elements of $S$ of finite measure. If $E$ and $F$ are any two sets, then their symmetric difference, denoted by $E \symd F$, is defined to be $(E\sd F)\du(F\sd E)$. (This definition was considered in Exercise \ref{exer:null set as ideal} of Chapter \ref{ch:measures}.)
 
 \begin{proposition}
-Let $(X,S,\mu)$ be a measure space, and define a function, $d$, on pairs of elements of $S_f$ by $$d(E, F)=|\mu|(E\symd F).$$ Then $d$ is a semimetric on $S_f$.
+Let $(X,S,\mu)$ be a measure space, and define a function, $d$, on pairs of elements of $S_f$ by \[d(E, F)=|\mu|(E\symd F).\] Then $d$ is a semimetric on $S_f$.
 \end{proposition}
 
 \begin{proof}
@@ -247,10 +247,10 @@ The operations of forming the union of any two elements of $S_f$ and of forming 
 \end{proposition}
 
 \begin{proof}
-Let $E,E_1,F,F_1$ be elements of $S_f$. Then it is easily seen that $(E\cup E_1)\sd(F\cup F_1)\subseteq(E\symd F)\cup(E_1\symd F_1)$. A similar inclusion is obtained if the roles of the $E$'s and $F$'s are interchanged. Combining these inclusions, we obtain $$d(E\cup E_1,F\cup F_1)\leq d(E,F)+d(E_1, F_1),$$
+Let $E,E_1,F,F_1$ be elements of $S_f$. Then it is easily seen that $(E\cup E_1)\sd(F\cup F_1)\subseteq(E\symd F)\cup(E_1\symd F_1)$. A similar inclusion is obtained if the roles of the $E$'s and $F$'s are interchanged. Combining these inclusions, we obtain \[d(E\cup E_1,F\cup F_1)\leq d(E,F)+d(E_1, F_1),\]
 which shows that forming unions is continuous.
 
-Similarly it is easily seen that $$(E\sd E_1)\symd(F\sd E_1)\subseteq E\symd F\text{ while }(E\sd E_1)\symd(E\sd F_1)\subseteq E_1\symd F_1.$$ An application of the triangle inequality then shows that $$d(E\sd E_1,F\sd F_1)\leq d(E, F)+d(E_1,F_1).$$
+Similarly it is easily seen that \[(E\sd E_1)\symd(F\sd E_1)\subseteq E\symd F\text{ while }(E\sd E_1)\symd(E\sd F_1)\subseteq E_1\symd F_1.\] An application of the triangle inequality then shows that \[d(E\sd E_1,F\sd F_1)\leq d(E, F)+d(E_1,F_1).\]
 \end{proof}
 
 The various density theorems in this section are all based on the following theorem.

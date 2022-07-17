@@ -27,22 +27,22 @@ The following are examples of normed spaces:
     The field, $\mathbb{R}$, of real numbers, or the field, $\bC$, of complex numbers, where the norm of an element is taken to be its absolute value.
     
     \item\label{ex:norm 2}
-    The vector spaces $\bR^n$ and $\bC^n$, consisting of all $n$-tuples of real or complex numbers, with the norm of an $n$-tuple, $(s_1,\dots,s_n)$, defined by $$\norm{(s_1,\dots,s_n)}=\br{\sum_{i=1}^n|s_i|^2}^{1/2}.$$ This norm is called the Euclidean norm.
+    The vector spaces $\bR^n$ and $\bC^n$, consisting of all $n$-tuples of real or complex numbers, with the norm of an $n$-tuple, $(s_1,\dots,s_n)$, defined by \[\norm{(s_1,\dots,s_n)}=\br{\sum_{i=1}^n|s_i|^2}^{1/2}.\] This norm is called the Euclidean norm.
     
     \item\label{ex:norm 3}
-    The same vector spaces as in example \ref{ex:norm 2} above, but with the norm defined by $$\norm{(s_1,\dots,s_n)}=\sum_{i=1}^n|s_i|.$$
+    The same vector spaces as in example \ref{ex:norm 2} above, but with the norm defined by \[\norm{(s_1,\dots,s_n)}=\sum_{i=1}^n|s_i|.\]
     
-    \item The same vector spaces as in example \ref{ex:norm 2} and \ref{ex:norm 3} above, but with the norm defined by $$\norm{(s_1,\dots,s_n)}=\max\brc{|s_1|,\dots,|s_n|}.$$
+    \item The same vector spaces as in example \ref{ex:norm 2} and \ref{ex:norm 3} above, but with the norm defined by \[\norm{(s_1,\dots,s_n)}=\max\brc{|s_1|,\dots,|s_n|}.\]
     
     \item\label{ex:norm last}
-    Let $X$ be a topological space, and let $C(X)$ denote the vector space of all complex-valued (or real-valued) bounded functions on $X$, with the norm of an element $f\in C(X)$ defined by $$\norm{f}=\sup\brc{|f(x)|:x\in X}.$$ If, instead, we choose one fixed point, $x_0$, of $X$, and define $\norm{\imarg}$ by $$\norm{f}=|f(x_0)|,$$ then we obtain an example of a seminorm on $C(X)$.
+    Let $X$ be a topological space, and let $C(X)$ denote the vector space of all complex-valued (or real-valued) bounded functions on $X$, with the norm of an element $f\in C(X)$ defined by \[\norm{f}=\sup\brc{|f(x)|:x\in X}.\] If, instead, we choose one fixed point, $x_0$, of $X$, and define $\norm{\imarg}$ by \[\norm{f}=|f(x_0)|,\] then we obtain an example of a seminorm on $C(X)$.
     
     \item\label{ex:norm non banach}
-    Let $X$ be the closed unit interval, $[0,1]$, so that $C(X)$ is the vector space of all continuous functions on $[0,1]$ (real valued if desired), and define the norm of an element, $f$, of $C(X)$ to be $$\norm{f}=\int_0^1|f(x)|\dd{x},$$ where the integral is a Riemann integral.
+    Let $X$ be the closed unit interval, $[0,1]$, so that $C(X)$ is the vector space of all continuous functions on $[0,1]$ (real valued if desired), and define the norm of an element, $f$, of $C(X)$ to be \[\norm{f}=\int_0^1|f(x)|\dd{x},\] where the integral is a Riemann integral.
 \end{enumerate}
 \end{examples}
 
-A norm, $\norm{\imarg}$, on a vector space $V$ can always be used to define a metric, $d$, on $V$, by setting $$d(v,w)=\norm{v-w}$$ for any $v,w\in V$. We will leave to the reader the verification that $d$, defined in this way, is a metric. If, instead, $\norm{\imarg}$ is only a seminorm, then $d$, defined as above, will only be a semimetric (pseudometric), that is, it will satisfy all the properties of a metric except that the distance between some pairs of different points may be zero.
+A norm, $\norm{\imarg}$, on a vector space $V$ can always be used to define a metric, $d$, on $V$, by setting \[d(v,w)=\norm{v-w}\] for any $v,w\in V$. We will leave to the reader the verification that $d$, defined in this way, is a metric. If, instead, $\norm{\imarg}$ is only a seminorm, then $d$, defined as above, will only be a semimetric (pseudometric), that is, it will satisfy all the properties of a metric except that the distance between some pairs of different points may be zero.
 
 It follows from the above considerations that every normed space is a metric space, when we equip it with the metric obtained from its norm. We can thus discuss open sets, convergence of sequences, Cauchy sequences, completeness, compactness, etc., in a normed space. In later chapters, when we do mention such concepts in relation to a normed space, it will always be understood that they are defined with respect to the metric obtained from the norm of the normed space. In particular, whenever we speak of the topology of a normed space we will always mean the collection of all its subsets which are open with respect to the metric obtained from its norm.
 
@@ -65,7 +65,7 @@ In other words, a Banach apace is a normed space which has the property that eve
     Let $\ell^1$ denote the vector space of all complex-valued sequences, $\brc{s_i}_{i=1}^\infty$, which have the property that $\sum_{i=1}^\infty|s_i|$ is finite, and define the norm of any such sequence to be this sum.
     
     \item\label{ex:banach 3}
-    If $X$ is any set, then we will let $\ell^\infty(X)$ denote the vector space of all bounded complex-valued functions on $X$, and define the norm of an element, $f$, of $\ell^\infty(X)$ to be $$\norm{f}=\sup\brc{|f(x)|:x\in X}.$$ If $X$ is viewed as being a metric space with the discrete metric, then this example is a special case of Example \ref{ex:norm last}. If $X$ is the set $\bN$ of positive integers, then we will write just $\ell^\infty$ instead of $\ell^\infty(\bN)$. Thus $\ell^\infty$ is the space of all bounded sequences.
+    If $X$ is any set, then we will let $\ell^\infty(X)$ denote the vector space of all bounded complex-valued functions on $X$, and define the norm of an element, $f$, of $\ell^\infty(X)$ to be \[\norm{f}=\sup\brc{|f(x)|:x\in X}.\] If $X$ is viewed as being a metric space with the discrete metric, then this example is a special case of Example \ref{ex:norm last}. If $X$ is the set $\bN$ of positive integers, then we will write just $\ell^\infty$ instead of $\ell^\infty(\bN)$. Thus $\ell^\infty$ is the space of all bounded sequences.
 \end{enumerate} 
 \end{examples}
 
@@ -74,11 +74,11 @@ The reader should not have much difficulty in proving the fact that these last t
 We conclude with a simple consequence of the triangle inequality which will be useful in a number of places.
 
 \begin{proposition}
-Let $V$ be a normed space. Then for any $v,w\in V$ we have $$|\norm{v}-\norm{w}|\leq\norm{v-w}.$$
+Let $V$ be a normed space. Then for any $v,w\in V$ we have \[|\norm{v}-\norm{w}|\leq\norm{v-w}.\]
 \end{proposition}
 
 \begin{proof}
-Using triangle inequality, we obtain $$\norm{v}=\norm{(v-w)+w}\leq\norm{v-w}+\norm{w},$$ so that $\norm{v}-\norm{w}\leq\norm{v-w}$. Reversing the roles of $v$ and $w$, we obtain the fact that $\norm{w}-\norm{v}\leq\norm{v-w}.$
+Using triangle inequality, we obtain \[\norm{v}=\norm{(v-w)+w}\leq\norm{v-w}+\norm{w},\] so that $\norm{v}-\norm{w}\leq\norm{v-w}$. Reversing the roles of $v$ and $w$, we obtain the fact that $\norm{w}-\norm{v}\leq\norm{v-w}.$
 \end{proof}
 
 \subsection*{Exercises}

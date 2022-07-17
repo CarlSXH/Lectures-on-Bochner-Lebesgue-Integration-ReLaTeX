@@ -15,7 +15,7 @@ If $\sum_i^mb_i\idf{E_i}=\sum_j^nc_j\idf{F_j}$ as functions, where the $E_i$ are
 \end{lemma}
 
 \begin{proof}
-We may assume that the $b_i$ and $c_j$ are non-zero. Since the two functions are equal, their carriers are equal, and so $\bigdu_i E_i=\bigdu_j F_j$. It follows that $E_i=\bigdu_j E_i \cap F_j$ for each $i$, and that $F_j=\bigdu_iE_i \cap F_j$ for each $j$. Thus we have $$\sum_{i, j}b_i\idf{E_i \cap F_j}=\sum_i b_i\idf{E_i}=\sum_jc_j\idf{F_j}=\sum_{i, j} c_j\idf{E_j\cap F_j}.$$ Since the $E_i \cap F_j$ are disjoint, we must have $b_i=c_j$ if $E_i \cap F_j \neq \varnothing$. It follows that $$\sum_ib_i\mu(E_i)=\sum_{i,j}b_i\mu(E_i\cap F_j)=\sum_{i,j}c_j\mu(E_i\cap F_j)=\sum_jc_j\mu(F_j).$$
+We may assume that the $b_i$ and $c_j$ are non-zero. Since the two functions are equal, their carriers are equal, and so $\bigdu_i E_i=\bigdu_j F_j$. It follows that $E_i=\bigdu_j E_i \cap F_j$ for each $i$, and that $F_j=\bigdu_iE_i \cap F_j$ for each $j$. Thus we have \[\sum_{i, j}b_i\idf{E_i \cap F_j}=\sum_i b_i\idf{E_i}=\sum_jc_j\idf{F_j}=\sum_{i, j} c_j\idf{E_j\cap F_j}.\] Since the $E_i \cap F_j$ are disjoint, we must have $b_i=c_j$ if $E_i \cap F_j \neq \varnothing$. It follows that \[\sum_ib_i\mu(E_i)=\sum_{i,j}b_i\mu(E_i\cap F_j)=\sum_{i,j}c_j\mu(E_i\cap F_j)=\sum_jc_j\mu(F_j).\]
 \end{proof}
 
 
@@ -68,7 +68,7 @@ We remark that Lemma \ref{lem:item:ISF integral homogeneity} together with Lemma
 The next result will be of crucial importance in extending the domain of the integral of a wider class of functions.
 
 \begin{lemma}\label{lem:triangle inequality ISF integral}
-If $f$ is an ISF and if $E$ is a locally measurable set, then $$\norm{\int_Ef\dd\mu}\leq\int_E\norm{f(x)}\dd|\mu|(x).$$
+If $f$ is an ISF and if $E$ is a locally measurable set, then \[\norm{\int_Ef\dd\mu}\leq\int_E\norm{f(x)}\dd|\mu|(x).\]
 \end{lemma}
 
 \begin{proof}
@@ -126,7 +126,7 @@ If a sequence of ISF is a mean Cauchy sequence, then it is Cauchy in measure.
 \end{lemma}
 
 \begin{proof}
-Let $f_n$ be a mean Cauchy sequence of ISF, and let $\ep>0$ be given. Let $$E_{mn}=\brc{x\in X:\norm{f_n(x)-f_m(x)}\geq\ep}.$$ Because the $f_n$ are ISF, it is clear that each $E_{mn}$ is a measurable set of finite measure, so that each $\idf{E_{mn}}$ is an ISF. We must show that $\lim_{m,n}|\mu|(E_{mn})=0$. But it is clear that $\idf{E_{mn}}\leq\norm{f_n(\imarg)-f_m(\imarg)}/\ep$, and so by Lemma \ref{lem:item:ISF integral order} we have $$|\mu|(E_{mn})=\int\idf{E_{mn}}\dd|\mu|\leq\int\frac{\norm{f_n(x)-f_m(x)}}{\ep}\dd|\mu|(x)=\norm{f_n-f_m}_1/\ep.$$ The result now follows form the fact that the $f_n$ form a mean Cauchy sequence.
+Let $f_n$ be a mean Cauchy sequence of ISF, and let $\ep>0$ be given. Let \[E_{mn}=\brc{x\in X:\norm{f_n(x)-f_m(x)}\geq\ep}.\] Because the $f_n$ are ISF, it is clear that each $E_{mn}$ is a measurable set of finite measure, so that each $\idf{E_{mn}}$ is an ISF. We must show that $\lim_{m,n}|\mu|(E_{mn})=0$. But it is clear that $\idf{E_{mn}}\leq\norm{f_n(\imarg)-f_m(\imarg)}/\ep$, and so by Lemma \ref{lem:item:ISF integral order} we have \[|\mu|(E_{mn})=\int\idf{E_{mn}}\dd|\mu|\leq\int\frac{\norm{f_n(x)-f_m(x)}}{\ep}\dd|\mu|(x)=\norm{f_n-f_m}_1/\ep.\] The result now follows form the fact that the $f_n$ form a mean Cauchy sequence.
 \end{proof}
 
 It follows from this proposition and the Riesz-Weyl theorem that if $f_n$ is a mean Cauchy sequence of ISF, then there is a measurable function, $f$, to which $f_n$ converges in measure, and $f$ is unique a.e. We would like to identify $f$ with the elements of the completion of the vector space of ISF corresponding to the sequence $f_n$. But before we can do this, there are two things that we must check. To begin with, we must be sure that two equivalent Cauchy sequence converge in measure to the same function.
@@ -150,7 +150,7 @@ It is easily seen that it suffices to show that $f_n$ and $g_n$ have subsequence
 
 Let $\ep>0$ be given, and choose $N$ so that if $m,n\geq N$ then $\norm{h_n-h_m}_1<\ep/8$. We show that if $n\geq N$ then $\norm{h_n}_1<\ep$. To do this, it suffices to show that $\norm{h_N}_1<\ep/2$, for then $\norm{h_n}_1\leq\norm{h_n-h_N}_1+\norm{h_N}_1<\ep$.
 
-Let $E$ be the carrier of $h_N$. Since $h_N$ is an ISF, we have $|\mu|(E)<\infty$. Furthermore, $h_N$ is bounded, that is, there is a constant, $c$, such that $\norm{h_N(x)}\leq c$ for all $x$. Since $h_n$ converges $0$ a.u., we can find a measurable set $F\subseteq E$ such that $|\mu|(E\sd F)<\ep/4c$ and $h_n$ converges uniformly to $0$ on $F$. Then $$\int_{E\sd F}\norm{h_N(x)}\dd|\mu|(x)\leq\int c\idf{E\sd F}\dd|\mu|=c|\mu|(E\sd F)<\ep/4.$$
+Let $E$ be the carrier of $h_N$. Since $h_N$ is an ISF, we have $|\mu|(E)<\infty$. Furthermore, $h_N$ is bounded, that is, there is a constant, $c$, such that $\norm{h_N(x)}\leq c$ for all $x$. Since $h_n$ converges $0$ a.u., we can find a measurable set $F\subseteq E$ such that $|\mu|(E\sd F)<\ep/4c$ and $h_n$ converges uniformly to $0$ on $F$. Then \[\int_{E\sd F}\norm{h_N(x)}\dd|\mu|(x)\leq\int c\idf{E\sd F}\dd|\mu|=c|\mu|(E\sd F)<\ep/4.\]
 
 Now, since $h_n$ converges to $0$ uniformly on $F$ and since $|\mu|(F)<\infty$, we can find an integer $m\geq N$ such that $\int_F\norm{h_m(x)}\dd|\mu|(x)<\ep/8$. But
 \begin{align*}
@@ -158,7 +158,7 @@ Now, since $h_n$ converges to $0$ uniformly on $F$ and since $|\mu|(F)<\infty$, 
     &\leq\int_F\norm{h_N(x)-h_m(x)}\dd|\mu|(x)\\
     &<\norm{h_N-h_m}_1<\ep/8.
 \end{align*}
-It follows that $\int_F\norm{h_N(x)}\dd|\mu|(x)<\ep/4$. Thus $$\norm{h_N}_1=\int_{E\sd F}\norm{h_N(x)}\dd|\mu|(x)+\int_F\norm{h_N(x)}\dd|\mu|(x)\leq\ep/4+\ep/4=\ep/2,$$ as desired.
+It follows that $\int_F\norm{h_N(x)}\dd|\mu|(x)<\ep/4$. Thus \[\norm{h_N}_1=\int_{E\sd F}\norm{h_N(x)}\dd|\mu|(x)+\int_F\norm{h_N(x)}\dd|\mu|(x)\leq\ep/4+\ep/4=\ep/2,\] as desired.
 \end{proof}
 
 \begin{definition}\label{def:bochner integrable}
@@ -237,7 +237,7 @@ We will denote the vector space of $\mu$-integrable $B$-valued functions by $\cL
 \end{definition}
 
 \begin{definition}
-On $\cL^1$ we define function, $\norm{\imarg}_1$, by $$\norm{f}_1=\int\norm{f(x)}\dd|\mu|(x)$$ for all $f\in\cL^1$. We will call $\norm{f}_1$ the \defline{$\cL^1$-norm} of $f$.
+On $\cL^1$ we define function, $\norm{\imarg}_1$, by \[\norm{f}_1=\int\norm{f(x)}\dd|\mu|(x)\] for all $f\in\cL^1$. We will call $\norm{f}_1$ the \defline{$\cL^1$-norm} of $f$.
 \end{definition}
 
 \begin{proposition}
@@ -263,7 +263,7 @@ Let $f$ be a non-negative integrable function, and let $E$ be a measurable set. 
 \end{proposition}
 
 \begin{proof}
-It is clear that, except for a null set, $E$ is contained in the carrier of $f$, and so is $\sigma$-finite. Thus there is a sequence, $E_n$ of subsets of $E$ of finite measure which increases up to $E$, so that $\mu(E_n)$ increases to $\mu(E)$ by Proposition \ref{prop:increase limit of measures}. But $\idf{E_n}$ is integrable for each $n$ and $f\geq\idf{E_n}$ a.e., so that according to Proposition \ref{prop:item:integral preserve order} we have $$|\mu|(E_n)=\int\idf{E_n}\dd|\mu|\leq\int f\dd|\mu|.$$ It follows that $$|\mu|(E)\leq\int f\dd|\mu|.$$
+It is clear that, except for a null set, $E$ is contained in the carrier of $f$, and so is $\sigma$-finite. Thus there is a sequence, $E_n$ of subsets of $E$ of finite measure which increases up to $E$, so that $\mu(E_n)$ increases to $\mu(E)$ by Proposition \ref{prop:increase limit of measures}. But $\idf{E_n}$ is integrable for each $n$ and $f\geq\idf{E_n}$ a.e., so that according to Proposition \ref{prop:item:integral preserve order} we have \[|\mu|(E_n)=\int\idf{E_n}\dd|\mu|\leq\int f\dd|\mu|.\] It follows that \[|\mu|(E)\leq\int f\dd|\mu|.\]
 \end{proof}
 
 \begin{definition}
@@ -324,15 +324,15 @@ Let $f_n$ be a mean Cauchy sequence of elements of $\cL^1$. Using Corollary \ref
 We conclude this section with some consequences of Corollary \ref{cor:ISF dense in L1}.
 
 \begin{proposition}\label{prop:integral small outside finite set}
-Let $f$ be an integrable function. Then for every $\ep>0$ there is a measurable set $E$ of finite measure such that $$\int_{X\sd E}\norm{f(x)}\dd|\mu|(x)<\ep.$$
+Let $f$ be an integrable function. Then for every $\ep>0$ there is a measurable set $E$ of finite measure such that \[\int_{X\sd E}\norm{f(x)}\dd|\mu|(x)<\ep.\]
 \end{proposition}
 
 \begin{proof}
-Given $\ep>0$, we can, by Corollary \ref{cor:ISF dense in L1}, find an ISF, g, such that $\norm{f-g}_1<\ep$. Let $E$ be the carrier of $g$, so that $E$ is a measurable set of finite measure. Then $$\int_{X\sd E}\norm{f(x)}\dd|\mu|(x)=\int_{X\sd E}\norm{f(x)-g(x)}\dd|\mu|(x)\leq\norm{f-g}_1<\ep.$$
+Given $\ep>0$, we can, by Corollary \ref{cor:ISF dense in L1}, find an ISF, g, such that $\norm{f-g}_1<\ep$. Let $E$ be the carrier of $g$, so that $E$ is a measurable set of finite measure. Then \[\int_{X\sd E}\norm{f(x)}\dd|\mu|(x)=\int_{X\sd E}\norm{f(x)-g(x)}\dd|\mu|(x)\leq\norm{f-g}_1<\ep.\]
 \end{proof}
 
 \begin{proposition}
-Let $f$ be an integrable function, and let $E$ be a locally measurable set. Then $$\int_Ef\dd\mu=\int\idf{E}f\dd\mu.$$
+Let $f$ be an integrable function, and let $E$ be a locally measurable set. Then \[\int_Ef\dd\mu=\int\idf{E}f\dd\mu.\]
 \end{proposition}
 
 \begin{proof}
@@ -344,7 +344,7 @@ It is easily verified that this equality is true whenever $f$ is an ISF. It is a
 Let $f$ be an integrable function. In this section we will study the properties of $\int_Ef\dd\mu$ as a function of $E$.
 
 \begin{definition}
-Let $f\in\cL^1(X,S,\mu,B)$. Then the set function $\mu_f$, defined on the $\sigma$-field of locally measurable sets by $$\mu_f(E)=\int_Ef\dd\mu$$ (and so having values in B) will be called the \defline{indefinite integral} of $f$.
+Let $f\in\cL^1(X,S,\mu,B)$. Then the set function $\mu_f$, defined on the $\sigma$-field of locally measurable sets by \[\mu_f(E)=\int_Ef\dd\mu\] (and so having values in B) will be called the \defline{indefinite integral} of $f$.
 \end{definition}
 
 \begin{theorem}\label{thm:indef integral is measure}
@@ -378,7 +378,7 @@ We return to the proof of Theorem \ref{thm:indef integral is measure}. Let a loc
 The next proposition shows how to compute the total variation of $\mu_f$.
 
 \begin{proposition}\label{prop:total var of indef integral}
-Let $f$ be an integrable function. Then for each locally measurable set $E$ we have $$|\mu_f|(E)=\int_E\norm{f(x)}\dd|\mu|(x).$$
+Let $f$ be an integrable function. Then for each locally measurable set $E$ we have \[|\mu_f|(E)=\int_E\norm{f(x)}\dd|\mu|(x).\]
 \end{proposition}
 
 \begin{proof}
@@ -395,7 +395,7 @@ Suppose now that $f$ is an ISF, and let $f=\sum_i^kb_i\idf{F_i}$ where the $F_i$
     &=\sum_{i,j}\norm{\int_{G_{ij}}f\dd\mu}=\sum_{i,j}\norm{b_i}|\mu(G_{ij})|\\
     &=\sum_i\norm{b_i}\br{\sum_j|\mu(G_{i j})|}.
 \end{align*}
-It follows that $$|\mu_f|(E)\geq\sum_i\norm{b_i}|\mu|(F_i\cap E)=\int_E\norm{f(x)}\dd|\mu|(x),$$ so that the theorem is true whenever $f$ is an ISF.
+It follows that \[|\mu_f|(E)\geq\sum_i\norm{b_i}|\mu|(F_i\cap E)=\int_E\norm{f(x)}\dd|\mu|(x),\] so that the theorem is true whenever $f$ is an ISF.
 
 To complete the proof we need the following Lemma:
 
@@ -404,7 +404,7 @@ Let $\mu$ and $\nu$ be measures on a measurable space $(X,S)$ with values in $B$
 \end{lemma}
 
 \begin{proof}
-If $E=\bigdu_i^nE_i$, the $$\sum_i^n\norm{(\mu+\nu)(E_i)}\leq\sum_i^n\norm{\mu(E_i)}+\sum_i^n\norm{\nu(E_i)}\leq|\mu|(E)+|\nu|(E).$$ The desired inequalities follow immediately.
+If $E=\bigdu_i^nE_i$, the \[\sum_i^n\norm{(\mu+\nu)(E_i)}\leq\sum_i^n\norm{\mu(E_i)}+\sum_i^n\norm{\nu(E_i)}\leq|\mu|(E)+|\nu|(E).\] The desired inequalities follow immediately.
 \end{proof}
 
 We now return to the proof of Proposition \ref{prop:total var of indef integral}. Suppose now that $f$ and $g$ are integrable functions and that $E$ is a locally measurable set. Then
@@ -461,7 +461,7 @@ We saw in the last section that $\mu_g$ is strongly absolutely $\mu$-continuous,
     &\leq2\int_{E\sd F}g(x)\dd|\mu|(x)=2|\mu_g|(E\sd F)\leq\ep/3.
 \end{align*}
 
-Finally, since the sequence $f_n$ converges to $f$ uniformly on $F$, we can find $N$ such that if $m,n>N$, then $\norm{f_n(x)-f_m(x)}\leq\ep/(3|\mu|(F))$ for all $x\in F$. Then for all $m,n>N$ we have that $$\int_F\norm{f_n(x)-f_m(x)}\dd|\mu|(x)\leq\int_F\ep/(3|\mu|(F))\dd|\mu|(x)=\ep/3.$$ It follows that for all $m,n>N$ we have $$\norm{f_n-f_m}_1=\br{\int_{X\sd E}+\int_{E\sd F}+\int_F}\norm{f_n(x)-f_m(x)}\dd|\mu|(x)\leq\ep,$$ so that the $f_n$ form a mean Cauchy sequence as desired.
+Finally, since the sequence $f_n$ converges to $f$ uniformly on $F$, we can find $N$ such that if $m,n>N$, then $\norm{f_n(x)-f_m(x)}\leq\ep/(3|\mu|(F))$ for all $x\in F$. Then for all $m,n>N$ we have that \[\int_F\norm{f_n(x)-f_m(x)}\dd|\mu|(x)\leq\int_F\ep/(3|\mu|(F))\dd|\mu|(x)=\ep/3.\] It follows that for all $m,n>N$ we have \[\norm{f_n-f_m}_1=\br{\int_{X\sd E}+\int_{E\sd F}+\int_F}\norm{f_n(x)-f_m(x)}\dd|\mu|(x)\leq\ep,\] so that the $f_n$ form a mean Cauchy sequence as desired.
 
 Since $\cL^1$ is complete, the sequence $f_n$ converges in mean to some integrable function. By Corollary \ref{cor:in measure implies subsequence ae} a subsequence of the $f_n$ converges a.e. to this same function, and so this function must equal $f$ a.e. Thus $f$ is integrable and $f_n$ converges to $f$ in mean.
 \end{proof}
@@ -473,7 +473,7 @@ Let $\mu$ be a scalar-valued measure on $(X,S)$, and let $f$ be a $\mu$-measurab
 \end{theorem}
 
 \begin{proof}
-We must produce a mean Cauchy sequence of ISF which converges to $f$ a.e. Since $f$ is measurable, we can find a sequence, $f_n$, of simple measurable functions which converges to $f$ a.e. For each $n$ let $$h_n(x)=\begin{cases}f_n(x)&\text{if }\norm{f_n(x)}\leq2g(x)\\0&\text{if }\norm{f_n(x)}>2g(x)\end{cases}.$$
+We must produce a mean Cauchy sequence of ISF which converges to $f$ a.e. Since $f$ is measurable, we can find a sequence, $f_n$, of simple measurable functions which converges to $f$ a.e. For each $n$ let \[h_n(x)=\begin{cases}f_n(x)&\text{if }\norm{f_n(x)}\leq2g(x)\\0&\text{if }\norm{f_n(x)}>2g(x)\end{cases}.\]
 Equivalently, if we let $E_n=\brc{x: 2g(x)-\norm{f_n(x)}\geq 0}$, then $h_n=f_n\idf{E_n}$. Since $E_n$ is clearly locally measurable, it follows that each $h_n$ is also a simple measurable function. It is easily seen that the sequence $h_n$ converges to $f$ a.e., and we have just arranged matters that for each $n$ we have $\norm{h_n(x)}\leq2g(x)$ for all $x$. But it is easily seen by using Proposition \ref{prop:integrable idf} that this inequality implies that each $h_n$ is integrable, which is something which did not need to be true for the $f_n$. It follows from the Lebesgue dominated convergence theorem (Theorem \ref{thm:dct}) that $h_n$ is a mean Cauchy sequence and that $f$ is integrable.
 \end{proof}
 
@@ -515,12 +515,12 @@ We will let the reader verify that $f$ must be $\mu$-measurable, since in the ap
 We remark that the corresponding statement for the case in which the sequence $f_n$ is non-increasing is false in general unless at least one of the $f_n$ is integrable (in which case Corollary \ref{cor:mct} is applicable), for essentially the name reason as the fact that Proposition \ref{prop:decrease limit of measures} is false unless at least one of the $E_n$ has finite measure.
 
 \begin{theorem}[Fatou's Lemma]\label{thm:fatou}
-If $\mu$ is a non-negative measure, and if $f_n$ is a sequence of non-negative integrable functions, then $$\int_E(\liminf_nf_n)\dd\mu\leq\liminf_n\int f_n\dd\mu.$$ In particular, if the right hand is finite, then $\liminf_nf_n$ is integrable.
+If $\mu$ is a non-negative measure, and if $f_n$ is a sequence of non-negative integrable functions, then \[\int_E(\liminf_nf_n)\dd\mu\leq\liminf_n\int f_n\dd\mu.\] In particular, if the right hand is finite, then $\liminf_nf_n$ is integrable.
 
 \end{theorem}
 
 \begin{proof}
-Let $g_n=\inf\brc{f_i:n\leq i<\infty}$. Now $g_n$ is the limit as $m$ goes to $\infty$ of the decreasing sequence $\inf\brc{f_i:n\leq i\leq m}$. But from Proposition \ref{prop:sum product of meas function} it follows that the infimum of a finite number of measurable functions is measurable. Thus $g_n$ is measurable for each $n$. Since $\liminf_nf_n=\lim_ng_n$, we see that $\liminf_nf_n$ is also measurable. Now $g_n$ is a non-decreasing sequence, and so $\lim_n\int g_n\dd\mu=\int\liminf_nf_n\dd\mu$ by Corollary \ref{cor:mct extended real}. But $g_n\leq f_n$, and so $\int g_n\dd\mu\leq\int f_n\dd\mu$, for all $n$. Because the sequence $\int g_n\dd\mu$ is non-decreasing, we obtain the inequality $$\liminf_nf_n\dd\mu\geq\lim\int g_n\dd\mu=\int\liminf_nf_n\dd\mu$$ as desired.
+Let $g_n=\inf\brc{f_i:n\leq i<\infty}$. Now $g_n$ is the limit as $m$ goes to $\infty$ of the decreasing sequence $\inf\brc{f_i:n\leq i\leq m}$. But from Proposition \ref{prop:sum product of meas function} it follows that the infimum of a finite number of measurable functions is measurable. Thus $g_n$ is measurable for each $n$. Since $\liminf_nf_n=\lim_ng_n$, we see that $\liminf_nf_n$ is also measurable. Now $g_n$ is a non-decreasing sequence, and so $\lim_n\int g_n\dd\mu=\int\liminf_nf_n\dd\mu$ by Corollary \ref{cor:mct extended real}. But $g_n\leq f_n$, and so $\int g_n\dd\mu\leq\int f_n\dd\mu$, for all $n$. Because the sequence $\int g_n\dd\mu$ is non-decreasing, we obtain the inequality \[\liminf_nf_n\dd\mu\geq\lim\int g_n\dd\mu=\int\liminf_nf_n\dd\mu\] as desired.
 \end{proof}
 
 
@@ -540,7 +540,7 @@ Let $B$ and $B'$ be Banach spaces, and let $T$ be a bounded linear transformatio
 
 \item Let $f$ be a $B$-valued function which is integrable with respect to Lebesgue measure on $[0,1]$. If $\int_0^t f\dd\mu=0$ for all $t\in[0,1]$, what can you conclude about $f$?
 
-\item Show that if $f$ is a $\mu$-integrable $B$-valued function and if $$\int f(x)g(x)\dd\mu(x)=0$$ for all scalar-valued ISF $g$, then $f=0$ a.e.
+\item Show that if $f$ is a $\mu$-integrable $B$-valued function and if \[\int f(x)g(x)\dd\mu(x)=0\] for all scalar-valued ISF $g$, then $f=0$ a.e.
 
 \item A left-continuous non-decreasing real-valued function $\alpha$ defined on $\bR$ is said to be absolutely continuous if for every $\ep>0$ there is a $\delta>0$ such that $\sum_{i=1}^n|\alpha(b_i)-\alpha(a_i)|<\ep$ for every finite disjoint collection $\brc{[a_i, b_i): i=1,\dots, n}$ of intervals for which $\sum_{i=1}^n(b_i-a_i)<\delta$. If $\alpha$ is any left-continuous non-decreasing function, show that $\alpha$ is absolutely continuous if and only if the corresponding Stieltjes-Lebesgue measure is strongly absolutely continuous with respect to Lebesgue measure.
 
@@ -553,9 +553,9 @@ Let $B$ and $B'$ be Banach spaces, and let $T$ be a bounded linear transformatio
 \item\label{exer:mvt}
 The Mean Value Theorem: This theorem is stated in terms of convex sets, and so we will need to discuss first the rudiments of the theory of convex sets.
 \begin{enumerate}[label=\alph*)]
-    \item A subset $A$ of a vector space is called convex if the line segment joining any two points of $A$ lies entirely in $A$, that is, whenever $a,b\in A$ then $ta+(1-t)b \in A$ for all $0\leq t\leq1$. Show that the intersection of any collection of convex sets in convex, so every set $A$ of a vector space is contained in a smallest convex set called the convex hull of $A$, which we will denote by $c(A)$. Show that $$c(A)=\brc{\sum_{i=1}^nt_ia_i:a_i \in A,t_i\geq0,\sum_{i=1}^nt_i=1}.$$ If $A$ is contained in a Banach space and if $\overline{c}(A)$ denotes the closure on $c(A)$, show that $\overline{c}(A)$ is the smallest closed convex set containing $A$. It is called the closed convex hull of A.
+    \item A subset $A$ of a vector space is called convex if the line segment joining any two points of $A$ lies entirely in $A$, that is, whenever $a,b\in A$ then $ta+(1-t)b \in A$ for all $0\leq t\leq1$. Show that the intersection of any collection of convex sets in convex, so every set $A$ of a vector space is contained in a smallest convex set called the convex hull of $A$, which we will denote by $c(A)$. Show that \[c(A)=\brc{\sum_{i=1}^nt_ia_i:a_i \in A,t_i\geq0,\sum_{i=1}^nt_i=1}.\] If $A$ is contained in a Banach space and if $\overline{c}(A)$ denotes the closure on $c(A)$, show that $\overline{c}(A)$ is the smallest closed convex set containing $A$. It is called the closed convex hull of A.
     
-    \item The Mean Value Theorem. Let $\mu$ be a non-negative measure, and let $f$ be a $B$-valued $\mu$-integrable function. Then for every measurable set $E$ of strictly positive finite measure we have $$\mu_f(E)/\mu(E)=(1/\mu(E))\int_Ef\dd\mu\in\overline{c}(\er{f}{E})\subseteq\overline{c}(\operatorname{range}f|_E).$$ (where $\er{f}{E}$ is as defined in Exercise \ref{exer:essential range} of Chapter \ref{ch:meas func}). This is the analogue of the fact that if a real valued continuous function $f$ on $[a, b]$ has values in the interval $[m, M]$, then $\frac{1}{b-a}\int_a^b f(x)\dd x\in[m, M]$. Hint: As usual, prove this first for ISF and then approximate.
+    \item The Mean Value Theorem. Let $\mu$ be a non-negative measure, and let $f$ be a $B$-valued $\mu$-integrable function. Then for every measurable set $E$ of strictly positive finite measure we have \[\mu_f(E)/\mu(E)=(1/\mu(E))\int_Ef\dd\mu\in\overline{c}(\er{f}{E})\subseteq\overline{c}(\operatorname{range}f|_E).\] (where $\er{f}{E}$ is as defined in Exercise \ref{exer:essential range} of Chapter \ref{ch:meas func}). This is the analogue of the fact that if a real valued continuous function $f$ on $[a, b]$ has values in the interval $[m, M]$, then $\frac{1}{b-a}\int_a^b f(x)\dd x\in[m, M]$. Hint: As usual, prove this first for ISF and then approximate.
     
     \item Prove conversely that if $\mu$ is a non-negative measure, $f$ is a $B$-valued $\mu$-measurable function, $E$ is a locally measurable set and $K$ is a closed subset of $B$, then if $(\mu_f(F)/\mu(F))\in K$ for every measurable $F\subseteq E$ such that $0<\mu(F)<\infty$, it follows that $\er{f}{E}\subseteq K$. In particular, if $E$ is measurable then $f(x)\in K$ for almost all $x \in E$.
 \end{enumerate}
@@ -612,7 +612,7 @@ Let $\mu$ be Lebesgue measure on $[0,1]$, and let $B=L^\infty([0,1],\mu)$ (see E
     \item Show that $\mu_f(E)$ is a continuous function (more precisely, the equivalence class of $\mu_f(E)$ contains a continuous function) for every measurable set $E$. Thus $\mu_f$ can be viewed as having values in $C([0,1])$ and so in $B$ (since $C([0,1])$ can be identified with a closed subspace of $L^\infty([0,1],\mu)$. Show that viewed in this way $\mu_f$ is still a measure. What is its total variation?
 
     \item\label{exer:item:integral w duality}
-    Viewing $f$ as having values in $B$, one might then expect $\int_Ef\dd\mu$ to be $\mu_f(E)$ viewed as an element of $B$. The way to justify this is as follows: For $g \in B$ and $h\in B'$ note that $gh$ is integrable, and let $\brk{g,h}=\int gh\dd\mu$. Show that for any $h\in B'$ the function $t\mapsto\brk{f(t), h}$ is measurable (so we say that $f$ is weakly measurable for the duality $\brk{,}$). Then verify that $$\brk{\mu_f(E),h}=\int_E\brk{f(t),h}\dd\mu(t)$$ for every measurable set $E$ and every $h \in B'$. Hint: Show it first when $h$ is an ISF. To do this note that $g\mapsto\brk{g,h}$ is a bounded linear functional and use Exercise \ref{exer:integral compose linear functional}. (We thus say that $f$ is weakly integrable for the duality, $\brk{,}$, between $B$ and $B'$, and that the weak integral of $f$ over any set $E$ is the vector $\mu_f(E)$. Thus $\mu_f$ viewed as having values in $B$ can be considered to be the indefinite integral of the weakly integrable function $f$.)
+    Viewing $f$ as having values in $B$, one might then expect $\int_Ef\dd\mu$ to be $\mu_f(E)$ viewed as an element of $B$. The way to justify this is as follows: For $g \in B$ and $h\in B'$ note that $gh$ is integrable, and let $\brk{g,h}=\int gh\dd\mu$. Show that for any $h\in B'$ the function $t\mapsto\brk{f(t), h}$ is measurable (so we say that $f$ is weakly measurable for the duality $\brk{,}$). Then verify that \[\brk{\mu_f(E),h}=\int_E\brk{f(t),h}\dd\mu(t)\] for every measurable set $E$ and every $h \in B'$. Hint: Show it first when $h$ is an ISF. To do this note that $g\mapsto\brk{g,h}$ is a bounded linear functional and use Exercise \ref{exer:integral compose linear functional}. (We thus say that $f$ is weakly integrable for the duality, $\brk{,}$, between $B$ and $B'$, and that the weak integral of $f$ over any set $E$ is the vector $\mu_f(E)$. Thus $\mu_f$ viewed as having values in $B$ can be considered to be the indefinite integral of the weakly integrable function $f$.)
     
     \item\label{exer:item:duality non ind integral}
     Viewing $\mu_f$ as having values in $C([0,1])$, show that it is not the indefinite integral of any Bochner integrable function with values in $C([0,1])$, (basically because thus function would have to be $f$). This illustrates the fact that a measure with values in a certain space (e.g. $C([0,1])$) which is not an indefinite integral, may be an indefinite integral in at least a weak sense if the space in which it is viewed as taking its values is enlarged (e.g. to $B$). Note that the range of $\mu_f$ is relatively compact. (Why?)
@@ -625,18 +625,18 @@ Let $\mu$ be Lebesgue measure on $[0,1]$, and let $B=L^\infty([0,1],\mu)$ (see E
 
 \begin{enumerate}[label=\alph*)]
     \item Show that $f$ is not measurable. Hint: Egoroff's theorem is helpful.
-    \item Nevertheless we would like to integrate $f$. In fact we would expect that $$\int_E f\dd\mu=\br{\int_Ef_1\dd\mu,\int_Ef_2\dd\mu,\dots}$$ for any measurable set $E$. If we define $\mu_f(E)=\int_Ef\dd\mu$ by the above formula, show that it is a measure, and has finite total variation.
+    \item Nevertheless we would like to integrate $f$. In fact we would expect that \[\int_E f\dd\mu=\br{\int_Ef_1\dd\mu,\int_Ef_2\dd\mu,\dots}\] for any measurable set $E$. If we define $\mu_f(E)=\int_Ef\dd\mu$ by the above formula, show that it is a measure, and has finite total variation.
     
-    \item We justify the definition of the integral of $f$ suggested above in a manner entirely analogous to the justification provided in exercise \ref{exer:item:integral w duality}. Given $a\in\ell^\infty$ and $b\in\ell^1$ note that their pointwise product, $ab$, is in $\ell^1$, and let $\brk{a,b}=\sum_{i=1}^\infty a_ib_i$. Show that for every $b\in\ell^1$ the function $t\mapsto\brk{f(t),b}$ is measurable (so we say that $f$ is weakly measurable for the duality $\brk{,}$). Then verify that $$\brk{\mu_f(E), b}=\int_E\brk{f(t),b}\dd\mu(t)$$ for every measurable set $E$ and every $b\in\ell^1$. (We thus say that $f$ is weakly integrable for the duality $\brk{,}$, and that the weak integral of $f$ over any set $E$ is the vector $\mu_f(E)$.)
+    \item We justify the definition of the integral of $f$ suggested above in a manner entirely analogous to the justification provided in exercise \ref{exer:item:integral w duality}. Given $a\in\ell^\infty$ and $b\in\ell^1$ note that their pointwise product, $ab$, is in $\ell^1$, and let $\brk{a,b}=\sum_{i=1}^\infty a_ib_i$. Show that for every $b\in\ell^1$ the function $t\mapsto\brk{f(t),b}$ is measurable (so we say that $f$ is weakly measurable for the duality $\brk{,}$). Then verify that \[\brk{\mu_f(E), b}=\int_E\brk{f(t),b}\dd\mu(t)\] for every measurable set $E$ and every $b\in\ell^1$. (We thus say that $f$ is weakly integrable for the duality $\brk{,}$, and that the weak integral of $f$ over any set $E$ is the vector $\mu_f(E)$.)
     
     \item A Banach space of some interest is the subspace of $\ell^\infty$ consisting of all sequences which converge to 0. This space is traditionally denoted by $c_0$. Show that the range of $\mu_f$ is contained in $c_0$, and in fact is contained in a compact subset of $c_0$. But show that $\mu_f$ cannot be the indefinite integral of a function with values in $c_0$. This gives another example of the phenomenon described in exercise \ref{exer:item:duality non ind integral}.
 \end{enumerate}
 
-\item Let $\mu$ be Lebesgue measure on $\bR$. The Fourier transform of any function $f\in\cL^1(\mu,c)$ is defined to be the function $\cF(f)$ on $\bR$ whose value at $t\in\bR$ is $$\cF(f)(t)=\int f(x)\exp(ixt)\dd x.$$
+\item Let $\mu$ be Lebesgue measure on $\bR$. The Fourier transform of any function $f\in\cL^1(\mu,c)$ is defined to be the function $\cF(f)$ on $\bR$ whose value at $t\in\bR$ is \[\cF(f)(t)=\int f(x)\exp(ixt)\dd x.\]
 \begin{enumerate}[label=\alph*]
     \item Prove that the Fourier transform of any function in $\cL^1$ is a bounded uniformly continuous function.
 
-    \item Prove that if both $f$ and $x\mapsto xf(x)$ are in $\cL^1$, then $\cF(f)$ is differentiable and $$\dv{\cF(f)}{t}(s)=\cF(x\mapsto ixf(x))(s).$$
+    \item Prove that if both $f$ and $x\mapsto xf(x)$ are in $\cL^1$, then $\cF(f)$ is differentiable and \[\dv{\cF(f)}{t}(s)=\cF(x\mapsto ixf(x))(s).\]
 \end{enumerate}
 
 \item Let $G$ be a topological croup, such as $\bR$, and let $B$ be a Banach space. Then a representation of $G$ on $B$ is a map, $R$, from $G$ to the set of bounded invertible linear operators on $B$ (the definition of a bounded operator was given in exercise \ref{exer:integral compose linear functional} above) such that $R(s+t)=R(s)R(t)$ for all $s,t\in G$ (composition of operators). The representation $R$ is called strongly continuous if $s\mapsto R(s)b$ is a (norm) continuous function on $G$ for each $b\in B$, and it is called uniformly bounded if there is a constant $c$ such that $\norm{R(s)b}\leq c\norm{b}$ for all $t\in G$ and $b\in B$.
@@ -645,7 +645,7 @@ Let $\mu$ be Lebesgue measure on $[0,1]$, and let $B=L^\infty([0,1],\mu)$ (see E
     \item If $G=\bR$, if $\mu$ is Lebesgue measure on $\bR$ if $B=L^1(\mu,B')$ where $B'$ is any Banach space, and if $R$ is defined by $(R(s)f)(t)=f(t-s)$, show that $R$ is a uniformly bounded continuous representation of $R$. Hint: Use exercise \ref{exer:item:translation inv} of Chapter \ref{ch:measures}.
     
     \item\label{exer:item:representation induce bounded linear op}
-    Let $R$ be a uniformly bounded strongly continuous representation of $\bR$ on a Banach space $B$, and let $\mu$ be Lebesgue measure on $\bR$. For each $f\in L^1(\mu,c)$ define a function, $R_f$, on $B$ by $$R_f(b)=\int f(s)(R(s)b)\dd\mu(s)$$ for every $b \in B$. Show that $R_f$ is a bounded linear operator on $B$.
+    Let $R$ be a uniformly bounded strongly continuous representation of $\bR$ on a Banach space $B$, and let $\mu$ be Lebesgue measure on $\bR$. For each $f\in L^1(\mu,c)$ define a function, $R_f$, on $B$ by \[R_f(b)=\int f(s)(R(s)b)\dd\mu(s)\] for every $b \in B$. Show that $R_f$ is a bounded linear operator on $B$.
 
     \item With $R$ and $R_f$ as in \ref{exer:item:representation induce bounded linear op}, show that there is a sequence, $f_n$, of elements of $L^1(\mu)$ of norm one such that $\lim R_{f_n} b=b$ for all $b\in B$. Hint: Try an ``approximate $\delta$-function''.
 \end{enumerate}
