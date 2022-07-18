@@ -2,11 +2,11 @@
 \section{Restrictions of Measures}
 
 \begin{definition}
-A pair $(X,S)$ is called a \defline{measurable space} if $X$ is a set and $S$ is a $\sigma$-ring of subsets of $X$. A triple $(X,S,\mu)$ is called a \defline{measure space} if $(X,S)$ is a measurable space and $\mu$ is a measure on $S$.
+A pair $(X,S)$ is called a \defline{measurable space}\index{measurable space} if $X$ is a set and $S$ is a $\sigma$-ring of subsets of $X$. A triple $(X,S,\mu)$ is called a \defline{measure space}\index{measure space} if $(X,S)$ is a measurable space and $\mu$ is a measure on $S$.
 \end{definition}
 
 \begin{definition}\label{def:measure space set locally}
-Let $(X, S)$ be a measurable space. We say that $E \subseteq X$ is \defline{$S$-measurable} (or just \defline{measurable}) if $E \in S$. We say that $E \subseteq X$ is \defline{locally $S$-measurable} if $E\cap F\in S$ for all $F \in S$. If $\mu$ is a non-negative measure on $(X, S)$, then we say that $E \subseteq X$ is \defline{$\mu$-measurable} if $E \in S\du\nring{\mu}$ (which was defined in Proposition \ref{prop:null set completion}). We say that $E\subseteq X$ is \defline{locally $\mu$-measurable} if $E\cap F$ is $\mu$-measurable for every $\mu$-measurable set $F$.
+Let $(X, S)$ be a measurable space. We say that $E \subseteq X$ is \defline{$S$-measurable}\index{S-measurable@$S$-measurable} (or just \defline{measurable}) if $E \in S$. We say that $E \subseteq X$ is \defline{locally $S$-measurable}\index{locally S-measurable@locally $S$-measurable} if $E\cap F\in S$ for all $F \in S$. If $\mu$ is a non-negative measure on $(X, S)$, then we say that $E \subseteq X$ is \defline{$\mu$-measurable}\index{mu-measurable@$\mu$-measurable} if $E \in S\du\nring{\mu}$ (which was defined in Proposition \ref{prop:null set completion}). We say that $E\subseteq X$ is \defline{locally $\mu$-measurable}\index{locally mu-measurable@locally $\mu$-measurable} if $E\cap F$ is $\mu$-measurable for every $\mu$-measurable set $F$.
 \end{definition}
 
 We remark that if $\mu$ is $\sigma$-finite, then the $\mu$-measurable sets are exactly the sets which are measurable with respect to the outer measure determined by $\mu$, as is seen from Theorem \ref{thm:null set completion sigma finite}.
@@ -16,7 +16,7 @@ It is easily seen that if $(X, S)$ is a measurable space, then the family of all
 If $X$ is any set, $P$ is a collection of subsets of $X$, and $E \subseteq X$, then by $P \cap E$ we will mean the collection $\brc{F \cap E:F\in P}$. For example, if $S$ is a $\sigma$-ring and $E$ is a locally $S$-measurable set, then it is easily seen that $S \cap E$ will form a $\sigma$-ring which is contained in $S$. If $\mu$ is a measure on $S$, then we can obtain a measure on $S \cap E$ by restricting the domain of $\mu$ to $S \cap E$
 
 \begin{definition}
-If $\mu$ is a measure on $S$ and if $E$ is a locally $S$-measurable set, then the measure obtained by restricting the domain of $\mu$ to $S \cap E$ will be called \defline{the restriction of $\mu$ to $E$}.
+If $\mu$ is a measure on $S$ and if $E$ is a locally $S$-measurable set, then the measure obtained by restricting the domain of $\mu$ to $S \cap E$ will be called \defline{the restriction of $\mu$ to $E$}\index{restriction of measure}.
 \end{definition}
 
 Given a measure $\mu'$ on $S \cap E$ we can enlarge its domain to obtain a measure $\mu$ on $S$ by letting $\mu(F)=\mu'(F \cap E)$ for all $F \in S$. Note that if we start with $\mu$ on $S$, restrict $\mu$ to $E$, and then enlarge back to a measure on $S$, we do not necessarily obtain $\mu$ back again. In particular, there will in general be many other ways of enlarging the domain of $\mu'$ to obtain a measure on $S$
@@ -43,7 +43,7 @@ For example, this corollary shows that the two ways in which one might define Le
 In Chapter \ref{ch:measures}, most of the results which we proved involved non-negative measures. The purpose of this section is to define the total variation of an arbitrary measure. This gives us a way to obtain a non-negative measure which is closely related to a given arbitrary measure, and this will enable us to extend some of our earlier definitions and results about non-negative measures to arbitrary measures.
 
 \begin{definition}
-If $\mu$ is an arbitrary measure on a $\sigma$-ring $S$, then the \defline{total variation}, $|\mu|$, of $\mu$ is defined by \[|\mu|(E)=\sup\brc{\sum_{i=1}^n\norm{\mu(E_i)}: E=\bigdu_{i=1}^nE_i, E_i\in S}\] for each $E \in S$. (Of course, if $\mu$ is extended real-valued, we let $\norm{\infty}=\infty$.)
+If $\mu$ is an arbitrary measure on a $\sigma$-ring $S$, then the \defline{total variation}\index{total variation}, $|\mu|$, of $\mu$ is defined by \[|\mu|(E)=\sup\brc{\sum_{i=1}^n\norm{\mu(E_i)}: E=\bigdu_{i=1}^nE_i, E_i\in S}\] for each $E \in S$. (Of course, if $\mu$ is extended real-valued, we let $\norm{\infty}=\infty$.)
 \end{definition}
 
 
@@ -72,17 +72,17 @@ Note that $\norm{\mu(E)}\leq|\mu|(E)$ for all $E \in S$, so that $|\mu|$ may be 
 As a result of Theorem \ref{thm:total var is measure} we can extend some of our earlier definitions which were originally made only for non-negative measures.
 
 \begin{definition}
-An arbitrary measure $\mu$ is said to be \defline{$\sigma$-finite} (\defline{totally $\sigma$-finite}) if $|\mu|$ is $\sigma$-finite (totally $\sigma$-finite).
+An arbitrary measure $\mu$ is said to be \defline{$\sigma$-finite}\index{sigma-finite@$\sigma$-finite} (\defline{totally $\sigma$-finite}\index{totally sigma-finite@totally $\sigma$-finite}) if $|\mu|$ is $\sigma$-finite (totally $\sigma$-finite).
 \end{definition}
 
 \begin{definition}\label{def:general sigma finite null set}
-If $\mu$ is an arbitrary measure on a $\sigma$-ring $S$, then a set $E \subseteq X$ is said to be (\defline{locally}) \defline{$\mu$-measurable} if it is (locally) measurable (see Definition \ref{def:measure space set locally}). A set $F \in \hring{S}$ is called a \defline{$\mu$-null set} (or just a \defline{null set}) if $|\mu|^*(F)=0$. We denote the family of $\mu$-null sets by $\nring{\mu}$.
+If $\mu$ is an arbitrary measure on a $\sigma$-ring $S$, then a set $E \subseteq X$ is said to be (\defline{locally}\index{locally mu-measurable@locally $\mu$-measurable}) \defline{$\mu$-measurable}\index{mu-measurable@$\mu$-measurable} if it is (locally) measurable (see Definition \ref{def:measure space set locally}). A set $F \in \hring{S}$ is called a \defline{$\mu$-null set}\index{null set} (or just a \defline{null set}) if $|\mu|^*(F)=0$. We denote the family of $\mu$-null sets by $\nring{\mu}$.
 \end{definition}
 
 We remark again that Theorem \ref{thm:null set completion sigma finite} shows that if $\mu$ is $\sigma$-finite, then the $\mu$-measurable sets are exactly the sets which are measurable with respect to the outer measure determined by $|\mu|$.
 
 \begin{definition}
-An arbitrary measure $\mu$ is said to be \defline{complete} if every $\mu$-null set is in the domain of $\mu$.
+An arbitrary measure $\mu$ is said to be \defline{complete}\index{complete measure} if every $\mu$-null set is in the domain of $\mu$.
 \end{definition}
 
 The fact that we have used the term $\mu$-measurable in Definition \ref{def:general sigma finite null set} suggests that we should be able to extend $\mu$ to a measure on the $\sigma$-ring of $\mu$-measurable sets. The following theorem, which generalizes Proposition \ref{prop:null set completion}, shows that this is in fact the case.
@@ -97,7 +97,7 @@ If $E \in S$ and $|\mu|(E)=0$, then $\mu(E)=0$. As a consequence, it is easily s
 
 \section{Bounded Measures}
 \begin{definition}
-A measure $\mu$ is said to be \defline{bounded} if it does not take the value $+\infty$, that is, if all its values are in a Banach space. If $\mu$ is bounded and if in addition $X\in S$ (so that $\norm{\mu(X)}<\infty$), then $\mu$ is said to be \defline{totally bounded}.
+A measure $\mu$ is said to be \defline{bounded}\index{bounded measure} if it does not take the value $+\infty$, that is, if all its values are in a Banach space. If $\mu$ is bounded and if in addition $X\in S$ (so that $\norm{\mu(X)}<\infty$), then $\mu$ is said to be \defline{totally bounded}\index{totally bounded measure}.
 \end{definition}
 
 We remark that a bounded measure need not be $\sigma$-finite. An example of such a measure will be given in Exercise of Chapter \ref{ch:Lp spaces}.
@@ -113,7 +113,7 @@ Suppose not. Then for each $n$ we can find a measurable set $E_n$ such that $\no
 \end{proof}
 
 \begin{definition}
-Let $\mu$ be a measure on a $\sigma$-ring $S$. A locally $S$-measurable set $E$ is said to \defline{carry} $\mu$ if $\mu(E)=\mu(F\cap E)$ for all $F\in S$, that is, if $F\cap E=\varnothing$ implies that $\mu(F)=0$. We also sometimes say that $\mu$ \defline{lives} on $E$.
+Let $\mu$ be a measure on a $\sigma$-ring $S$. A locally $S$-measurable set $E$ is said to \defline{carry}\index{carry, lives} $\mu$ if $\mu(E)=\mu(F\cap E)$ for all $F\in S$, that is, if $F\cap E=\varnothing$ implies that $\mu(F)=0$. We also sometimes say that $\mu$ \defline{lives} on $E$.
 \end{definition}
 
 \begin{proposition}\label{prop:meas set it lives on}
@@ -161,15 +161,15 @@ Note that Proposition \ref{prop:decrease limit of measures} is not true without 
 If $\mu$ is a vector valued measure, show that $|\mu|$ is the smallest extended real valued measure such that $\norm{\mu(E)}\leq|\mu|(E)$ for all $E \in S$, that is, if $\nu$ is a non-negative measure on the domain of $\mu$ such that $\norm{\mu(E)}\leq\nu(E)$ for all $E$ in the domain $\mu$, then $|\mu|(E)\leq\nu(E)$ for all $E$ in the domain $\mu$
 
 \item\label{exer:total var of measure in banach}
-A measure $\mu$ is said to be of \defline{bounded variation} if $|\mu|$ is a bounded measure. Show that any measure with values in a finite dimensional Banach space is of bounded variation. (You may assume that $B=\bR^n$ with the usual Euclidean norm, since it can be shown that all norms on a finite dimensional vector space are equivalent, that is, any two norms, $\norm{\imarg}$ and $\norm{\imarg}_0$, satisfy $k\norm{\imarg}\leq\norm{\imarg}_0\leq K\norm{\imarg}$ for suitable constants $k>0$ and $K$.)
+A measure $\mu$ is said to be of \defline{bounded variation}\index{bounded variation} if $|\mu|$ is a bounded measure. Show that any measure with values in a finite dimensional Banach space is of bounded variation. (You may assume that $B=\bR^n$ with the usual Euclidean norm, since it can be shown that all norms on a finite dimensional vector space are equivalent, that is, any two norms, $\norm{\imarg}$ and $\norm{\imarg}_0$, satisfy $k\norm{\imarg}\leq\norm{\imarg}_0\leq K\norm{\imarg}$ for suitable constants $k>0$ and $K$.)
 
 \item Compute the total variations of those set functions in Exercise \ref{exer:ex of measures} of Chapter \ref{ch:measures} which are measures. How does you result compare with Exercise \ref{exer:total var of measure in banach} above?
 
 \item Let $B$ be a Banach space and let $(X, S)$ be a measurable space. Then the collection of $B$-valued measures on $S$ forms a vector space when $\mu+\nu$ is defined by $(\mu+\nu)(E)=\mu(E)+\nu(E)$ for all $E \in S$, and $\alpha\mu$ is defined by $(\alpha \mu)(E)=\alpha(\mu(E))$ for $E \in S$. (The field of scalars for the vector space of measures is taken to be the same as the field scalars for $B$. Note that we cannot form a vector space in this way if we admit measures taking the value $+\infty$.) Let $M$ be the collection of all $B$-valued measures on $S$ which are of bounded variation. It is easy to see that $M$ is a subspace of the vector space of all $B$-valued measures on $S$. Furthermore, we can define a function $\norm{\imarg}$ from $M$ to $\bR$ by \[\norm{\mu}=\sup\brc{|\mu|(E):E\in S}.\] Show that $\norm{\imarg}$ is a norm on $M$. (This is called the total variation norm.), and show that $(M,\norm{\imarg})$ is a Banach space. (Be sure to show that the set functions which you claim are measures really are.)
 
-\item Two measures $\mu$ and $\nu$ on $(X, S)$ are said to be \defline{mutually singular} if there are disjoint locally measurable sets $E$ and $F$ such that $E$ carries $\mu$ and $F$ carries $\nu$.
+\item Two measures $\mu$ and $\nu$ on $(X, S)$ are said to be \defline{mutually singular}\index{mutally singular} if there are disjoint locally measurable sets $E$ and $F$ such that $E$ carries $\mu$ and $F$ carries $\nu$.
 \begin{enumerate}
 \item Show that if $\mu$ and $\nu$ are mutually singular then so are $|\mu|$ and $|\nu|$, and that if $\mu$ and $\nu$ have bounded variation, then $\norm{\mu+\nu}=\norm{\mu}+\norm{\nu}=\norm{\mu-\nu}$.
-\item Find Borel measures (i.e. measures on Borel sets) $\mu$ and $\nu$ on $[0,1]$ which are mutually singular but are not carried on disjoint \defline{closed} sets.
+\item Find Borel measures (i.e. measures on Borel sets) $\mu$ and $\nu$ on $[0,1]$ which are mutually singular but are not carried on disjoint closed sets.
 \end{enumerate}
 \end{enumerate}

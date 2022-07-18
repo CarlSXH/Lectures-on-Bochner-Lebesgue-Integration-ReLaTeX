@@ -2,12 +2,12 @@
 In this preliminary chapter we will define what is meant by a Banach space, give a few examples, and describe those few elementary properties of Banach spaces which will be needed in later chapters. We assume that the reader is familiar with the theory of metric spaces. In a few places before Chapter 8 we will mention topological spaces, but a reader who is not familiar with topological spaces will have no difficulty if at every occurrence of the words ``topological space'' they substitute the words ``metric space''.
 
 \begin{definition}\label{def:norm}
-Let $V$ be a vector space (over the real or complex numbers). A function, $\norm{\imarg}$, from $V$ into the non-negative real numbers is called a \defline{seminorm} on $V$ if it satisfies the following two properties:
+Let $V$ be a vector space (over the real or complex numbers). A function, $\norm{\imarg}$, from $V$ into the non-negative real numbers is called a \defline{seminorm}\index{seminorm} on $V$ if it satisfies the following two properties:
 \begin{enumerate}[label=\alph*)]
     \item $\norm{v+w}\leq\norm{v}+\norm{w}$ for all $v,w\in V$. (this inequality is called the triangle inequality)
     \item $\norm{sv}=|s|\norm{v}$ for all $v\in V$ and all scalars $s$.
 \end{enumerate}
-A seminorm, $\norm{\imarg}$, is called a \defline{norm} if, in addition, it satisfies the following property:
+A seminorm, $\norm{\imarg}$, is called a \defline{norm}\index{norm} if, in addition, it satisfies the following property:
 \begin{enumerate}[label=\alph*)]
     \setcounter{enumi}{2}
     \item If $v\in V$ and $\norm{v}=0$, then $v=0$.
@@ -15,7 +15,7 @@ A seminorm, $\norm{\imarg}$, is called a \defline{norm} if, in addition, it sati
 \end{definition}
 
 \begin{definition}\label{def:norm space}
-A \defline{normed vector space} (or, more briefly, a \defline{normed space}) is a vector space $V$ together with a particular norm on $V$.
+A \defline{normed vector space}\index{normed vector space} (or, more briefly, a \defline{normed space}) is a vector space $V$ together with a particular norm on $V$.
 \end{definition}
 
 
@@ -47,7 +47,7 @@ A norm, $\norm{\imarg}$, on a vector space $V$ can always be used to define a me
 It follows from the above considerations that every normed space is a metric space, when we equip it with the metric obtained from its norm. We can thus discuss open sets, convergence of sequences, Cauchy sequences, completeness, compactness, etc., in a normed space. In later chapters, when we do mention such concepts in relation to a normed space, it will always be understood that they are defined with respect to the metric obtained from the norm of the normed space. In particular, whenever we speak of the topology of a normed space we will always mean the collection of all its subsets which are open with respect to the metric obtained from its norm.
 
 \begin{definition}
-A \defline{Banach space} is a normed space which is complete (with respect to the metric obtained from its norm).
+A \defline{Banach space}\index{Banach space} is a normed space which is complete (with respect to the metric obtained from its norm).
 \end{definition}
 
 In other words, a Banach apace is a normed space which has the property that every Cauchy sequence of elements of the space has a limit.

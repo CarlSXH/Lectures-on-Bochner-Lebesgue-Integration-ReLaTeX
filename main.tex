@@ -7,6 +7,8 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{pgfplots}
+\usepackage{makeidx}
+\usepackage[totoc]{idxlayout}
 
 \include{preamble}
 \include{style}
@@ -17,9 +19,9 @@
 \small Carl Sun, LaTeX'ed in July, 2022}
 \date{1970}
 
+\makeindex
 
 \begin{document}
-
 
 \maketitle
 
@@ -29,7 +31,9 @@
 \input{0.Introduction}
 
 
+
 \tableofcontents
+
 
 \chapter{Preliminaries on Banach spaces}
 \label{ch:preliminary}
@@ -62,5 +66,8 @@
 
 %\chapter{The Radon-Nikodym Theorem}
 %\chapter{Integration on Locally Compact Spaces}
+\cleardoublepage
+\printindex
+\clearpage
 
 \end{document}

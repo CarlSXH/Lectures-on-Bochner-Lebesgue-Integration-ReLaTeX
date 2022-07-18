@@ -6,7 +6,7 @@ Let $(X,S,\mu)$ be a measure space, and let $B$ be a Banach space (we are not as
 The simplest functions from $X$ to $B$ which are nicely related to $S$ are the functions which are constant on a measurable set $E$ and have value 0 elsewhere. These functions can be written as $b\idf{E}$ where $b$ is the value of the function on $E$ and $\idf{E}$ is the characteristic function of $E$, that is, the real valued function which has value $1$ on $E$ and 0 elsewhere. Since the functions of the form $b\idf{E}$ take values in a Banach space, we can add these functions (pointwise). It is not difficult to convince oneself that the functions obtained by taking finite sums of functions of the type described above are exactly those described in the following definition.
 
 \begin{definition}
-A function, $f$, from $X$ to $B$ is called a \defline{simple $S$-measurable function} (or, for brevity, an \defline{$S$-simple function}) if the range of $f$ is a finite set, $\brc{b_1,\dots,b_n}$, in $B$, and if $f^{-1}(b_i)\in S$ for each $b_i\neq0$.
+A function, $f$, from $X$ to $B$ is called a \defline{simple $S$-measurable function}\index{simple S-measurable function@simple $S$-measurable function} (or, for brevity, an \defline{$S$-simple function}) if the range of $f$ is a finite set, $\brc{b_1,\dots,b_n}$, in $B$, and if $f^{-1}(b_i)\in S$ for each $b_i\neq0$.
 \end{definition}
 
 It is clear from the definition that the family of $B$-valued simple $S$-measurable functions is also precisely the collection of all functions $f$ from $X$ to $B$ of the form $f=\sum_{i=1}^nb_i\idf{E_i}$ where $b_i$'s are distinct non-zero elements of $B$ and the $E_i$'s are disjoint elements of $S$.
@@ -16,23 +16,23 @@ We will let the reader convince themselves that the $B$-valued simple $S$-measur
 In a Banach space, we have, in addition to vector space structure, a metric space structure, and so we can take pointwise limits of functions which have values in a Banach space.
 
 \begin{definition}
-A function, $f$, from $X$ to $B$ is said to be \defline{$S$-measurable} if there is a sequence, $f_n$, of simple $S$-measurable functions which converges to $f$ pointwise, that is, such that for every $x\in X$ the sequence $f_n(x)$ converges to $f(x)$.
+A function, $f$, from $X$ to $B$ is said to be \defline{$S$-measurable}\index{S-measurable@$S$-measurable} if there is a sequence, $f_n$, of simple $S$-measurable functions which converges to $f$ pointwise, that is, such that for every $x\in X$ the sequence $f_n(x)$ converges to $f(x)$.
 \end{definition}
 
 The definition of $S$-measurable functions does not depend on $\mu$. By using $\mu$ we can define a larger class of measurable functions. But we first state a general definition whose use pervades measure theory.
 
 \begin{definition}\label{def:a.e.}
-Let $(X,S,\mu)$ be a measure space, and let $P$ be a property which may or may not hold for various points of $X$. Then $P$ is said to hold, or be true, \defline{almost everywhere} on $X$ (abbreviated a.e.) if there is a null set $N$ for $\mu$ such that the property $P$ is true for all points in $X$ except possibly those in $N$.
+Let $(X,S,\mu)$ be a measure space, and let $P$ be a property which may or may not hold for various points of $X$. Then $P$ is said to hold, or be true, \defline{almost everywhere}\index{almost everywhere} on $X$ (abbreviated a.e.) if there is a null set $N$ for $\mu$ such that the property $P$ is true for all points in $X$ except possibly those in $N$.
 \end{definition}
 
 This definition will be illustrated in Definition \ref{def:mu measurable function}.
 
 \begin{definition}
-A function, $f$, from $X$ to $B$ is called a \defline{simple $\mu$-measurable function} if $f$ is a simple $(S\du\nring\mu)$-measurable function. (The definition of $S\du\nring\mu$ was given in Theorem \ref{thm:completion of general measure}.)
+A function, $f$, from $X$ to $B$ is called a \defline{simple $\mu$-measurable function}\index{simple mu-measurable function@simple $\mu$-measurable function} if $f$ is a simple $(S\du\nring\mu)$-measurable function. (The definition of $S\du\nring\mu$ was given in Theorem \ref{thm:completion of general measure}.)
 \end{definition}
 
 \begin{definition}\label{def:mu measurable function}
-A function, $f$, with values in $B$, which is defined almost everywhere on $X$, is said to be \defline{$\mu$-measurable} if there is a sequence, $f_n$, of simple $\mu$-measurable functions which converges pointwise to $f$ almost everywhere.
+A function, $f$, with values in $B$, which is defined almost everywhere on $X$, is said to be \defline{$\mu$-measurable}\index{mu-measurable@$\mu$-measurable} if there is a sequence, $f_n$, of simple $\mu$-measurable functions which converges pointwise to $f$ almost everywhere.
 \end{definition}
 
 Thus in Definition \ref{def:a.e.}, we allow $f$ to be undefined on a null set of $\mu$, and we allow there to be a (possibly larger) null set on which the sequence $f_n$ does not necessarily converge to $f$ pointwise.
@@ -76,7 +76,7 @@ The proof is given by the following chain of equivalent statements (where ``iff'
 \end{proof}
 
 \begin{definition}
-If $f$ is a function from $X$ to $B$, then we define the \defline{carrier} of $f$ to be $\brc{x\in X: f(x)\neq 0}$. We will denote the carrier of $f$ by $\car{f}$. 
+If $f$ is a function from $X$ to $B$, then we define the \defline{carrier}\index{carrier} of $f$ to be $\brc{x\in X: f(x)\neq 0}$. We will denote the carrier of $f$ by $\car{f}$. 
 \end{definition}
 
 Recall that a subset of a metric space is said to be separable if it contains a countable dense subset. The following theorem was shown to us by S. Newberger.
@@ -153,7 +153,7 @@ Since $f_n$ is $S$-measurable, $f_n(X)$ is separable. Thus the closure of $\bigc
 
 For many purposes pointwise convergence is an insufficiently strong type of convergence. The next theorem shows that if the functions considered are measurable, then pointwise convergence actually implies a stronger kind of convergence.
 
-\begin{theorem}[Egoroff (1911)]\label{thm:egoroff}
+\begin{theorem}[Egoroff (1911)]\label{thm:egoroff}\index{Egoroff's Theorem}
 Let $\mu$ be a non-negative measure on a $\sigma$-ring $S$. If $E\in S$ and $\mu(E)<\infty$, and if $f_n$ is a sequence of $\mu$-measurable functions which converges to a function $f$ a.e. on $E$, then for every $\ep>0$ there exists a measurable set $F\subseteq E$ such that $\mu(E\sd F)<\ep$ and the sequence $f_n$ converges to $f$ uniformly on $F$.
 \end{theorem}
 
@@ -168,7 +168,7 @@ Finally, the $F$ just obtained is in $S\du\nring{\mu}$, but if it is desired we 
 As is the case with many important theorems, Egoroff's theorem leads naturally to a definition.
 
 \begin{definition}
-Let $\mu$ be a non-negative measure on a measure space $(X,S)$, and let the corresponding outer measure be $\mu^*$. A sequence $f_n$ of arbitrary functions on $X$ is said to converge \defline{almost uniformly} on $E\subseteq X$ to a function $f$ if for every $\ep>0$ there exists $F\subseteq E$ such that $E\sd F$ is in the domain of $\mu^*$, $\mu^*(E\sd F)<\ep$, and $f_n$ converges to $f$ uniformly on $F$. (We will abbreviate ``almost uniformly'' by ``a.u.''.)
+Let $\mu$ be a non-negative measure on a measure space $(X,S)$, and let the corresponding outer measure be $\mu^*$. A sequence $f_n$ of arbitrary functions on $X$ is said to converge \defline{almost uniformly}\index{almost uniformly} on $E\subseteq X$ to a function $f$ if for every $\ep>0$ there exists $F\subseteq E$ such that $E\sd F$ is in the domain of $\mu^*$, $\mu^*(E\sd F)<\ep$, and $f_n$ converges to $f$ uniformly on $F$. (We will abbreviate ``almost uniformly'' by ``a.u.''.)
 \end{definition}
 
 Using this definition, Egoroff's theorem states that if $f_n$ is any sequence of $\mu$-measurable functions which converges a.e. to a function, $f$, on a set $E$ of finite measure, then $f_n$ converges to $f$ a.u. on $E$. It is not difficult to find example which show that the condition that $E$ of finite measure is necessary.
@@ -184,7 +184,7 @@ For each $m$ choose $F_m\subseteq E$ such that $\mu^*(E\sd F_m)<1/m$ and $f_n$ c
 \end{proof}
 
 \begin{definition}
-A sequence, $f_n$, of arbitrary functions on $X$ is said to be \defline{almost uniformly Cauchy} on $E\subseteq X$ if for each $\ep>0$ there exist $F\subseteq E$ such that $E\sd F$ is in the domain of $\mu^*$, $\mu^*(E\sd F)<\ep$, and the $f_n$ are uniformly Cauchy on $F$ (that is, given $\delta>0$ there exists $N$ such that if $m,n\geq N$, then $\norm{f_m(x)-f_n(x)}<\delta$ for all $x\in F$).
+A sequence, $f_n$, of arbitrary functions on $X$ is said to be \defline{almost uniformly Cauchy}\index{almost uniformly Cauchy} on $E\subseteq X$ if for each $\ep>0$ there exist $F\subseteq E$ such that $E\sd F$ is in the domain of $\mu^*$, $\mu^*(E\sd F)<\ep$, and the $f_n$ are uniformly Cauchy on $F$ (that is, given $\delta>0$ there exists $N$ such that if $m,n\geq N$, then $\norm{f_m(x)-f_n(x)}<\delta$ for all $x\in F$).
 \end{definition}
 
 The next proposition, which is a preliminary completeness result, is probably the first place at which it is important that the functions which we are considering take values in a Banach (hence complete) space.
@@ -201,7 +201,7 @@ For each integer $m$ choose $F_m\subset E$ such that $\mu^*(E\sd F_m)<1/m$, and 
 
 In this section we study another type of convergence for functions, which will be of considerable use later.
 \begin{definition}
-Let $\mu$ be a non-negative measure on $(X,S)$ with corresponding outer measure $\mu^*$. A sequence, $f_n$, of arbitrary functions on $X$ is said to converges to a function $f$ \defline{in measure} on $E\subseteq X$ if the intersections of $E$ with $\car{f}$ and the $\car{f_n}$ are in the domain of $\mu^*$, and if for every $\ep>0$, \[\lim_{n\to+\infty}\mu^*(\brc{x\in E:\norm{f(x)-f_n(x)}\geq\ep})=0.\]
+Let $\mu$ be a non-negative measure on $(X,S)$ with corresponding outer measure $\mu^*$. A sequence, $f_n$, of arbitrary functions on $X$ is said to converges to a function $f$ \defline{in measure}\index{convergence in measure} on $E\subseteq X$ if the intersections of $E$ with $\car{f}$ and the $\car{f_n}$ are in the domain of $\mu^*$, and if for every $\ep>0$, \[\lim_{n\to+\infty}\mu^*(\brc{x\in E:\norm{f(x)-f_n(x)}\geq\ep})=0.\]
 \end{definition}
 
 Our first result shows that limits in measure are unique a.e.
@@ -250,12 +250,12 @@ This follows from Egoroff's theorem and Proposition \ref{prop:au implies in meas
 \end{proof}
 
 \begin{definition}
-A sequence $f_n$ of functions is said to be \defline{Cauchy in measure} on $E\subseteq X$ if the intersection of $E$ with each $\car{f_n}$ is in the domain of $\mu^*$, and if for every $\ep>0$ \[\lim_{m,n\to+\infty}\mu^*(\brc{x\in X:\norm{f_m(x)-f_n(x)}\geq\ep})=0.\]
+A sequence $f_n$ of functions is said to be \defline{Cauchy in measure}\index{Cauchy in measure} on $E\subseteq X$ if the intersection of $E$ with each $\car{f_n}$ is in the domain of $\mu^*$, and if for every $\ep>0$ \[\lim_{m,n\to+\infty}\mu^*(\brc{x\in X:\norm{f_m(x)-f_n(x)}\geq\ep})=0.\]
 \end{definition}
 
 We now come to the most important completeness result of this chapter. It is the crux cf the proof that certain function spaces (the $L^p$ spaces) defined in Chapter \ref{ch:Lp spaces} are complete, and so are Banach spaces.
 
-\begin{theorem}[Riesz-Weyl]\label{thm:riesz weyl}
+\begin{theorem}[Riesz-Weyl]\label{thm:riesz weyl}\index{Riesz-Weyl Theorem}
 If a sequence, $f_n$, of functions is Cauchy in measure on $E\subseteq X$, then there exists a subsequence, $f_{n_k}$, which is almost uniformly Cauchy on $E$. Thus there exists a function $f$ such that $f_{n_k}$ converges to $f$ a.u. on $E$, and hence so that $f_n$ converges to $f$ in measure on $E$. Furthermore, $f$ is unique a.e. on $E$.
 \end{theorem}
 
@@ -289,7 +289,7 @@ From the fact that the sequence $f_n$ converges in measure to $f$ on $E$, it is 
 The definitions of almost uniform convergence and of convergence in measure were given for non-negative measures. We extend these definitions to an arbitrary measure $\mu$ simply by applying them to $|\mu|$.
 
 \begin{definition}
-Let $\mu$ be an arbitrary measure on a measurable space $(X, S)$, and let $E\subseteq X$. Then a sequence, $f_n$, of functions will be said to converge on $E$ to a function $f$ \defline{almost uniformly} (resp. \defline{in measure}) with respect to $\mu$ if $f_n$ converges to $f$ on $E$ almost uniformly (resp. in measure) with respect to $|\mu|$. We define what is meant by a sequence of functions which is \defline{almost uniformly Cauchy} (resp. \defline{Cauchy in measure}) with respect to $\mu$, in analogous fashion. 
+Let $\mu$ be an arbitrary measure on a measurable space $(X, S)$, and let $E\subseteq X$. Then a sequence, $f_n$, of functions will be said to converge on $E$ to a function $f$ \defline{almost uniformly}\index{almost uniformly} (resp. \defline{in measure}\index{almost uniformly in measure}) with respect to $\mu$ if $f_n$ converges to $f$ on $E$ almost uniformly (resp. in measure) with respect to $|\mu|$. We define what is meant by a sequence of functions which is \defline{almost uniformly Cauchy}\index{almost uniformly Cauchy} (resp. \defline{Cauchy in measure}\index{almost uniformly Cauchy in measure}) with respect to $\mu$, in analogous fashion. 
 \end{definition}
 
 \section{Exercises}
@@ -314,7 +314,7 @@ Prove that if $f$ is a continuous function on the real line into a Banach space 
 \item Let $(X,S,\mu)$ be a measure space. Prove that any $S$-measurable function from $X$ to a Banach space $B$ locally almost has compact range, that is, given any $E\in S$ with $|\mu|(E)<\infty$ (``locally'') and given $\ep>0$, there is a measurable $F\subseteq E$ with $|\mu|(E\sd F)<\ep$ (``almost''), such that the range of $f$ restricted to $F$ is a precompact subset of $B$. Hint: Use the definition of compactness in terms of total boundedness. (This result is related to the Radon-Nikodym theorem which we will prove in Chapter 7.) %FIXME linking can't be resolved now
 
 \item\label{exer:essential range}
-When working with $\mu$-measurable functions and when identifying functions which agree a.e., one would like to be able to talk about the ranges of such functions, but in such a way that the range of two functions which agree a.e. are the same. The appropriate definition is that of the \defline{essential range} of a $\mu$-measurable function $f$. If $E$ is locally measurable, then the essential range of $f$ on $E$, $\er{f}{E}$, is defined to be the set of $b \in B$ such that for all $\ep>0$, the set $\brc{x\in E:\norm{f(x)-b}<\ep}$ contains a measurable set of strictly positive $|\mu|$-measure. %I just changed it lol
+When working with $\mu$-measurable functions and when identifying functions which agree a.e., one would like to be able to talk about the ranges of such functions, but in such a way that the range of two functions which agree a.e. are the same. The appropriate definition is that of the \defline{essential range}\index{essential range} of a $\mu$-measurable function $f$. If $E$ is locally measurable, then the essential range of $f$ on $E$, $\er{f}{E}$, is defined to be the set of $b \in B$ such that for all $\ep>0$, the set $\brc{x\in E:\norm{f(x)-b}<\ep}$ contains a measurable set of strictly positive $|\mu|$-measure. %I just changed it lol
 \begin{enumerate}
     \item Verify the following simply properties of $\er{f}{E}$
     \begin{enumerate}[label=\arabic*)]
@@ -346,5 +346,5 @@ A measurable function on $X$ is said to be essentially bounded if $\er{f}{X}$ is
 Show that $d$ is a pseudometric on $F$ which defines convergence in measure, that is, a sequence, $f_n$, of elements of $F$ converges in measure to $f\in F$ iff $d(f_n, f)$ converges to 0. (It is a curious fact that the smallest convex set in $F$ containing any $d$-neighborhood of 0 is all of $F$ itself if, for example, $\mu$ is Lebesgue measure.)
 
 \item\label{exer:precpct range seq of simple func}
-Show that if $f$ is a $B$-valued measurable function and if $E$ is a locally measurable set such that $f(E)$ is a precompact subset of $B$, then there exists a sequence of simple measurable functions which converges \defline{uniformly} to $f$ on $E$.
+Show that if $f$ is a $B$-valued measurable function and if $E$ is a locally measurable set such that $f(E)$ is a precompact subset of $B$, then there exists a sequence of simple measurable functions which converges uniformly to $f$ on $E$.
 \end{enumerate}
