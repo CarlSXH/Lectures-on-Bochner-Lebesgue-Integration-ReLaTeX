@@ -105,18 +105,18 @@ The function $\mu_\alpha$ is countably additive on $P$.
 \end{theorem}
 
 \begin{proof}
-Let $E_n=[a_n, b_n)$ $n=1, 2, \dots$ be a sequence of disjoint elements of $P$, and suppose that $\bigdu_{n=1}^\infty E_n=E$, where $E=[a_0, b_0)$. We need to show that $\mu_\alpha(E)=\sum_{n=1}^\infty\mu_\alpha(E_n)$, that is, that $\alpha(b_0)-\alpha(a_0)=\sum_{n=1}^\infty(\alpha(b_n)-\alpha(a_n))$.
+Let $E_n=[a_n, b_n)$, $n=1,2,\dots$ be a sequence of disjoint elements of $P$, and suppose that $\bigdu_{n=1}^\infty E_n=E$, where $E=[a_0, b_0)$. We need to show that $\mu_\alpha(E)=\sum_{n=1}^\infty\mu_\alpha(E_n)$, that is, that $\alpha(b_0)-\alpha(a_0)=\sum_{n=1}^\infty(\alpha(b_n)-\alpha(a_n))$.
 
-We begin by showing that $\mu_\alpha(E)\geq\sum_{n=1}^\infty\mu_\alpha(E_n)$. Now it is sufficient for this to show that $\mu_\alpha(E)\geq\sum_{n=1}^m\mu_\alpha(E_n)$ for each finite $m$. Given any $m$, order the intervals $E_n$, $n=1,\dots,m$, according to their left endpoint, that is, re-index them so that $a_i\leq a_{i+1}$ for all $i=1, \dots, m-1$. Since the intervals are disjoint, it follows that $b_i \leq a_{i+1}$. We must show that $\alpha(b_0)-\alpha(a_0) \geq \sum_{n=1}^m(\alpha(b_n)-\alpha(a_n))$. Since clearly $b_0 \geq b_i$ and $a_0 \leq a_i$ for $i$, we have $\alpha(b_0)-\alpha(a_0)\geq\alpha(b_m)-\alpha(a_1)$. Now $\sum_{n=1}^m(\alpha(b_n)-\alpha(a_n))=\alpha(b_m)-\alpha(a_1)+\sum_{n=1}^m(\alpha(b_n)-\alpha(a_{n+1}))$, and $\sum_{n=1}^{m-1}(\alpha(b_n)-\alpha(a_{n+1})) \leq 0$ because of the way we have ordered the disjoint intervals and because $\alpha$ is non-decreasing. Hence we obtain the desired inequality.
+We begin by showing that $\mu_\alpha(E)\geq\sum_{n=1}^\infty\mu_\alpha(E_n)$. Now it is sufficient for this to show that $\mu_\alpha(E)\geq\sum_{n=1}^m\mu_\alpha(E_n)$ for each finite $m$. Given any $m$, order the intervals $E_n$, $n=1,\dots,m$, according to their left endpoint, that is, re-index them so that $a_i\leq a_{i+1}$ for all $i=1,\dots,m-1$. Since the intervals are disjoint, it follows that $b_i\leq a_{i+1}$. We must show that $\alpha(b_0)-\alpha(a_0)\geq\sum_{n=1}^m(\alpha(b_n)-\alpha(a_n))$. Since clearly $b_0\geq b_i$ and $a_0\leq a_i$ for $i$, we have $\alpha(b_0)-\alpha(a_0)\geq\alpha(b_m)-\alpha(a_1)$. Now $\sum_{n=1}^m(\alpha(b_n)-\alpha(a_n))=\alpha(b_m)-\alpha(a_1)+\sum_{n=1}^m(\alpha(b_n)-\alpha(a_{n+1}))$, and $\sum_{n=1}^{m-1}(\alpha(b_n)-\alpha(a_{n+1}))\leq0$ because of the way we have ordered the disjoint intervals and because $\alpha$ is non-decreasing. Hence we obtain the desired inequality.
 
-Now we need to show that $\mu_\alpha(E) \leq \sum_{n=1}^\infty \mu_\alpha(E_n)$. Choose $\ep>0$, choose $b_0'<b_0$ such that $\alpha(b_0') \geq \alpha(b_0)-\frac\ep2$, and for each $n$ choose $a_n'<a_n$ such that $\alpha(a_n')\geq \alpha(a_n)-\ep_n$, where the $\ep_n$ are positive numbers such that $\sum_{n=1}^\infty\ep_n=\frac\ep2$. For example we could let $\ep_n=\ep/2^{n+1}$. (Recall that $\sum_{n=1}^\infty 1/2^n=1$. We will use this fact repeatedly.) We can choose such $a_n'$ only because $\alpha$ is assumed to be left continuous. Then $[a_0, b_0'] \subseteq[a_0, b_0)=\bigdu_{n=1}^\infty[a_n, b_n) \subseteq \bigcup_{n=1}^\infty(a_n', b_n) .$ Since $[a_0, b_0']$ is compact and the $(a_n', b_n)$ are open, there exists a finite integer $m$ such that $[a_0, b_0'] \subseteq \bigcup_{n=1}^m(a_n', b_n)$. Re-index the intervals so that the first contains $a_0$, the second contains the right endpoint of the first, the third contains the right endpoint of the second and so on until we get $b_0'$ contained in an interval of the string. There may be some intervals left over, and we discard them as they are superfluous. We see that we have now arranged matters so that $b_n \geq a_{n+1}'$ for $n=1, \dots, m$ and $a_1' \leq a_0$ and $b_0' \leq b_m .$ We also re-index the $\ep_n$ in the same way. Then
+Now we need to show that $\mu_\alpha(E)\leq\sum_{n=1}^\infty\mu_\alpha(E_n)$. Choose $\ep>0$, choose $b_0'<b_0$ such that $\alpha(b_0')\geq\alpha(b_0)-\frac\ep2$, and for each $n$ choose $a_n'<a_n$ such that $\alpha(a_n')\geq\alpha(a_n)-\ep_n$, where the $\ep_n$ are positive numbers such that $\sum_{n=1}^\infty\ep_n=\frac\ep2$. For example we could let $\ep_n=\ep/2^{n+1}$. (Recall that $\sum_{n=1}^\infty 1/2^n=1$. We will use this fact repeatedly.) We can choose such $a_n'$ only because $\alpha$ is assumed to be left continuous. Then $[a_0,b_0']\subseteq[a_0,b_0)=\bigdu_{n=1}^\infty[a_n,b_n)\subseteq\bigcup_{n=1}^\infty(a_n',b_n)$. Since $[a_0,b_0']$ is compact and the $(a_n',b_n)$ are open, there exists a finite integer $m$ such that $[a_0,b_0']\subseteq\bigcup_{n=1}^m(a_n',b_n)$. Re-index the intervals so that the first contains $a_0$, the second contains the right endpoint of the first, the third contains the right endpoint of the second and so on until we get $b_0'$ contained in an interval of the string. There may be some intervals left over, and we discard them as they are superfluous. We see that we have now arranged matters so that $b_n\geq a_{n+1}'$ for $n=1,\dots,m$ and $a_1'\leq a_0$ and $b_0'\leq b_m$. We also re-index the $\ep_n$ in the same way. Then
 \begin{align*}
-    \alpha(b_0)-\alpha(a_0)&\leq\alpha(b_0')-\alpha(a_0)+\frac\ep2\leq \alpha(b_m)-\alpha(a_1')+\frac\ep2\\
+    \alpha(b_0)-\alpha(a_0)&\leq\alpha(b_0')-\alpha(a_0)+\frac\ep2\leq\alpha(b_m)-\alpha(a_1')+\frac\ep2\\
     &\leq\alpha(b_m)-\alpha(a_1')+\sum_{n=1}^{m-1}(\alpha(b_n)-\alpha(a_{n+1}'))+\frac\ep2\\
     &=\sum_{n=1}^m(\alpha(b_n)-\alpha(a_n'))+\frac\ep2\\
     &\leq\sum_{n=1}^m(\alpha(b_n)-\alpha(a_n)+\ep_n)+\frac\ep2\\
-    &\leq \sum_{n=1}^\infty(\alpha(b_n)-\alpha(a_n))+\ep.
-\end{align*}Since $\ep$ was arbitrary we have shown that $\alpha(b_0)-\alpha(a_0) \leq \sum_{n=1}^\infty(\alpha(b_n)-\alpha(a_n))$ which is what we needed.
+    &\leq\sum_{n=1}^\infty(\alpha(b_n)-\alpha(a_n))+\ep.
+\end{align*}Since $\ep$ was arbitrary we have shown that $\alpha(b_0)-\alpha(a_0)\leq\sum_{n=1}^\infty(\alpha(b_n)-\alpha(a_n))$ which is what we needed.
 \end{proof}
 
 \section{Semirings and Premeasures}
@@ -126,9 +126,9 @@ Motivated by the properties of the collection $P$ of the previous section, we ma
 \begin{definition}
 A collection $P$ of subsets of a set $X$ is called a \defline{semiring}\index{semiring} if
 \begin{enumerate}[label=\arabic*)]
-    \item $\varnothing \in P$
+    \item $\varnothing\in P$
     \item if $E,F\in P$ then $E\cap F\in P$
-    \item if $E,F\in P$ then there exist $E_1,\dots,E_m\in P$ such that $E\sd F=\bigdu_{n=1}^m E_n$.
+    \item if $E,F\in P$ then there exist $E_1,\dots,E_m\in P$ such that $E\sd F=\bigdu_{n=1}^mE_n$.
 \end{enumerate}
 \end{definition}
 
@@ -145,11 +145,11 @@ As was the case for measures, it is easily seen that if a premeasure $\mu$, has 
 The extension theorem which we wish to prove states in part that a premeasure $\mu$, on a semiring $P$, can be extended to a measure on $\sring{P}$, the $\sigma$-ring generated by $P$. But before beginning the discussion of this theorem, we need three lemmas concerning premeasures. In each of the following lemmas, $P$ is an arbitrary semiring and $\mu$ is an arbitrary premeasure on $P$.
 
 \begin{lemma}\label{lem:repeated set diff}
-If $E, E_1, E_2, \dots, E_m\in P$ then there exist $F_i \in P$, $i=1, \dots, k$ such that $(((E\sd E_1)\sd E_2)\sd \cdots\sd E_m)=\bigdu_{i=1}^k F_i$ 
+If $E,E_1,E_2,\dots,E_m\in P$ then there exist $F_i\in P$, $i=1,\dots,k$ such that $(((E\sd E_1)\sd E_2)\sd\cdots\sd E_m)=\bigdu_{i=1}^kF_i$ 
 \end{lemma}
 
 \begin{proof}
-We use induction on $m$. If $m=1$ then the lemma is true by the definition of a semiring. Now suppose that the lemma is true for $m-1$ where $m>1$. Then there exist $F_i'$, $i=1, \dots, k'$ such that $((((E\sd E_1)\sd E_2)\sd\cdots\sd E_{m-1})\sd E_m)=\br{\bigdu_{i=1}^{k'}F_i'}\sd E_m$. But $\br{\bigdu_{i=1}^{k'}F_i'}\sd E_m=\bigdu_{i=1}^{k'}(F_i'\sd E_m)$. Thus, using the definition of a semiring to express each $F_i'\sd E_m$ as the disjoint union of a finite number of elements of $P$, we obtain the desired result.
+We use induction on $m$. If $m=1$ then the lemma is true by the definition of a semiring. Now suppose that the lemma is true for $m-1$ where $m>1$. Then there exist $F_i'$, $i=1,\dots,k'$ such that $((((E\sd E_1)\sd E_2)\sd\cdots\sd E_{m-1})\sd E_m)=\br{\bigdu_{i=1}^{k'}F_i'}\sd E_m$. But $\br{\bigdu_{i=1}^{k'}F_i'}\sd E_m=\bigdu_{i=1}^{k'}(F_i'\sd E_m)$. Thus, using the definition of a semiring to express each $F_i'\sd E_m$ as the disjoint union of a finite number of elements of $P$, we obtain the desired result.
 \end{proof}
 
 
@@ -158,24 +158,24 @@ The ring generated by a semiring $P$ consists of the finite disjoint unions of e
 \end{corollary}
 
 \begin{proof}
-By Lemma \ref{lem:repeated set diff} we have \[\bigdu_mE_m\sd\bigdu_nF_n=\bigdu_m\br{E_m\sd\bigdu_nF_n}=\bigdu_m\bigdu_{j=1}^{k_m}G_{mj}\] where the $E_m, F_n$ and $G_{mj}$ are elements of $P$. Thus the collection of finite disjoint unions of elements of $P$ is closed under taking differences. But this collection is also clearly closed under taking finite disjoint unions. It follows that it is closed under taking finite unions, since $E\cup F$ $=E\du(F\sd E)$
+By Lemma \ref{lem:repeated set diff} we have \[\bigdu_mE_m\sd\bigdu_nF_n=\bigdu_m\br{E_m\sd\bigdu_nF_n}=\bigdu_m\bigdu_{j=1}^{k_m}G_{mj}\] where the $E_m, F_n$ and $G_{mj}$ are elements of $P$. Thus the collection of finite disjoint unions of elements of $P$ is closed under taking differences. But this collection is also clearly closed under taking finite disjoint unions. It follows that it is closed under taking finite unions, since $E\cup F=E\du(F\sd E)$
 \end{proof}
 
 
 \begin{lemma}\label{lem:countable superadditive}
-If $E \supseteq \bigdu_{i=1}^\infty E_i$ where $E, E_i \in P$, then $\mu(E) \geq \sum_{i=1}^\infty \mu(E_i)$. (As a special case we see that a premeasure is monotone, that is, if $E \subseteq F$, and $E,F\in P$, then $\mu(E) \leq \mu(F)$.)
+If $E\supseteq\bigdu_{i=1}^\infty E_i$ where $E,E_i\in P$, then $\mu(E)\geq\sum_{i=1}^\infty\mu(E_i)$. (As a special case we see that a premeasure is monotone, that is, if $E\subseteq F$, and $E,F\in P$, then $\mu(E)\leq\mu(F)$.)
 \end{lemma}
 
 \begin{proof}
-We note first that we have not assumed that $\bigdu_{i=1}^\infty E_i$ is in $P$. Now, to prove the lemma it is sufficient to show that $\mu(E) \geq \sum_{i=1}^m\mu(E_i)$ for each finite $m$. By Lemma \ref{lem:repeated set diff}, $(((E\sd E_1)\sd E_2)\sd\cdots\sd E_m) =\bigdu_{i=1}^k F_i$ where $F_i \in P$. Then $E=E_1 \du E_2 \du \cdots \du E_m\du\bigdu_{i=1}^kF_i$. Thus $\mu(E)=\mu(E_1)+\cdots+\mu(E_m)+\sum_{i=1}^k\mu(F_i)$. Since $\mu$ is non-negative, it follows that $\mu(E) \geq \sum_{i=1}^m \mu(E_i)$.
+We note first that we have not assumed that $\bigdu_{i=1}^\infty E_i$ is in $P$. Now, to prove the lemma it is sufficient to show that $\mu(E)\geq\sum_{i=1}^m\mu(E_i)$ for each finite $m$. By Lemma \ref{lem:repeated set diff}, $(((E\sd E_1)\sd E_2)\sd\cdots\sd E_m)=\bigdu_{i=1}^kF_i$ where $F_i\in P$. Then $E=E_1\du E_2\du\cdots\du E_m\du\bigdu_{i=1}^kF_i$. Thus $\mu(E)=\mu(E_1)+\cdots+\mu(E_m)+\sum_{i=1}^k\mu(F_i)$. Since $\mu$ is non-negative, it follows that $\mu(E)\geq\sum_{i=1}^m\mu(E_i)$.
 \end{proof}
 
 \begin{lemma}
-A premeasure is countably subadditive, that is, if $E \subseteq \bigcup_{i=1}^\infty E_i$ where $E, E_i \in P$, then $\mu(E)\leq\sum_{i=1}^\infty\mu(E_i)$ 
+A premeasure is countably subadditive, that is, if $E\subseteq\bigcup_{i=1}^\infty E_i$ where $E,E_i\in P$, then $\mu(E)\leq\sum_{i=1}^\infty\mu(E_i)$ 
 \end{lemma}
 
 \begin{proof}
-Clearly $E=\bigcup_{i=1}^\infty(E \cap E_i)$. Let $E \cap E_i=E_i'$ so that $E=\bigcup_{i=1}^\infty E_i'$. Using Lemma \ref{lem:repeated set diff} repeatedly we obtain 
+Clearly $E=\bigcup_{i=1}^\infty(E\cap E_i)$. Let $E\cap E_i=E_i'$ so that $E=\bigcup_{i=1}^\infty E_i'$. Using Lemma \ref{lem:repeated set diff} repeatedly we obtain 
 \begin{align*}
     E=\bigcup_{i=1}^\infty E_i'&=E_1'\du(E_2'\sd E_1')\du\cdots\du\br{E_m'\sd\bigcup_{j=1}^{m-1}E_j'}\du\cdots\\
     &=E_1'\du\bigdu_{i=1}^{k_2}F_{2i}\du\cdots\du\bigdu_{i=1}^{k_m} F_{mi}\du\cdots\\
@@ -209,15 +209,15 @@ An \defline{outer measure}\index{outer measure} is a non-negative (extended real
 \end{definition}
 
 \begin{theorem}\label{thm:outer measure of premeasure}
-If $\mu$ is a premeasure on a semiring $P$ and if $\mu^*$ is defined on $\hring{P}$ by \[\mu^*(A)=\inf \brc{\sum_{n=1}^\infty\mu(E_n): A\subseteq\bigcup_{n=1}^\infty E_n, E_n \in P},\] then $\mu^*$ is an outer measure on $\hring{P}$ which extends $\mu$ (that is, $\mu^*(E)=\mu(E)$ for each $E\in P$.)
+If $\mu$ is a premeasure on a semiring $P$ and if $\mu^*$ is defined on $\hring{P}$ by \[\mu^*(A)=\inf\brc{\sum_{n=1}^\infty\mu(E_n):A\subseteq\bigcup_{n=1}^\infty E_n,E_n\in P},\] then $\mu^*$ is an outer measure on $\hring{P}$ which extends $\mu$ (that is, $\mu^*(E)=\mu(E)$ for each $E\in P$.)
 \end{theorem}
 
 \begin{proof}
-Property \ref{def:outer measure 1} in the definition of an outer measure is clearly satisfied by $\mu^*$. So we need first to prove property \ref{def:outer measure 2}, that is, that if $A\subseteq\bigcup_{i=1}^\infty A_i$, where each $A_i\in\hring{P}$ then $\mu^*(A)\leq\sum_{i=1}^\infty \mu^*(A_i)$. Now if $\mu^*(A_i)=\infty$ for some $i$, then the result is certainly true, and so we may assume that $\mu^*(A_i)<\infty$ for every $i$.
+Property \ref{def:outer measure 1} in the definition of an outer measure is clearly satisfied by $\mu^*$. So we need first to prove property \ref{def:outer measure 2}, that is, that if $A\subseteq\bigcup_{i=1}^\infty A_i$, where each $A_i\in\hring{P}$ then $\mu^*(A)\leq\sum_{i=1}^\infty\mu^*(A_i)$. Now if $\mu^*(A_i)=\infty$ for some $i$, then the result is certainly true, and so we may assume that $\mu^*(A_i)<\infty$ for every $i$.
 
-Let $\ep>0$ be given. Choose $\brc{E_{ij}}_{i, j=1}^\infty\subseteq P$ such that $A_i\subseteq\bigcup_{j=1}^\infty E_{ij}$ and $\mu^*(A_i)\geq\sum_{j=1}^\infty\mu(E_{ij})-\frac{\ep}{2^i}$. Then $A\subseteq\bigcup_{i,j=1}^\infty E_{i j}$ and $\mu^*(A)\leq\sum_{i,j=1}^\infty\mu(E_{ij})=\sum_{i=1}^\infty\br{\sum_{j=1}^\infty\mu(E_{i j})}\leq \sum_{i=1}^\infty\br{\mu^*(A_i)+\frac{\ep}{2^i}}\allowbreak=\sum_{i=1}^\infty\mu^*(A_i)+\ep$. Since $\ep$ was arbitrary it follows that $\mu^*$ is countably subadditive. Thus $\mu^*$ is an outer measure.
+Let $\ep>0$ be given. Choose $\brc{E_{ij}}_{i, j=1}^\infty\subseteq P$ such that $A_i\subseteq\bigcup_{j=1}^\infty E_{ij}$ and $\mu^*(A_i)\geq\sum_{j=1}^\infty\mu(E_{ij})-\frac{\ep}{2^i}$. Then $A\subseteq\bigcup_{i,j=1}^\infty E_{i j}$ and $\mu^*(A)\leq\sum_{i,j=1}^\infty\mu(E_{ij})=\sum_{i=1}^\infty\br{\sum_{j=1}^\infty\mu(E_{ij})}\leq\sum_{i=1}^\infty\br{\mu^*(A_i)+\frac{\ep}{2^i}}\allowbreak=\sum_{i=1}^\infty\mu^*(A_i)+\ep$. Since $\ep$ was arbitrary it follows that $\mu^*$ is countably subadditive. Thus $\mu^*$ is an outer measure.
 
-Now we need to show that $\mu^*$ extends $\mu$. Clearly $\mu^*(A)\leq\mu(A)$ for all $A\in P$ by the definition of $\mu^*$, so all that we need to show is that $\mu^*(A)\geq\mu(A)$ if $A\in P$, that is, that $\sum_{i=1}^\infty\mu(E_i)\geq\mu(A)$ if $A\subseteq \bigcup_{i=1}^\infty E_i$ and $A, E_i \in P$. But this is just the fact that a premeasure is countably subadditive.
+Now we need to show that $\mu^*$ extends $\mu$. Clearly $\mu^*(A)\leq\mu(A)$ for all $A\in P$ by the definition of $\mu^*$, so all that we need to show is that $\mu^*(A)\geq\mu(A)$ if $A\in P$, that is, that $\sum_{i=1}^\infty\mu(E_i)\geq\mu(A)$ if $A\subseteq\bigcup_{i=1}^\infty E_i$ and $A,E_i\in P$. But this is just the fact that a premeasure is countably subadditive.
 \end{proof}
 
 \begin{definition}
@@ -232,7 +232,7 @@ Outer measures will in general not be measures. We now begin the process of rest
 Given a hereditary $\sigma$-ring $H$ and an outer measure $\mu^*$ on $H$ we call a set $E\in H$ \defline{$\mu^*$-measurable}\index{mu-measurable@$\mu$-measurable} if for every $A\in H$ we have the equality $\mu^*(A)=\mu^*(A\cap E)+\mu^*(A\sd E)$. We will denote the collection of all $\mu^*$-measurable sets by $\mring{\mu^*}$.
 \end{definition}
 
-This ingenious definition is due to Caratheodory in 1918. It says that $E$ splits all elements of $H$ nicely with respect to $\mu^*$. Note that it is always true that $\mu^*(A) \leq \mu^*(A\cap E)+\mu^*(A\sd E)$ because of the subadditivity of $\mu^*$. Thus to show that a set $E$ is $\mu^*$-measurable we need only prove the opposite inequality, $\mu^*(A)\geq\mu^*(A\cap E)+\mu^*(A\sd E)$, for all $A\in H$
+This ingenious definition is due to Caratheodory in 1918. It says that $E$ splits all elements of $H$ nicely with respect to $\mu^*$. Note that it is always true that $\mu^*(A)\leq\mu^*(A\cap E)+\mu^*(A\sd E)$ because of the subadditivity of $\mu^*$. Thus to show that a set $E$ is $\mu^*$-measurable we need only prove the opposite inequality, $\mu^*(A)\geq\mu^*(A\cap E)+\mu^*(A\sd E)$, for all $A\in H$
 
 \begin{theorem}\label{thm:restriction of outer measure to meas sets}
 If $\mu^*$ is an outer measure on a hereditary $\sigma$-ring $H$, then either $\mring{\mu^*}$ is empty, or it is a $\sigma$-ring and the restriction of $\mu^*$ to $\mring{\mu^*}$ is a measure.
@@ -246,75 +246,75 @@ We divide the proof into two main steps.
 If $\mring{\mu^*}$ is not empty, then it is a ring.
 \end{lemma}
 \begin{proof}
-We need to prove that if $E,F \in \mring{\mu^*}$, then $E \cup F$ and $E\sd F\in \mring{\mu^*}$. Let ${A} \in {H}$ be arbitrary. Then, using the fact that $E$ and ${F}$ are $\mu^*$-measurable, we obtain the following two strings of inequalities:
+We need to prove that if $E,F\in\mring{\mu^*}$, then $E\cup F$ and $E\sd F\in\mring{\mu^*}$. Let $A\in H$ be arbitrary. Then, using the fact that $E$ and $F$ are $\mu^*$-measurable, we obtain the following two strings of inequalities:
 \begin{align*}
-    \mu^*(A)&\leq\mu^*(A \cap(E \cup F))+\mu^*(A\sd(E \cup F)) \\
-    &=\mu^*((A \cap E) \du((A\sd E) \cap F))+\mu^*((A\sd E)\sd F) \\
-    & \leq \mu^*(A \cap E)+\mu^*((A\sd E) \cap F)+\mu^*((A\sd E)\sd F) \\
-    &=\mu^*(A \cap E)+\mu^*(A\sd E)=\mu^*(A)
+    \mu^*(A)&\leq\mu^*(A\cap(E\cup F))+\mu^*(A\sd(E\cup F)) \\
+            &=\mu^*((A\cap E)\du((A\sd E)\cap F))+\mu^*((A\sd E)\sd F) \\
+            &\leq\mu^*(A\cap E)+\mu^*((A\sd E)\cap F)+\mu^*((A\sd E)\sd F) \\
+            &=\mu^*(A\cap E)+\mu^*(A\sd E)=\mu^*(A)
 \end{align*}
 and
 \begin{align*}
-\mu^*(A) & \leq \mu^*(A \cap(E\sd F))+\mu^*(A\sd (E\sd F)) \\
-&=\mu^*((A \cap E)\sd F)+\mu^*((A\sd E) \cup(A \cap F)) \\
-&=\mu *((A \cap E)\sd F)+\mu^*((A\sd E) \du(A \cap E\cap F)) \\
-& \leq \mu^*((A \cap E)\sd F)+\mu^*(A\sd E)+\mu^*(A \cap E\cap F) \\
-&=\mu^*(A \cap E)+\mu^*(A\sd E)=\mu^*(A) .
+    \mu^*(A)&\leq\mu^*(A\cap(E\sd F))+\mu^*(A\sd (E\sd F)) \\
+            &=\mu^*((A\cap E)\sd F)+\mu^*((A\sd E)\cup(A\cap F)) \\
+            &=\mu^*((A\cap E)\sd F)+\mu^*((A\sd E)\du(A\cap E\cap F)) \\
+            &\leq\mu^*((A\cap E)\sd F)+\mu^*(A\sd E)+\mu^*(A\cap E\cap F) \\
+            &=\mu^*(A\cap E)+\mu^*(A\sd E)=\mu^*(A) .
 \end{align*}
-Since both strings begin and end with $\mu^*(A)$, all inequalities are actually equalities. Thus the first line of the first string shows that $E \cup F\in \mring{\mu^*}$ and the first line of the second string shows that $E\sd F\in \mring{\mu^*}$. Therefore $\mring{\mu^*}$ is a ring if it is not empty.
+Since both strings begin and end with $\mu^*(A)$, all inequalities are actually equalities. Thus the first line of the first string shows that $E\cup F\in\mring{\mu^*}$ and the first line of the second string shows that $E\sd F\in\mring{\mu^*}$. Therefore $\mring{\mu^*}$ is a ring if it is not empty.
 \end{proof}
 
 \begin{lemma}\label{lem:outer measure sigma additivity}
-Either $\mring{\mu^*}$ is empty, or it is a $\sigma$-ring, in which case if $E=\bigdu_{i=1}^\infty E_i$ where $E_i\in\mring{\mu^*}$, then $\mu^*(A \cap E)=\sum_{j=1}^\infty \mu^*(A \cap E_i)$ for all ${A} \in {H}$
+Either $\mring{\mu^*}$ is empty, or it is a $\sigma$-ring, in which case if $E=\bigdu_{i=1}^\infty E_i$ where $E_i\in\mring{\mu^*}$, then $\mu^*(A\cap E)=\sum_{j=1}^\infty\mu^*(A\cap E_i)$ for all $A\in H$
 \end{lemma}
 \begin{proof}
-We remark first that if $E$ and $F$ are disjoint elements of $\mring{\mu^*}$, then \[\mu^*(A \cap(E \du F))=\mu^*(A \cap E)+\mu^*(A \cap F),\] for this is easily seen to be the same as the statement that $E$ splits the set $A \cap(E \du F)$ nicely with respect to $\mu^*$.
+We remark first that if $E$ and $F$ are disjoint elements of $\mring{\mu^*}$, then \[\mu^*(A\cap(E\du F))=\mu^*(A\cap E)+\mu^*(A\cap F),\] for this is easily seen to be the same as the statement that $E$ splits the set $A\cap(E\du F)$ nicely with respect to $\mu^*$.
 
-Now to prove that $\mring{\mu^*}$ is a $\sigma$-ring we only need to show that $\mring{\mu^*}$ is closed under formation of countable unions. Suppose that $E=\bigcup_{i=1}^\infty E_i$, where each $E_i \in \mring{\mu^*}$. We wish to show that $E \in \mring{\mu^*}$. Now we can assume that the $E_i$'s are disjoint, since if they are not, we can disjointize them by letting $E_k'=E_k\sd\bigcup_{i=1}^{k-1} E_i$. Clearly each $E_{k}' \in \mring{\mu^*}$, since $\mring{\mu^*}$ is a ring.
+Now to prove that $\mring{\mu^*}$ is a $\sigma$-ring we only need to show that $\mring{\mu^*}$ is closed under formation of countable unions. Suppose that $E=\bigcup_{i=1}^\infty E_i$, where each $E_i\in\mring{\mu^*}$. We wish to show that $E\in\mring{\mu^*}$. Now we can assume that the $E_i$'s are disjoint, since if they are not, we can disjointize them by letting $E_k'=E_k\sd\bigcup_{i=1}^{k-1} E_i$. Clearly each $E_k'\in\mring{\mu^*}$, since $\mring{\mu^*}$ is a ring.
 
-Let $A \in {H}$. Then we have
+Let $A\in H$. Then we have
 \begin{align*}
     \mu^*(A)&=\mu^*\br{A\cap\br{\bigdu_{i=1}^mE_i}}+\mu^*\br{A\sd\br{\bigdu_{i=1}^mE_i}}& &\text{since }\mring{\mu^*}\text{ is a ring}\\
-    &\geq\mu^*\br{A\cap\br{\bigdu_{i=1}^mE_i}}+\mu^*(A\sd E)& &\text{by monotonicity of }\mu^*\\
-    &=\sum_{i=1}^m \mu^*(A \cap E_i)+\mu^*(A\sd E)& &\text{by first remark}
+            &\geq\mu^*\br{A\cap\br{\bigdu_{i=1}^mE_i}}+\mu^*(A\sd E)& &\text{by monotonicity of }\mu^*\\
+            &=\sum_{i=1}^m\mu^*(A\cap E_i)+\mu^*(A\sd E)& &\text{by first remark}
 \end{align*}
-Since this holds for every finite $m$ and since $\bigdu_{i=1}^\infty(A \cap E_i)=A \cap E$ we thus have $\mu^*(A) \geq \sum_{i=1}^\infty \mu^*(A \cap E_i)+\mu^*(A\sd E) \geq \mu^*(A \cap E)+\mu^*(A\sd E)$ since $\mu^*$ is subadditive. Thus $E$ is $\mu^*$-measurable, and consequently $\mring{\mu^*}$ is a $\sigma$-ring if it is not empty.
+Since this holds for every finite $m$ and since $\bigdu_{i=1}^\infty(A\cap E_i)=A\cap E$ we thus have $\mu^*(A)\geq\sum_{i=1}^\infty\mu^*(A\cap E_i)+\mu^*(A\sd E)\geq\mu^*(A\cap E)+\mu^*(A\sd E)$ since $\mu^*$ is subadditive. Thus $E$ is $\mu^*$-measurable, and consequently $\mring{\mu^*}$ is a $\sigma$-ring if it is not empty.
 
-To prove the second part of the lemma we note that we can also conclude from the above that $\mu^*(A)=\sum_{i=1}^\infty \mu^*(A \cap E_i)+\mu^*(A\sd E)$. Then if we replace $A$ by $A \cap E$ we obtain $\mu^*(A \cap E)=\sum_{i=1}^\infty \mu^*(A \cap E_i)+\mu^*(\varnothing)=\sum_{i=1}^\infty \mu^*(A \cap E_i)$ as desired, where we have used the fact that if $\mring{\mu^*}$ is not empty then some set splits $\varnothing$ nicely, so that either $\mu^*(\varnothing)=0$ or else $\mu^*(E)=\infty$ for all $E \in H$.
+To prove the second part of the lemma we note that we can also conclude from the above that $\mu^*(A)=\sum_{i=1}^\infty\mu^*(A\cap E_i)+\mu^*(A\sd E)$. Then if we replace $A$ by $A\cap E$ we obtain $\mu^*(A\cap E)=\sum_{i=1}^\infty\mu^*(A\cap E_i)+\mu^*(\varnothing)=\sum_{i=1}^\infty\mu^*(A\cap E_i)$ as desired, where we have used the fact that if $\mring{\mu^*}$ is not empty then some set splits $\varnothing$ nicely, so that either $\mu^*(\varnothing)=0$ or else $\mu^*(E)=\infty$ for all $E\in H$.
 \end{proof}
 
-To conclude the proof of Theorem \ref{thm:restriction of outer measure to meas sets} all that we need to show is that $\mu^*$ restricted to $\mring{\mu^*}$ is a measure, that is, that if $E=\bigdu_{i=1}^\infty E_i$, with each $E_i\in\mring{\mu^*}$, then $\mu^*(E)=\sum_{i=1}^\infty \mu^*(E_i)$. But to obtain this we need only let $A=E$ in the second statement of Lemma \ref{lem:outer measure sigma additivity}.
+To conclude the proof of Theorem \ref{thm:restriction of outer measure to meas sets} all that we need to show is that $\mu^*$ restricted to $\mring{\mu^*}$ is a measure, that is, that if $E=\bigdu_{i=1}^\infty E_i$, with each $E_i\in\mring{\mu^*}$, then $\mu^*(E)=\sum_{i=1}^\infty\mu^*(E_i)$. But to obtain this we need only let $A=E$ in the second statement of Lemma \ref{lem:outer measure sigma additivity}.
 \end{proof}
 
 We remark that it is entirely possible for $\mring{\mu^*}$ to be empty (see Exercise \ref{exer:empty meas sets}).
 
 \begin{definition}
-A non-negative measure $\mu$ on a $\sigma$-ring ${S}$ is \defline{complete}\index{complete measure} if whenever $F \subseteq E$, $E \in S$, and $\mu(E)=0$, then $F\in S$. (And, of course, $\mu(F)=0$.)
+A non-negative measure $\mu$ on a $\sigma$-ring $S$ is \defline{complete}\index{complete measure} if whenever $F\subseteq E$, $E\in S$, and $\mu(E)=0$, then $F\in S$. (And, of course, $\mu(F)=0$.)
 \end{definition}
 
 \begin{proposition}
-If $\mu^*$ is an outer measure, if $\mring{\mu^*} \neq \varnothing$, and if $\widetilde{\mu}$ is the restriction of $\mu^*$ to $\mring{\mu^*}$, then $\widetilde{\mu}$ is a complete measure.
+If $\mu^*$ is an outer measure, if $\mring{\mu^*}\neq\varnothing$, and if $\widetilde{\mu}$ is the restriction of $\mu^*$ to $\mring{\mu^*}$, then $\widetilde{\mu}$ is a complete measure.
 \end{proposition}
 
 \begin{proof}
-It is sufficient to show that if $\mu^*(E)=0$ then $E \in \mring{\mu^*}$. Let $A \in H$. Then clearly $\mu^*(A) \geq \mu^*(A \cap E)+\mu^*(A\sd E)$, since $\mu^*(A) \geq \mu^*(A\sd E)$ and $\mu^*(A \cap E)=0$ by the monotonicity of $\mu^*$. Therefore $E \in \mring{\mu^*}$.
+It is sufficient to show that if $\mu^*(E)=0$ then $E\in\mring{\mu^*}$. Let $A\in H$. Then clearly $\mu^*(A)\geq\mu^*(A\cap E)+\mu^*(A\sd E)$, since $\mu^*(A)\geq\mu^*(A\sd E)$ and $\mu^*(A\cap E)=0$ by the monotonicity of $\mu^*$. Therefore $E\in\mring{\mu^*}$.
 \end{proof}
 
 At this point we do not yet know that we have proved a really useful theorem. For example, we do not know whether $\mring{\mu^*}$ is ever non-empty. Also, we do not have an extension theorem yet. We solve these problems with the following theorem.
 
 \begin{theorem}
-If $\mu$ is a premeasure on a semiring $P$, and if $\mu^*$, defined on $\hring{P}$, is the outer measure which $\mu$ determines, then $P \subseteq \mring{\mu^*}$.
+If $\mu$ is a premeasure on a semiring $P$, and if $\mu^*$, defined on $\hring{P}$, is the outer measure which $\mu$ determines, then $P\subseteq\mring{\mu^*}$.
 \end{theorem}
 \begin{proof}
-We need to show that if $E \in P$, then $E \in \mring{\mu^*}$, that is, that for all $A \in \hring{P}, \mu^*(A)=\mu^*(A \cap E)+\mu^*(A\sd E)$. If $\mu^*(A)=\infty$ then we are clearly done since it is then clear that $\mu^*(A) \geq \mu^*(A \cap E)+\mu^*(A\sd E)$. Thus, we may assume that $\mu^*(A)<\infty$. Suppose we are given $\ep>0$. Then, since $A \in \hring{P}$, we can choose elements $F_i$ of $P$ such that $A \subseteq \bigcup_{i=1}^\infty F_i$ and $\mu^*(A)+\ep \geq \sum_{i=1}^\infty \mu(F_i)$. Now $F_i=(E \cap F_i) \du(F_i\sd E)$, so by the definition of a semiring there exist $G_{ij} \in P$, such that $F_i=(E \cap F_i) \du\br{\bigdu_{j=1}^{k_i}G_{ij}}$. Then
+We need to show that if $E\in P$, then $E\in\mring{\mu^*}$, that is, that for all $A\in\hring{P},\mu^*(A)=\mu^*(A\cap E)+\mu^*(A\sd E)$. If $\mu^*(A)=\infty$ then we are clearly done since it is then clear that $\mu^*(A)\geq\mu^*(A\cap E)+\mu^*(A\sd E)$. Thus, we may assume that $\mu^*(A)<\infty$. Suppose we are given $\ep>0$. Then, since $A\in\hring{P}$, we can choose elements $F_i$ of $P$ such that $A\subseteq\bigcup_{i=1}^\infty F_i$ and $\mu^*(A)+\ep\geq\sum_{i=1}^\infty\mu(F_i)$. Now $F_i=(E\cap F_i)\du(F_i\sd E)$, so by the definition of a semiring there exist $G_{ij}\in P$, such that $F_i=(E\cap F_i)\du\br{\bigdu_{j=1}^{k_i}G_{ij}}$. Then
 \begin{align*}
-\sum_{i=1}^\infty \mu(F_i)&=\sum_{i=1}^\infty\br{\mu(E \cap F_i)+\sum_{j=1}^{k_i} \mu(G_{i j})} \\
-&=\sum_{i=1}^\infty \mu(E \cap F_i)+\sum_{i=1}^\infty \sum_{j=1}^{k_i} \mu(G_{i j}).
+\sum_{i=1}^\infty\mu(F_i)&=\sum_{i=1}^\infty\br{\mu(E\cap F_i)+\sum_{j=1}^{k_i}\mu(G_{i j})} \\
+&=\sum_{i=1}^\infty\mu(E\cap F_i)+\sum_{i=1}^\infty\sum_{j=1}^{k_i}\mu(G_{i j}).
 \end{align*}
-Now we note that $A \cap E\subseteq \bigcup_{i=1}^\infty(F_i \cap E)$ and that $A\sd E\subseteq \bigcup_{i=1}^\infty(F_i\sd E)=\bigcup_{i=1}^\infty \bigcup_{j=1}^{k_i} G_{ij} $. Thus
+Now we note that $A\cap E\subseteq\bigcup_{i=1}^\infty(F_i\cap E)$ and that $A\sd E\subseteq\bigcup_{i=1}^\infty(F_i\sd E)=\bigcup_{i=1}^\infty\bigcup_{j=1}^{k_i}G_{ij} $. Thus
 \begin{align*}
-    \mu^*(A)+\ep&\geq\sum_{i=1}^\infty\mu(F_i)=\sum_{i=1}^\infty \mu(F_i \cap E)+\sum_{i=1}^\infty \sum_{j=1}^{k_i}\mu(G_{i j})\\
-    &\geq\mu^*(A \cap E)+\mu^*(A\sd E).
+    \mu^*(A)+\ep&\geq\sum_{i=1}^\infty\mu(F_i)=\sum_{i=1}^\infty\mu(F_i\cap E)+\sum_{i=1}^\infty\sum_{j=1}^{k_i}\mu(G_{i j})\\
+    &\geq\mu^*(A\cap E)+\mu^*(A\sd E).
 \end{align*}
 Since $\ep$ is arbitrary, we obtain the desired result.
 \end{proof}
@@ -326,7 +326,7 @@ If $\mu$ is a premeasure on a semiring $P$ and if $\mu^*$, defined on $\hring{P}
 \end{theorem}
 
 \begin{definition}
-If $P, \alpha$ and $\mu_\alpha$ are as in \ref{def:stieltjes premeasure}, then $\overline{\mu_\alpha}$ is called the \defline{Borel-Stieltjes measure}\index{Borel-Stieltjes measure} on $\bR$ corresponding to $\alpha$ (recall that $\sring{P}$ is the $\sigma$-ring of Borel sets of $\bR$), and $\widetilde{\mu_\alpha}$ is called the \defline{Lebesgue-Stieltjes measure}\index{Lebesgue-Stieltjes measure} on $\bR$ corresponding to $\alpha$. If $\alpha(x)=x$, then $\overline{\mu_\alpha}$ is called \defline{Borel measure}\index{Borel measure} on $\bR$, $\widetilde{\mu_\alpha}$ is called \defline{Lebesgue measure}\index{Lebesgue measure} on $\bR$, and $\mring{\mu_\alpha^*}$ is called the $\sigma$-ring of \defline{Lebesgue measurable subsets}\index{Lebesgue measurable} of $\bR$.
+If $P,\alpha$ and $\mu_\alpha$ are as in \ref{def:stieltjes premeasure}, then $\overline{\mu_\alpha}$ is called the \defline{Borel-Stieltjes measure}\index{Borel-Stieltjes measure} on $\bR$ corresponding to $\alpha$ (recall that $\sring{P}$ is the $\sigma$-ring of Borel sets of $\bR$), and $\widetilde{\mu_\alpha}$ is called the \defline{Lebesgue-Stieltjes measure}\index{Lebesgue-Stieltjes measure} on $\bR$ corresponding to $\alpha$. If $\alpha(x)=x$, then $\overline{\mu_\alpha}$ is called \defline{Borel measure}\index{Borel measure} on $\bR$, $\widetilde{\mu_\alpha}$ is called \defline{Lebesgue measure}\index{Lebesgue measure} on $\bR$, and $\mring{\mu_\alpha^*}$ is called the $\sigma$-ring of \defline{Lebesgue measurable subsets}\index{Lebesgue measurable} of $\bR$.
 \end{definition}
 
 Implicit in the wording of the last paragraph is the fact that, given $\alpha$, the corresponding $\overline{\mu_\alpha}$ and $\widetilde{\mu_\alpha}$ are unique. We have not yet proved anything like this, but the uniqueness of extensions is the subject of the next section, and uniqueness of Borel-Stieltjes and Lebesgue-Stieltjes measure will follow from the results obtained there.
@@ -336,32 +336,32 @@ Implicit in the wording of the last paragraph is the fact that, given $\alpha$, 
 Before going on to prove uniqueness we first show that we cannot extend a premeasure $\mu$, to a measure on a larger $\sigma$-ring than $\mring{\mu^*}$ by iterating the process described above.
 
 \begin{proposition}\label{prop:repeated outer measure}
-Let $\mu$ be a premeasure on a semiring $P$ and let $\mu^*$ be the outer measure determined by $\mu$. Then $\hring{P}=\hring{\mring{\mu^*}}$, and the outer measures determined by $\overline{\mu}$ and $\widetilde{\mu}$ are both just $\mu^*$. More precisely, if $E \in \hring{P}$, then $\mu^*(E)=\inf \brc{\overline{\mu}(F):E\subseteq F,F\in \sring{P}}=\allowbreak\inf \brc{\widetilde{\mu}(F):E\subseteq F,F\in \mring{\mu^*}}$.
+Let $\mu$ be a premeasure on a semiring $P$ and let $\mu^*$ be the outer measure determined by $\mu$. Then $\hring{P}=\hring{\mring{\mu^*}}$, and the outer measures determined by $\overline{\mu}$ and $\widetilde{\mu}$ are both just $\mu^*$. More precisely, if $E\in\hring{P}$, then $\mu^*(E)=\inf\brc{\overline{\mu}(F):E\subseteq F,F\in\sring{P}}=\allowbreak\inf\brc{\widetilde{\mu}(F):E\subseteq F,F\in\mring{\mu^*}}$.
 \end{proposition}
 
 \begin{proof}
 
-$\hring{P}=\hring{\mring{\mu^*}}$ because $P \subseteq \mring{\mu^*} \subseteq \hring{P}$. To prove the second statement it suffices to show that for each $E \in \hring{P}$ the following string of inequalities holds:
+$\hring{P}=\hring{\mring{\mu^*}}$ because $P\subseteq\mring{\mu^*}\subseteq\hring{P}$. To prove the second statement it suffices to show that for each $E\in\hring{P}$ the following string of inequalities holds:
 \begin{align*}
-    \mu^*(E) &\geq \inf\brc{\sum_{i=1}^\infty\mu(E_i):E\subseteq \bigcup_{i=1}^\infty E_i, E_i \in P}\\
-    &\geq \inf \brc{\overline{\mu}(F):E\subseteq F,F\in \sring{P}}\\
-    &\geq \inf \brc{\widetilde{\mu}(F):E\subseteq F,F\in \mring{\mu^*}}\\
-    &\geq \mu^*(E).
+    \mu^*(E)&\geq\inf\brc{\sum_{i=1}^\infty\mu(E_i):E\subseteq\bigcup_{i=1}^\infty E_i,E_i\in P}\\
+            &\geq\inf\brc{\overline{\mu}(F):E\subseteq F,F\in\sring{P}}\\
+            &\geq\inf\brc{\widetilde{\mu}(F):E\subseteq F,F\in\mring{\mu^*}}\\
+            &\geq\mu^*(E).
 \end{align*}
-Now the first inequality follows from the definition of $\mu^*$. The second inequality follows from the fact that if $F=\bigcup_{i=1}^\infty E_i$ where the $E_i \in P$, then $\overline{\mu}(F) \leq \sum_{i=1}^\infty \mu(E_i)$ by the countable subadditivity of $\mu^*$. The third inequality holds because the term on the right is the infimum of a larger set. Finally, the last inequality follows from the monotonicity of $\mu^*$.
+Now the first inequality follows from the definition of $\mu^*$. The second inequality follows from the fact that if $F=\bigcup_{i=1}^\infty E_i$ where the $E_i\in P$, then $\overline{\mu}(F)\leq\sum_{i=1}^\infty\mu(E_i)$ by the countable subadditivity of $\mu^*$. The third inequality holds because the term on the right is the infimum of a larger set. Finally, the last inequality follows from the monotonicity of $\mu^*$.
 \end{proof}
 
 \begin{corollary}\label{cor:measure of hereditary wrt outer measure}
-If $E \in \hring{P}$, then there exists $F \in \sring{P}$ such that $E \subseteq F$ and $\overline{\mu}(F)=\mu^*(E)$
+If $E\in\hring{P}$, then there exists $F\in\sring{P}$ such that $E\subseteq F$ and $\overline{\mu}(F)=\mu^*(E)$
 \end{corollary}
 \begin{proof}
-By Proposition \ref{prop:repeated outer measure} there must exist a sequence $\brc{F_i}_{i=1}^\infty$ of elements of $\sring{P}$ such that $E \subseteq F_i$ for each $i$ and $\lim _{i \to \infty} \overline{\mu}(F_i)=\mu^*(E)$ Let $F=\bigcap_{i=1}^\infty F_i$.
+By Proposition \ref{prop:repeated outer measure} there must exist a sequence $\brc{F_i}_{i=1}^\infty$ of elements of $\sring{P}$ such that $E\subseteq F_i$ for each $i$ and $\lim _{i\to\infty}\overline{\mu}(F_i)=\mu^*(E)$ Let $F=\bigcap_{i=1}^\infty F_i$.
 \end{proof}
 
 In order to prove that the extensions we have obtained are unique we need to make an additional hypothesis (see Exercise \ref{exer:non unique extension measure}).
 
 \begin{definition}
-Let $\mu$ be a non-negative set function (such as a premeasure, measure, or outer measure) defined on a collection $P$, of subsets of $X$. Then $E\subseteq X$ is said to be \defline{$\sigma$-finite}\index{sigma-finite@$\sigma$-finite} for $\mu$ if there exist $E_i\in P$ such that $\mu(E_i)<\infty$ for each $i$, and $E\subseteq\bigcup_{i=1}^\infty E_i$. If each $E \in P$ is $\sigma$-finite, then $\mu$ itself is said to be \defline{$\sigma$-finite}. If in fact $X$ is $\sigma$-finite, then $\mu$ is said to be \defline{totally $\sigma$-finite}\index{totally sigma-finite@totally $\sigma$-finite}.
+Let $\mu$ be a non-negative set function (such as a premeasure, measure, or outer measure) defined on a collection $P$, of subsets of $X$. Then $E\subseteq X$ is said to be \defline{$\sigma$-finite}\index{sigma-finite@$\sigma$-finite} for $\mu$ if there exist $E_i\in P$ such that $\mu(E_i)<\infty$ for each $i$, and $E\subseteq\bigcup_{i=1}^\infty E_i$. If each $E\in P$ is $\sigma$-finite, then $\mu$ itself is said to be \defline{$\sigma$-finite}. If in fact $X$ is $\sigma$-finite, then $\mu$ is said to be \defline{totally $\sigma$-finite}\index{totally sigma-finite@totally $\sigma$-finite}.
 \end{definition}
 
 Being $\sigma$-finite will be an important hypothesis in many theorems in addition to the theorem concerning the uniqueness of extensions. Many pathologies occur with measures that are not $\sigma$-finite.
@@ -374,15 +374,15 @@ Obvious
 \end{proof}
 
 \begin{theorem}[Uniqueness of extensions]\label{thm:unique extension}
-If $\mu$ is a $\sigma$-finite premeasure on a semiring $P$, if $S$ is a $\sigma$-ring such that $\sring{P}\subseteq S\subseteq \mring{\mu^*}$ and if $\nu$ is a non-negative extension of $\mu$ to a measure on ${S}$, then $\nu$ coincides with the restriction of $\mu^*$ to ${S}$.
+If $\mu$ is a $\sigma$-finite premeasure on a semiring $P$, if $S$ is a $\sigma$-ring such that $\sring{P}\subseteq S\subseteq\mring{\mu^*}$ and if $\nu$ is a non-negative extension of $\mu$ to a measure on $S$, then $\nu$ coincides with the restriction of $\mu^*$ to $S$.
 \end{theorem}
 
 \begin{proof}
-If $E \in S$ and $E \subseteq \bigcup_{i=1}^\infty E_i$ where each $E_i \in P$, then $\nu(E) \leq \sum_{i=1}^\infty \nu(E_i)=\sum_{i=1}^\infty \mu(E_i)$ by the countable subadditivity of non-negative measures and by the fact that $\nu$ extends $\mu$. Thus $\nu(E) \leq \mu^*(E)$ for all $E \in S$. Thus we need to show that $\mu^*(E) \leq \nu(E)$ for all $E \in S$.
+If $E\in S$ and $E\subseteq\bigcup_{i=1}^\infty E_i$ where each $E_i\in P$, then $\nu(E)\leq\sum_{i=1}^\infty\nu(E_i)=\sum_{i=1}^\infty\mu(E_i)$ by the countable subadditivity of non-negative measures and by the fact that $\nu$ extends $\mu$. Thus $\nu(E)\leq\mu^*(E)$ for all $E\in S$. Thus we need to show that $\mu^*(E)\leq\nu(E)$ for all $E\in S$.
 
-\underline{Case 1}. Suppose first that $E$ is such that there exists $F \in P$ for which $E \subseteq F$ and $\mu(F)<\infty$. Then, since $F=E \du(F\sd E)$, we have $\nu(F)=\mu(F)=\mu^*(F)=\mu^*(E)+\mu^*(F\sd E) \geq \nu(E)+\nu(F\sd E)=\nu(F)$. Thus $\mu^*(E)+\mu^*(F\sd E)=\nu(E)+\nu(F\sd E)$. But $\mu^*(E) \geq \nu(E)$ and $\mu^*(F\sd E) \geq \nu(F\sd E)$ and these quantities are all assumed to be finite, so we must have $\mu^*(E)=v(E) .$
+\underline{Case 1}. Suppose first that $E$ is such that there exists $F\in P$ for which $E\subseteq F$ and $\mu(F)<\infty$. Then, since $F=E\du(F\sd E)$, we have $\nu(F)=\mu(F)=\mu^*(F)=\mu^*(E)+\mu^*(F\sd E)\geq\nu(E)+\nu(F\sd E)=\nu(F)$. Thus $\mu^*(E)+\mu^*(F\sd E)=\nu(E)+\nu(F\sd E)$. But $\mu^*(E)\geq\nu(E)$ and $\mu^*(F\sd E)\geq\nu(F\sd E)$ and these quantities are all assumed to be finite, so we must have $\mu^*(E)=v(E)$.
 
-\underline{Case 2}. Suppose now that $E \in S$ is arbitrary. Then, since $\mu$ is assumed to be $\sigma$-finite, there exist $F_i \in P$ such that $\mu(F_i)<\infty$ for each $i$ and $E\subseteq\bigcup_{j=1}^\infty F_i .$ Using the usual disjointizing process, we can then obtain sets ${G}_i$ in $\sring{P}$ such that $\overline{\mu}(G_i)<\infty$ for each $i$ and $E \subseteq \bigdu_{i=1}^\infty {G}_i$. Then, using Case 1, we see that $\nu(E)=\sum_{i=1}^\infty\nu(E\cap G_i)=\sum_{i=1}^\infty \mu^*(E \cap G_i)=\mu^*(E)$.
+\underline{Case 2}. Suppose now that $E\in S$ is arbitrary. Then, since $\mu$ is assumed to be $\sigma$-finite, there exist $F_i\in P$ such that $\mu(F_i)<\infty$ for each $i$ and $E\subseteq\bigcup_{j=1}^\infty F_i$. Using the usual disjointizing process, we can then obtain sets $G_i$ in $\sring{P}$ such that $\overline{\mu}(G_i)<\infty$ for each $i$ and $E\subseteq\bigdu_{i=1}^\infty G_i$. Then, using Case 1, we see that $\nu(E)=\sum_{i=1}^\infty\nu(E\cap G_i)=\sum_{i=1}^\infty\mu^*(E\cap G_i)=\mu^*(E)$.
 \end{proof}
 
 \begin{corollary}
@@ -390,40 +390,40 @@ Any non-negative measure $\mu$ defined on the Borel subsets of the real line whi
 \end{corollary}
 
 \begin{proof}
-Define $\alpha$ by $\alpha(t)=\mu([0, t))$ if $t \geq 0$ and $\alpha(t)=-\mu([t, 0))$ if $t<0$. Then $\alpha$ is clearly non-decreasing, and it is easily seen, using the countable additivity of $\mu$, that $\alpha$ is left continuous. Clearly $\overline{\mu_\alpha}$ agrees with $\mu$ on the family of left closed, right open finite intervals, and so $\overline{\mu_\alpha}$ agrees with $\mu$ on the class of Borel sets, by the theorem concerning the uniqueness of extensions.
+Define $\alpha$ by $\alpha(t)=\mu([0, t))$ if $t\geq 0$ and $\alpha(t)=-\mu([t, 0))$ if $t<0$. Then $\alpha$ is clearly non-decreasing, and it is easily seen, using the countable additivity of $\mu$, that $\alpha$ is left continuous. Clearly $\overline{\mu_\alpha}$ agrees with $\mu$ on the family of left closed, right open finite intervals, and so $\overline{\mu_\alpha}$ agrees with $\mu$ on the class of Borel sets, by the theorem concerning the uniqueness of extensions.
 \end{proof}
 
 We will now examine the structure of $\mring{\mu^*}$ more closely and show that if $\mu^*$ is determined by a $\sigma$-finite premeasure, then $\mring{\mu^*}$ has a rather simple form.
 
 \begin{definition}
-Let $\mu$ be a non-negative measure on a $\sigma$-ring $S$. A subset $E$ of $X$ is called a \defline{null set}\index{null set} with respect to $\mu$ if there exists $F \in S$ such that $E \subseteq F$ and $\mu(F)=0$ (or equivalently, if $\mu^*(E)=0$). The null sets form a hereditary $\sigma$-ring which we will denote by $\nring{\mu}$.
+Let $\mu$ be a non-negative measure on a $\sigma$-ring $S$. A subset $E$ of $X$ is called a \defline{null set}\index{null set} with respect to $\mu$ if there exists $F\in S$ such that $E\subseteq F$ and $\mu(F)=0$ (or equivalently, if $\mu^*(E)=0$). The null sets form a hereditary $\sigma$-ring which we will denote by $\nring{\mu}$.
 \end{definition}
 
 Our first result does not involve $\sigma$-finiteness.
 
 \begin{proposition}\label{prop:null set completion}
-Let $\mu$ be a non-negative measure on a $\sigma$-ring $S$. Let $S\du\nring{\mu}=\{E\du F:E\in S,F\in \nring{\mu}\}$ and define $\widehat{\mu}$ on $S \du \nring{\mu}$ by $\widehat{\mu}(E \du F)=\mu(E)$ where $E \in S$ and $F \in \nring{\mu}$. Then $S \du \nring{\mu}$ is a $\sigma$-ring, $\widehat{\mu}$ is well defined and $\widehat{\mu}$ is a completion of $\mu$, that is, $\widehat{\mu}$ is an extension of $\mu$ to a complete measure.
+Let $\mu$ be a non-negative measure on a $\sigma$-ring $S$. Let $S\du\nring{\mu}=\{E\du F:E\in S,F\in\nring{\mu}\}$ and define $\widehat{\mu}$ on $S\du\nring{\mu}$ by $\widehat{\mu}(E\du F)=\mu(E)$ where $E\in S$ and $F\in\nring{\mu}$. Then $S\du\nring{\mu}$ is a $\sigma$-ring, $\widehat{\mu}$ is well defined and $\widehat{\mu}$ is a completion of $\mu$, that is, $\widehat{\mu}$ is an extension of $\mu$ to a complete measure.
 \end{proposition}
 
 \begin{proof}
-We leave to the reader the trivial proof that $S\du \nring{\mu}$ is a $\sigma$-ring. The only slightly non-trivial thing to prove is that $\widehat{\mu}$ is well defined. Let $E_1 \du F_1=E_2 \du F_2$, where $E_1, E_2 \in S$ and $F_1, F_2 \in \nring{\mu}$. Then we must show that $\mu(E_1)=\mu(E_2)$. But $E_1\sd E_2=E_1 \cap F_2 \subseteq F_2$ and $E_2\sd E_1=E_2 \cap F_1 \subseteq F_1$, and so $\mu(E_1\sd E_2)=\mu(E_2\sd E_1)=0$. Since $\mu(E_1)$ $=\mu(E_1 \cap E_2)+\mu(E_1\sd E_2)$ and $\mu(E_2)=\mu(E_1 \cap E_2)+\mu(E_2\sd E_1)$, it follows that $\mu(E_1)=\mu(E_2)$.
+We leave to the reader the trivial proof that $S\du\nring{\mu}$ is a $\sigma$-ring. The only slightly non-trivial thing to prove is that $\widehat{\mu}$ is well defined. Let $E_1\du F_1=E_2\du F_2$, where $E_1,E_2\in S$ and $F_1,F_2\in\nring{\mu}$. Then we must show that $\mu(E_1)=\mu(E_2)$. But $E_1\sd E_2=E_1\cap F_2\subseteq F_2$ and $E_2\sd E_1=E_2\cap F_1\subseteq F_1$, and so $\mu(E_1\sd E_2)=\mu(E_2\sd E_1)=0$. Since $\mu(E_1)=\mu(E_1\cap E_2)+\mu(E_1\sd E_2)$ and $\mu(E_2)=\mu(E_1\cap E_2)+\mu(E_2\sd E_1)$, it follows that $\mu(E_1)=\mu(E_2)$.
 
 \end{proof}
 
 \begin{theorem}\label{thm:null set completion sigma finite}
-If $\mu$ is a $\sigma$-finite non-negative measure on a $\sigma$-ring $S$, then $\mring{\mu^*}=S \du \nring{\mu}$
+If $\mu$ is a $\sigma$-finite non-negative measure on a $\sigma$-ring $S$, then $\mring{\mu^*}=S\du\nring{\mu}$
 \end{theorem}
 
 \begin{proof}
-Clearly ${S} \du \nring{\mu} \subseteq \mring{\mu^*}$. Thus we must show that $\mring{\mu^*} \subseteq S\du \nring{\mu}$
+Clearly $S\du\nring{\mu}\subseteq\mring{\mu^*}$. Thus we must show that $\mring{\mu^*}\subseteq S\du\nring{\mu}$
 
-\underline{Case 1}. Suppose first that $E \in \mring{\mu^*}$ is such that $\mu^*(E)<\infty$. By Corollary \ref{cor:measure of hereditary wrt outer measure} there exists $F \in S$ such that $E \subseteq F$ and $\mu(F)=\mu^*(E)$. Then $\mu(F)=\mu^*(E)+\mu^*(F\sd E)$ so $\mu^*(F\sd E)=\mu(F)-\mu^*(E)=0$. Using the corollary again, we see that there exists $G \in S$ such that $F\sd E\subseteq G$ and $\mu(G)=0$. Since $F\sd E\subseteq G$, we have $E\sd G=F\sd G$, and so $E=(E\sd G) \du(E\cap G)=(F\sd G)\du(E\cap G)$. But $F\sd G\in S$ and $E\cap G\in \nring{\mu}$, and so $E\in S\du \nring{\mu}$
+\underline{Case 1}. Suppose first that $E\in\mring{\mu^*}$ is such that $\mu^*(E)<\infty$. By Corollary \ref{cor:measure of hereditary wrt outer measure} there exists $F\in S$ such that $E\subseteq F$ and $\mu(F)=\mu^*(E)$. Then $\mu(F)=\mu^*(E)+\mu^*(F\sd E)$ so $\mu^*(F\sd E)=\mu(F)-\mu^*(E)=0$. Using the corollary again, we see that there exists $G\in S$ such that $F\sd E\subseteq G$ and $\mu(G)=0$. Since $F\sd E\subseteq G$, we have $E\sd G=F\sd G$, and so $E=(E\sd G)\du(E\cap G)=(F\sd G)\du(E\cap G)$. But $F\sd G\in S$ and $E\cap G\in\nring{\mu}$, and so $E\in S\du\nring{\mu}$
 
-\underline{Case 2}. Suppose now that $E \in \mring{\mu^*}$ is arbitrary. Since $\mu$ is assumed to be $\sigma$-finite, so is $\mu^*$, and so there exist sets $E_i \in \mring{\mu^*}$ such that $\mu^*(E_i)<\infty$ for each $i$ and $E=\bigcup_{i=1}^\infty E_i .$ (To get $E=\bigcup_{i=1}^\infty E_i$ rather than $E \subseteq \bigcup_{i=1} E_i$ we can take intersections with $E$ if necessary.) By Case $1$, $E_i \in {S} \du\nring{\mu}$ for each $i$. Since $S \du \nring{\mu}$ is a $\sigma$-ring, it follows that $E\in S\du\nring{\mu}$.
+\underline{Case 2}. Suppose now that $E\in\mring{\mu^*}$ is arbitrary. Since $\mu$ is assumed to be $\sigma$-finite, so is $\mu^*$, and so there exist sets $E_i\in\mring{\mu^*}$ such that $\mu^*(E_i)<\infty$ for each $i$ and $E=\bigcup_{i=1}^\infty E_i$. (To get $E=\bigcup_{i=1}^\infty E_i$ rather than $E\subseteq\bigcup_{i=1}E_i$ we can take intersections with $E$ if necessary.) By Case $1$, $E_i\in S\du\nring{\mu}$ for each $i$. Since $S\du\nring{\mu}$ is a $\sigma$-ring, it follows that $E\in S\du\nring{\mu}$.
 \end{proof}
 
 \begin{corollary}
-If $\mu$ is a $\sigma$-finite premeasure on a semiring $P$, then $\mring{\mu^*}=\sring{P} \du\nring{\bar{\mu}}$.
+If $\mu$ is a $\sigma$-finite premeasure on a semiring $P$, then $\mring{\mu^*}=\sring{P}\du\nring{\bar{\mu}}$.
 \end{corollary}
 
 Since Lebesgue measure is the most important example of a measure, it is of interest to know whether there exist subsets of the real line which are not Lebesgue measurable. It is not very difficult to construct such sets, and we suggest such a construction in Exercise \ref{exer:lebesgue measure rotation inv} at the end of this chapter. However, an interesting feature of all known examples (including that of Exercise \ref{exer:lebesgue measure rotation inv}) is that they seem to require the use of the axiom of choice. In fact, R. Solovay has recently shown that there exist models for the Zermelo-Frankel axioms of set theory other than the uncountable axiom of choice, such that, in these models, it is true that every subset of the real line is Lebesgue measurable.
@@ -436,10 +436,10 @@ It is also of interest to know that the Borel subsets of the real line form a pr
 \item\label{exer:ex of measures}
 Let $X$ be the set of positive integers and let $S$ be the family of all subsets of $X$. Determine which of the following are measures on $S$ (not all of them are).
 \begin{enumerate}[label=\alph*),ref=\alph*)]
-    \item $\mu$ has values in $\ell^\infty$, and, for each $E \in S$, $\mu(E)$ is the sequence whose $n$th term is $1 / n$ if $n \in E$ and 0 if $n \notin E$.
+    \item $\mu$ has values in $\ell^\infty$, and, for each $E\in S$, $\mu(E)$ is the sequence whose $n$th term is $1/n$ if $n\in E$ and 0 if $n\notin E$.
     
     \item\label{exer:which are measure ell infty}
-    $\mu$ has values in $\ell^\infty$ and, for each $E \in S$, $\mu(E)$ is the sequence whose $n$th term is $1$ if $n \in E$ and $0$ if $n \notin E$.
+    $\mu$ has values in $\ell^\infty$ and, for each $E\in S$, $\mu(E)$ is the sequence whose $n$th term is $1$ if $n\in E$ and $0$ if $n\notin E$.
     
     \item $\mu$ is defined as in \ref{exer:which are measure ell infty} but its values are viewed as being elements of the Banach space of sequences $a$ such that $\sum_{n=1}|a_n|/n^2<\infty$. In this space, $\norm{a}=\sum_{n=1}^\infty|a_n|/n^2$.
     
@@ -451,7 +451,7 @@ Let $X$ be the set of positive integers and let $S$ be the family of all subsets
 \item In showing that the set function $\mu_\alpha$ defined on the left-closed right-open intervals of $\bR$ in terms of a non-decreasing function $\alpha$ is countably additive, we had to use a compactness argument and so the completeness of $\bR$, and we had to assume that $\alpha$ is left continuous.
 
 \begin{enumerate}
-\item Show that if $\alpha(x) \equiv x$, but that $\bR$ is replaced by $\bQ$, the rational numbers, then the corresponding function, $\mu_\alpha$, defined on the left-closed right-open subsets of $\bQ$, is not countably additive.
+\item Show that if $\alpha(x)\equiv x$, but that $\bR$ is replaced by $\bQ$, the rational numbers, then the corresponding function, $\mu_\alpha$, defined on the left-closed right-open subsets of $\bQ$, is not countably additive.
 \item Show that if $\alpha$ is not left continuous then $\mu_\alpha$ is not countably additive.
 \end{enumerate}
 
@@ -460,7 +460,7 @@ Let $X$ be a set and let $S$ be the family of all subsets of $X$. Define $\mu^*$
 
 \item A measure $\mu$ is called \defline{continuous}\index{continuous measure} if $\mu(\brc{x})=0$ for every point $x$. If $\bar{\mu_\alpha}$ is a Borel-Stieltjes measure, show that $\overline{\mu_\alpha}$ is a continuous measure if and only if $\alpha$ is a continuous function.
 
-\item If $\mu$ is a measure on a $\sigma$-ring $S$, then $E \in S$ is called an \defline{atom}\index{atom} for $\mu$ if $\mu(E) \neq 0$ and for any $F \subseteq E, \mu(F)=\mu(E)$ or $\mu(F)=0$.
+\item If $\mu$ is a measure on a $\sigma$-ring $S$, then $E\in S$ is called an \defline{atom}\index{atom} for $\mu$ if $\mu(E)\neq 0$ and for any $F\subseteq E,\mu(F)=\mu(E)$ or $\mu(F)=0$.
 \begin{enumerate}
 \item If $\overline{\mu_\alpha}$ is a Borel-Stieltjes measure, determine its atoms in terms of $\alpha$.
 \item A measure is called \defline{purely atomic}\index{purely atomic} if every measurable set of nonzero measure is a union of atoms. Determine which $\overline{\mu_\alpha}$ are purely atomic in terms of $\alpha$.
@@ -468,10 +468,10 @@ Let $X$ be a set and let $S$ be the family of all subsets of $X$. Define $\mu^*$
 \end{enumerate}
 
 
-\item Unfortunately atoms need not be associated with points as above. Let ${X}$ be an uncountable set and let ${S}$ be the collection of subsets of ${X}$ which are either countable or whose complement is countable. Show that ${S}$ is a $\sigma$-field. Define $\mu$ on ${S}$ by $\mu(E)=0$ if ${X}$ is countable and $\mu(E)=1$ if $E$ is uncountable. Show that $\mu$ is a measure, and find its atoms.
+\item Unfortunately atoms need not be associated with points as above. Let $X$ be an uncountable set and let $S$ be the collection of subsets of $X$ which are either countable or whose complement is countable. Show that $S$ is a $\sigma$-field. Define $\mu$ on $S$ by $\mu(E)=0$ if $X$ is countable and $\mu(E)=1$ if $E$ is uncountable. Show that $\mu$ is a measure, and find its atoms.
 
 \item\label{exer:non atomic measure}
-A measure is called \defline{purely non-atomic}\index{purely non-atomic} if it has no atoms. Prove that if $\mu$ is a purely non-atomic non-negative measure on a $\sigma$-ring $S$, if $E \in S$, and if $c$ is any constant such that $0 \leq c\leq \mu(E)$, then there exists an $F \in S$ such that $F \subseteq E$ and $\mu(F)=c$.
+A measure is called \defline{purely non-atomic}\index{purely non-atomic} if it has no atoms. Prove that if $\mu$ is a purely non-atomic non-negative measure on a $\sigma$-ring $S$, if $E\in S$, and if $c$ is any constant such that $0\leq c\leq\mu(E)$, then there exists an $F\in S$ such that $F\subseteq E$ and $\mu(F)=c$.
 
 \item\label{exer:construct borel for reals}
 Prove that the cardinality of the collection of Borel subsets of the real line is equal to the cardinality of the real line, so that not every subset of the real line can be a Borel subset. Hint: let $P$ be the collection of open intervals, let $P^u$ be the collection of countable unions of elements of $P$, let $P^{uc}$ be the union of $P^u$ with the complements of elements of $P^u$, let $P^{ucu}$ be countable unions of elements of $P^{uc}$, etc. Show that each collection of sets so obtained has the cardinality of the real line, and that the union of this sequence of collections is the $\sigma$-ring of Borel sets.

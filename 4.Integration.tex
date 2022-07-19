@@ -15,7 +15,7 @@ If $\sum_i^mb_i\idf{E_i}=\sum_j^nc_j\idf{F_j}$ as functions, where the $E_i$ are
 \end{lemma}
 
 \begin{proof}
-We may assume that the $b_i$ and $c_j$ are non-zero. Since the two functions are equal, their carriers are equal, and so $\bigdu_i E_i=\bigdu_j F_j$. It follows that $E_i=\bigdu_j E_i \cap F_j$ for each $i$, and that $F_j=\bigdu_iE_i \cap F_j$ for each $j$. Thus we have \[\sum_{i, j}b_i\idf{E_i \cap F_j}=\sum_i b_i\idf{E_i}=\sum_jc_j\idf{F_j}=\sum_{i, j} c_j\idf{E_j\cap F_j}.\] Since the $E_i \cap F_j$ are disjoint, we must have $b_i=c_j$ if $E_i \cap F_j \neq \varnothing$. It follows that \[\sum_ib_i\mu(E_i)=\sum_{i,j}b_i\mu(E_i\cap F_j)=\sum_{i,j}c_j\mu(E_i\cap F_j)=\sum_jc_j\mu(F_j).\]
+We may assume that the $b_i$ and $c_j$ are non-zero. Since the two functions are equal, their carriers are equal, and so $\bigdu_i E_i=\bigdu_j F_j$. It follows that $E_i=\bigdu_jE_i\cap F_j$ for each $i$, and that $F_j=\bigdu_iE_i\cap F_j$ for each $j$. Thus we have \[\sum_{i,j}b_i\idf{E_i\cap F_j}=\sum_i b_i\idf{E_i}=\sum_jc_j\idf{F_j}=\sum_{i,j}c_j\idf{E_j\cap F_j}.\] Since the $E_i\cap F_j$ are disjoint, we must have $b_i=c_j$ if $E_i\cap F_j\neq\varnothing$. It follows that \[\sum_ib_i\mu(E_i)=\sum_{i,j}b_i\mu(E_i\cap F_j)=\sum_{i,j}c_j\mu(E_i\cap F_j)=\sum_jc_j\mu(F_j).\]
 \end{proof}
 
 
@@ -30,10 +30,10 @@ If $f$ and $g$ are ISF, then so is $f+g$, and for any locally measurable set $E$
 \end{lemma}
 
 \begin{proof}
-It is clear that $f+g$ is an ISF. If $f$ and $g$ are represented by $\sum_ib_i\idf{E_i}$ and $\sum_jc_j\idf{F_j}$ respectively, where the $E_i$ are disjoint and so are the $F_j$, and where $\bigdu_iE_i=\bigdu_jF_j$ but we allow the $b_i$ or the $c_j$ to have value 0, then $f=\sum_{i, j}b_i\idf{E_i\cap F_j}$ and $g=\sum_{i, j}c_j \idf{E_i\cap F_j}$, so that $f+g=\sum_{i, j}(b_i+c_j)\idf{E_i\cap F_j}$. Since the $E_i \cap F_j$ are disjoint, we have
+It is clear that $f+g$ is an ISF. If $f$ and $g$ are represented by $\sum_ib_i\idf{E_i}$ and $\sum_jc_j\idf{F_j}$ respectively, where the $E_i$ are disjoint and so are the $F_j$, and where $\bigdu_iE_i=\bigdu_jF_j$ but we allow the $b_i$ or the $c_j$ to have value 0, then $f=\sum_{i, j}b_i\idf{E_i\cap F_j}$ and $g=\sum_{i, j}c_j \idf{E_i\cap F_j}$, so that $f+g=\sum_{i,j}(b_i+c_j)\idf{E_i\cap F_j}$. Since the $E_i\cap F_j$ are disjoint, we have
 \begin{align*}
     \int_E(f+g)\dd\mu&=\sum_{i,j}(b_i+c_j)\mu(E\cap E_i\cap F_j)\\
-    &=\sum_{i,j}b_i\mu(E \cap E_i \cap F_j)+\sum_{i,j}c_j\mu(E\cap E_i\cap F_j)\\
+    &=\sum_{i,j}b_i\mu(E\cap E_i\cap F_j)+\sum_{i,j}c_j\mu(E\cap E_i\cap F_j)\\
     &=\int_Ef\dd\mu+\int_Eg\dd\mu.
 \end{align*}
 \end{proof}
@@ -55,9 +55,9 @@ Let $f$ be an ISF and let $E$ be a locally measurable set.
     \item If $f$ is non-negative real-valued, then $\int_Ef\dd|\mu|\geq0$,
     
     \item\label{lem:item:ISF integral order}
-    If $f$ and $g$ are real-valued ISF, and if $f \geq g$, then $\int_Ef\dd|\mu|\geq\int_Eg\dd|\mu|$,
+    If $f$ and $g$ are real-valued ISF, and if $f\geq g$, then $\int_Ef\dd|\mu|\geq\int_Eg\dd|\mu|$,
     
-    \item If $f$ is non-negative and $F \subseteq E$ is locally measurable, then $\int_Ff\dd|\mu|\leq\int_Ef\dd|\mu|$,
+    \item If $f$ is non-negative and $F\subseteq E$ is locally measurable, then $\int_Ff\dd|\mu|\leq\int_Ef\dd|\mu|$,
 
     \item If $E=F\du G$ with $F$ and $G$ locally measurable, then $\int_Ef\dd\mu=\int_Ff\dd\mu+\int_Gf\dd\mu$.
 \end{enumerate}
@@ -548,12 +548,12 @@ Let $B$ and $B'$ be Banach spaces, and let $T$ be a \defline{bounded linear tran
 
 \item Evaluate $\lim_{n\to\infty}\int_{-\infty}^\infty(1+x^2+n(x\sin(1/x))^2)^{-1}\dd x$. If you knew only the theory of the Riemann integral how would you go about doing this?
 
-\item Show that $(x^3 \sin x)/(x^{10}+\log(2+|x|))^{1/2}$ is Lebesgue integrable on $(-\infty,\infty)$
+\item Show that $(x^3\sin x)/(x^{10}+\log(2+|x|))^{1/2}$ is Lebesgue integrable on $(-\infty,\infty)$
 
 \item\label{exer:mvt}
 The Mean Value Theorem: This theorem is stated in terms of convex sets, and so we will need to discuss first the rudiments of the theory of convex sets.
 \begin{enumerate}[label=\alph*)]
-    \item A subset $A$ of a vector space is called convex if the line segment joining any two points of $A$ lies entirely in $A$, that is, whenever $a,b\in A$ then $ta+(1-t)b \in A$ for all $0\leq t\leq1$. Show that the intersection of any collection of convex sets in convex, so every set $A$ of a vector space is contained in a smallest convex set called the convex hull of $A$, which we will denote by $c(A)$. Show that \[c(A)=\brc{\sum_{i=1}^nt_ia_i:a_i \in A,t_i\geq0,\sum_{i=1}^nt_i=1}.\] If $A$ is contained in a Banach space and if $\overline{c}(A)$ denotes the closure on $c(A)$, show that $\overline{c}(A)$ is the smallest closed convex set containing $A$. It is called the closed convex hull of A.
+    \item A subset $A$ of a vector space is called convex if the line segment joining any two points of $A$ lies entirely in $A$, that is, whenever $a,b\in A$ then $ta+(1-t)b\in A$ for all $0\leq t\leq1$. Show that the intersection of any collection of convex sets in convex, so every set $A$ of a vector space is contained in a smallest convex set called the convex hull of $A$, which we will denote by $c(A)$. Show that \[c(A)=\brc{\sum_{i=1}^nt_ia_i:a_i\in A,t_i\geq0,\sum_{i=1}^nt_i=1}.\] If $A$ is contained in a Banach space and if $\overline{c}(A)$ denotes the closure on $c(A)$, show that $\overline{c}(A)$ is the smallest closed convex set containing $A$. It is called the closed convex hull of A.
     
     \item The Mean Value Theorem. Let $\mu$ be a non-negative measure, and let $f$ be a $B$-valued $\mu$-integrable function. Then for every measurable set $E$ of strictly positive finite measure we have \[\mu_f(E)/\mu(E)=(1/\mu(E))\int_Ef\dd\mu\in\overline{c}(\er{f}{E})\subseteq\overline{c}(\operatorname{range}f|_E).\] (where $\er{f}{E}$ is as defined in Exercise \ref{exer:essential range} of Chapter \ref{ch:meas func}). This is the analogue of the fact that if a real valued continuous function $f$ on $[a, b]$ has values in the interval $[m, M]$, then $\frac{1}{b-a}\int_a^b f(x)\dd x\in[m, M]$. Hint: As usual, prove this first for ISF and then approximate.
     
