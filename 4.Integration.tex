@@ -48,17 +48,17 @@ We will let the reader supply the proofs of the following simple properties of t
 Let $f$ be an ISF and let $E$ be a locally measurable set.
 \begin{enumerate}
     \item\label{lem:item:ISF integral homogeneity}
-    If $r$ is a scalar, then $rf$ is an ISF, and $\int_E(rf)\dd\mu=r\int_Ef\dd\mu$,
+    If $r$ is a scalar, then $rf$ is an ISF, and $\int_E(rf)\dd\mu=r\int_Ef\dd\mu$;
     
-    \item $\norm{f(\imarg)}$ is an ISF,
+    \item $\norm{f(\imarg)}$ is an ISF;
     
-    \item If $f$ is non-negative real-valued, then $\int_Ef\dd|\mu|\geq0$,
+    \item If $f$ is non-negative real-valued, then $\int_Ef\dd|\mu|\geq0$;
     
     \item\label{lem:item:ISF integral order}
-    If $f$ and $g$ are real-valued ISF, and if $f\geq g$, then $\int_Ef\dd|\mu|\geq\int_Eg\dd|\mu|$,
+    If $f$ and $g$ are real-valued ISF, and if $f\geq g$, then $\int_Ef\dd|\mu|\geq\int_Eg\dd|\mu|$;
     
-    \item If $f$ is non-negative and $F\subseteq E$ is locally measurable, then $\int_Ff\dd|\mu|\leq\int_Ef\dd|\mu|$,
-
+    \item If $f$ is non-negative and $F\subseteq E$ is locally measurable, then $\int_Ff\dd|\mu|\leq\int_Ef\dd|\mu|$;
+    
     \item If $E=F\du G$ with $F$ and $G$ locally measurable, then $\int_Ef\dd\mu=\int_Ff\dd\mu+\int_Gf\dd\mu$.
 \end{enumerate}
 \end{lemma} 
@@ -179,9 +179,9 @@ For the purpose of identifying integral functions with the completion of the vec
 Let $f$ be a measurable function. Then the following three conditions are equivalent: There exists a mean Cauchy sequence $f_n$ of ISF which converges to $f$
 \begin{enumerate}[label=\arabic*),ref=\arabic*)]
     \item\label{prop:item:ISF seq in measure}
-    in measure
+    in measure;
     \item\label{prop:item:ISF seq au}
-    a.u.
+    a.u.;
     \item\label{prop:item:ISF seq ae}
     a.e.
 \end{enumerate}
@@ -200,20 +200,20 @@ In this section we show that most of the properties which we proved at the begin
 Let $f$ and $g$ be integrable functions, and let $E$ be a locally measurable set. Then
 \begin{enumerate}
     \item\label{prop:item:integral linear}
-    $f+g$ is integrable, and $\int_E(f+g)\dd\mu=\int_Ef\dd\mu+\int_Eg\dd\mu$.
+    $f+g$ is integrable, and $\int_E(f+g)\dd\mu=\int_Ef\dd\mu+\int_Eg\dd\mu$;
 
     \item\label{prop:item:integral homogeneity}
-    If $r$ is a scalar, then $rf$ is integrable and $\int_E(rf)\dd\mu=r\int_Ef\dd\mu$.
+    If $r$ is a scalar, then $rf$ is integrable and $\int_E(rf)\dd\mu=r\int_Ef\dd\mu$;
 
-    \item $\norm{f(\imarg)}$ is integrable, and $\norm{\int_Ef\dd\mu}\leq\int_E\norm{f(x)}\dd|\mu|(x)$. (Note that a function is $\mu$-integrable iff it is $|\mu|$-integrable).
+    \item $\norm{f(\imarg)}$ is integrable, and $\norm{\int_Ef\dd\mu}\leq\int_E\norm{f(x)}\dd|\mu|(x)$; (Note that a function is $\mu$-integrable iff it is $|\mu|$-integrable).
 
     \item\label{prop:item:pos func pos integral}
-    If $f$ is real-valued and if $f\geq0$ a.e., then $\int_Ef\dd|\mu|\geq0$.
+    If $f$ is real-valued and if $f\geq0$ a.e., then $\int_Ef\dd|\mu|\geq0$;
 
     \item\label{prop:item:integral preserve order}
-    If $f$ and $g$ are real-valued and if $f\geq g$ a.e., then $\int_Ef\dd|\mu|\geq\int_Eg\dd|\mu|$.
+    If $f$ and $g$ are real-valued and if $f\geq g$ a.e., then $\int_Ef\dd|\mu|\geq\int_Eg\dd|\mu|$;
 
-    \item If $f$ is real-valued and $f\geq0$ a.e., and if $F\subseteq E$ is locally measurable, then $\int_Ff\dd|\mu|\leq\int_Ef\dd|\mu|$
+    \item If $f$ is real-valued and $f\geq0$ a.e., and if $F\subseteq E$ is locally measurable, then $\int_Ff\dd|\mu|\leq\int_Ef\dd|\mu|$;
 
     \item\label{prop:item:integral on disjoint sets}
     If $E=F\du G$ with $F$ and $G$ locally measurable, then $\int_Ef\dd\mu=\int_Ff\dd\mu+\int_Gf\dd\mu$
@@ -368,9 +368,9 @@ $\norm{\mu_f(E)-\mu_g(E)}=\norm{\int_Ef\dd\mu+\int_Eg\dd\mu}\leq\int_E\norm{f(x)
 \end{proof}
 
 We return to the proof of Theorem \ref{thm:indef integral is measure}. Let a locally measurable set $E$ be given, and let $E=\bigdu_{i=1}^\infty E_i$, with the $E_i$ locally measurable. We have already seen that $\mu_f$ is finitely additive (Proposition \ref{prop:item:integral on disjoint sets}), and so to prove countable additivity it suffices to show that $\mu_f\br{\bigdu_{i=1}^n E_i}$ converges to $\mu_f(E)$ as $n$ goes to $\infty$. Let $\ep>0$ be given. Choose an ISF $g$ such that $\norm{f-g}_1<\ep/3$. We have just seen that $\mu_g$ is countably additive, and so we can choose $N$ so that if $n>N$ then $\norm{\mu_g(E)-\mu_g\br{\bigdu_{i=1}^nE_i}}<\ep/3$. Then for $n>N$ we have
-\begin{align*} %FIXME
+\begin{align*}
     \norm{\mu_g(E)-\mu_g\br{\bigdu_{i=1}^nE_i}}&\leq\norm{\mu_f(E)-\mu_g(E)}+\norm{\mu_g(E)-\mu_g\br{\bigdu_{i=1}^nE_i}}\\
-    &\quad+\norm{\mu_g\br{\bigdu_{i=1}^nE_i}-\mu_f\br{\bigdu_{i=1}^nE_i}}\\
+    &\quad\quad+\norm{\mu_g\br{\bigdu_{i=1}^nE_i}-\mu_f\br{\bigdu_{i=1}^nE_i}}\\
     &\leq\norm{f-g}_1+\ep/3+\norm{f-g}_1\leq\ep.
 \end{align*}
 \end{proof}

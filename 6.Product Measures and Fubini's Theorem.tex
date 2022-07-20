@@ -168,13 +168,13 @@ Let $M$ be the collection of all sets $A\in S\otimes T$ for which properties \re
 
 Suppose that $A_n$ is a sequence of elements of $M$, and that $A_n$ decreases to a set $A$. Then $A\in S\otimes T$ and so property \ref{lem:item:sections of sigma ring integrable} holds for $A$. Now $\xsec{\idf{A_n}}{x}$ and $\ysec{\idf{A_n}}{y}$ will decrease to $\xsec{\idf{A}}{x}$ and $\ysec{\idf{A}}{y}$, and so we can apply Corollary \ref{cor:mct} of the Monotone Convergence Theorem to conclude that
 \begin{align*}
-\int\xsec{\idf{A_n}}{x}\dd\nu&\text { decreases to }\int\xsec{\idf{A}}{x}\dd\nu\text{ and}\\
-\int\ysec{\idf{A_n}}{y}\dd\mu&\text { decreases to }\int\ysec{\idf{A}}{y}\dd\mu.
+    \int\xsec{\idf{A_n}}{x}\dd\nu&\text { decreases to }\int\xsec{\idf{A}}{x}\dd\nu\text{ and}\\
+    \int\ysec{\idf{A_n}}{y}\dd\mu&\text { decreases to }\int\ysec{\idf{A}}{y}\dd\mu.
 \end{align*}
 Since property \ref{lem:item:integral of section of sigma ring integrable} holds for the sets $A_n$, it follows that the functions $\int\xsec{\idf{A}}{x}\dd\nu$ and $\int\ysec{\idf{A}}{y}\dd\mu$ are measurable. Thus property \ref{lem:item:integral of section of sigma ring integrable} holds for $A$ also. Using Corollary \ref{cor:mct} again, we see that
 \begin{align*}
-\int\br{\int\xsec{\idf{A_n}}{x}\dd\nu}\dd\mu(x)&\text { decreases to }\int\br{\int\xsec{\idf{A}}{x}\dd\nu}\dd\mu(x)\text{ and}\\
-\int\br{\int\ysec{\idf{A_n}}{y}\dd\mu}\dd\nu(y)&\text { decreases to }\int\br{\int\ysec{\idf{A}}{y}\dd\mu}\dd\nu(y).
+    \int\br{\int\xsec{\idf{A_n}}{x}\dd\nu}\dd\mu(x)&\text { decreases to }\int\br{\int\xsec{\idf{A}}{x}\dd\nu}\dd\mu(x)\text{ and}\\
+    \int\br{\int\ysec{\idf{A_n}}{y}\dd\mu}\dd\nu(y)&\text { decreases to }\int\br{\int\ysec{\idf{A}}{y}\dd\mu}\dd\nu(y).
 \end{align*}
 Since property \ref{lem:item:iterated sigma ring integral} holds for the sets $A_n$, the left hand sides are just $\int\idf{A_n}\dd(\mu\otimes\nu)$. But $\int\idf{A_n}\dd(\mu\otimes\nu)$ decreases to $\int\idf{A}\dd(\mu\otimes\nu)$ by Proposition 4.43, and so property \ref{lem:item:iterated sigma ring integral} holds for $A$ also. A similar proof shows that if instead the sequence $A_n$ increases to $A$, then again $A\in M$.
 

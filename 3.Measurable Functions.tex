@@ -53,7 +53,7 @@ We noted above that any $S$-measurable function is $\mu$-measurable. It follows 
 
 We remark that when one is working with real valued $\mu$-measurable functions, it is occasionally convenient to permit these functions to take the value $+\infty$ (for example, when using Fubini's theorem). Usually this value will be taken only at the points of some null set, and so we can treat such a function by considering it to be undefined at such points. However, if one prefers, much of measure theory can be developed so as to include functions which take value $+\infty$. Almost all of the results of the rest of this chapter hold for such functions (some statements may have to be modified slightly), but most proofs must include special arguments for the set on which the value $+\infty$ is taken. We will not allow such functions in our development of the theory, but in several places we will indicate where it might be convenient to use such functions.
 
-The next proposition collects together some elementary facts about measurable functions
+The next proposition collects together some elementary facts about measurable functions.
 
 \begin{proposition}\label{prop:sum product of meas function}
 Let $f$ and $g$ be $S$-measurable ($\mu$-measurable) functions from $X$ to $B$, and let $r$ be a scalar. Then $f+g, rf$, and $\norm{f(\imarg)}$ are $S$-measurable ($\mu$-measurable) functions. If, instead, $f$ is scalar-valued, then $fg$ is $S$-measurable ($\mu$-measurable). If $f$ and $g$ are real-valued, then $\max(f, g)$ and $\min(f, g)$ are $S$-measurable ($\mu$-measurable).
@@ -84,7 +84,7 @@ Recall that a subset of a metric space is said to be separable if it contains a 
 \begin{theorem}\label{thm:characterization of meas func}
 Let $f$ be a function from $X$ to $B$. Then $f$ is $S$-measurable if and only if
 \begin{enumerate}[label=\arabic*),ref=\arabic*)]
-    \item\label{thm:item:sep range} $f(X)$ (the range of $f$) is a separable subset of $B$, and
+    \item\label{thm:item:sep range} $f(X)$ (the range of $f$) is a separable subset of $B$;
     \item\label{thm:item:car} $f^{-1}(U)\cap\car{f}\in S$ for every open ball, $U$, in $B$.
 \end{enumerate}
 \end{theorem}
@@ -99,7 +99,7 @@ Conversely, suppose that $f$ satisfies properties \ref{thm:item:sep range} and \
 Let $f$ be a $B$-valued function defined almost everywhere on $X$. Then $f$ is $\mu$-measurable if and only if
 \begin{enumerate}[label=\arabic*),ref=\arabic*)]
     \item\label{cor:item:sep range}
-    there exists a null set $N$ such that $f(X\sd N)$ is separable, and
+    there exists a null set $N$ such that $f(X\sd N)$ is separable;
     \item\label{cor:item:car}
     $f^{-1}(U)\cap\car{f}\in S\du\nring{\mu}$ for all open balls, $U$, in $B$.
 \end{enumerate}
@@ -114,11 +114,11 @@ Conversely, suppose that $f$ satisfies properties \ref{cor:item:sep range} and \
 Let $f$ be a function from $X$ to $B$. Then the following are equivalent:
 \begin{enumerate}[label=\arabic*),ref=\arabic*)]
     \item\label{lem:item:car cond1}
-    $f^{-1}(C)\cap\car{f}$ is in $S$ for every closed set, $C$, in $B$
+    $f^{-1}(C)\cap\car{f}$ is in $S$ for every closed set, $C$, in $B$;
     \item\label{lem:item:car cond2}
-    $f^{-1}(U)\cap\car{f}$ is in $S$ for every open set, $U$, in $B$
+    $f^{-1}(U)\cap\car{f}$ is in $S$ for every open set, $U$, in $B$;
     \item\label{lem:item:car cond3}
-    $f^{-1}(W)\cap\car{f}$ is in $S$ for every Borel set, $W$, in $B$
+    $f^{-1}(W)\cap\car{f}$ is in $S$ for every Borel set, $W$, in $B$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -224,9 +224,9 @@ We leave the proof of the next proposition to the reader.
 \begin{proposition}
 If $f_n$ converges to $f$ in measure and $g_n$ converges to $g$ in measure, then
 \begin{enumerate}[label=\arabic*)]
-    \item $f_n+g_n$ converges to $f+g$ in measure,
-    \item for any scalar $c$, $cf_n$ converges to $cf$ in measure,
-    \item $\norm{f_n(\imarg)}$ converges to $\norm{f(\imarg)}$ in measure,
+    \item $f_n+g_n$ converges to $f+g$ in measure;
+    \item for any scalar $c$, $cf_n$ converges to $cf$ in measure;
+    \item $\norm{f_n(\imarg)}$ converges to $\norm{f(\imarg)}$ in measure;
     \item for any $F\subseteq X$, $\idf{F}f_n$ converges to $\idf{X}f$ in measure.
 \end{enumerate}
 \end{proposition}
@@ -305,10 +305,10 @@ Prove that if $f$ is a continuous function on the real line into a Banach space 
 
 \item Let $\mu$ be Lebesgue measure on the real line. Find sequences of real-valued measurable functions on the real line which:
 \begin{enumerate}[label=\alph*),ref=\theenumi\alph*)]
-    \item Converge a.e. but not a.u. Thus Egoroff's theorem does not hold if the set under consideration has infinite measure.
-    \item Converges a.e. but not in measure.
+    \item converge a.e. but not a.u. Thus Egoroff's theorem does not hold if the set under consideration has infinite measure;
+    \item converges a.e. but not in measure;
     \item\label{exer:item:in measure not ae}
-    Converges in measure but not a.e.
+    converges in measure but not a.e.
 \end{enumerate}
 
 \item Let $(X,S,\mu)$ be a measure space. Prove that any $S$-measurable function from $X$ to a Banach space $B$ locally almost has compact range, that is, given any $E\in S$ with $|\mu|(E)<\infty$ (``locally'') and given $\ep>0$, there is a measurable $F\subseteq E$ with $|\mu|(E\sd F)<\ep$ (``almost''), such that the range of $f$ restricted to $F$ is a precompact subset of $B$. Hint: Use the definition of compactness in terms of total boundedness. (This result is related to the Radon-Nikodym theorem which we will prove in Chapter 7.) %FIXME linking can't be resolved now
@@ -318,10 +318,10 @@ When working with $\mu$-measurable functions and when identifying functions whic
 \begin{enumerate}
     \item Verify the following simply properties of $\er{f}{E}$
     \begin{enumerate}[label=\arabic*)]
-        \item $\er{f}{E}$ is closed,
-        \item $\er{f}{E}\subseteq\text{closure of }f(E)$,
-        \item If $f=g$ a.e. on $E$, then $\er{f}{E}=\er{g}{E}$,
-        \item If $F\subseteq E$, then $\er{f}{F}\subseteq\er{f}{E}$,
+        \item $\er{f}{E}$ is closed;
+        \item $\er{f}{E}\subseteq\text{closure of }f(E)$;
+        \item If $f=g$ a.e. on $E$, then $\er{f}{E}=\er{g}{E}$;
+        \item If $F\subseteq E$, then $\er{f}{F}\subseteq\er{f}{E}$;
         \item If $|\mu|(E)=0$, then $\er{f}{E}=\varnothing$.
     \end{enumerate}
     
